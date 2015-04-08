@@ -1,0 +1,262 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Cookie Notice\n"
+"POT-Creation-Date: 2014-07-25 09:45+0100\n"
+"PO-Revision-Date: 2014-08-18 14:59+0100\n"
+"Last-Translator: Bartosz Arendt <info@dfactory.eu>\n"
+"Language-Team: dFactory <info@dfactory.eu>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.5\n"
+"X-Poedit-KeywordsList: gettext;gettext_noop;__;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../cookie-notice.php:101
+msgid "Top"
+msgstr "Nahoře"
+
+#: ../cookie-notice.php:102
+msgid "Bottom"
+msgstr "Dole"
+
+#: ../cookie-notice.php:106 ../cookie-notice.php:137
+msgid "None"
+msgstr "Žádný"
+
+#: ../cookie-notice.php:107
+msgid "WordPress"
+msgstr "WordPress"
+
+#: ../cookie-notice.php:108
+msgid "Bootstrap"
+msgstr "Bootstrap"
+
+#: ../cookie-notice.php:112
+msgid "Enable"
+msgstr "Povolit"
+
+#: ../cookie-notice.php:113
+msgid "Disable"
+msgstr "Zakázat"
+
+#: ../cookie-notice.php:117
+msgid "Custom link"
+msgstr "Libovolný odkaz"
+
+#: ../cookie-notice.php:118
+msgid "Page link"
+msgstr "Odkaz na stránku"
+
+#: ../cookie-notice.php:122
+msgid "Text color"
+msgstr "Barva textu"
+
+#: ../cookie-notice.php:123
+msgid "Bar color"
+msgstr "Barva lišty"
+
+#: ../cookie-notice.php:127
+msgid "1 day"
+msgstr "1 den"
+
+#: ../cookie-notice.php:128
+msgid "1 week"
+msgstr "1 týden"
+
+#: ../cookie-notice.php:129
+msgid "1 month"
+msgstr "1 měsíc"
+
+#: ../cookie-notice.php:130
+msgid "3 months"
+msgstr "3 měsíce"
+
+#: ../cookie-notice.php:131
+msgid "6 months"
+msgstr "6 měsíců"
+
+#: ../cookie-notice.php:132
+msgid "1 year"
+msgstr "1 rok"
+
+#: ../cookie-notice.php:133
+msgid "infinity"
+msgstr "navždy"
+
+#: ../cookie-notice.php:138
+msgid "Fade"
+msgstr "Fade efekt"
+
+#: ../cookie-notice.php:139
+msgid "Slide"
+msgstr "Slide efekt"
+
+#: ../cookie-notice.php:159
+msgid ""
+"We use cookies to ensure that we give you the best experience on our "
+"website. If you continue to use this site we will assume that you are happy "
+"with it."
+msgstr ""
+"Užíváme cookies, abychom vám zajistili co možná nejsnadnější použití našich "
+"webových stránek. Pokud budete nadále prohlížet naše stránky předpokládáme, "
+"že s použitím cookies souhlasíte."
+
+#: ../cookie-notice.php:160
+msgid "Ok"
+msgstr "Souhlasím"
+
+#: ../cookie-notice.php:161
+msgid "Read more"
+msgstr "Více"
+
+#: ../cookie-notice.php:188 ../cookie-notice.php:189 ../cookie-notice.php:201
+#: ../cookie-notice.php:204
+msgid "Cookie Notice"
+msgstr "Cookie Notice"
+
+#: ../cookie-notice.php:206
+msgid "Need support?"
+msgstr "Potřebujete poradit?"
+
+#: ../cookie-notice.php:207
+msgid ""
+"If you are having problems with this plugin, please talk about them in the"
+msgstr "Pokud máte potíže s pluginem obraťte se prosím na "
+
+#: ../cookie-notice.php:207
+msgid "Support forum"
+msgstr "fórum podpory"
+
+#: ../cookie-notice.php:209
+msgid "Do you like this plugin?"
+msgstr "Líbí se vám tento plugin?"
+
+#: ../cookie-notice.php:210
+msgid "Rate it 5"
+msgstr "Oznámkujte"
+
+#: ../cookie-notice.php:210
+msgid "on WordPress.org"
+msgstr "na WordPress.org"
+
+#: ../cookie-notice.php:211
+msgid "Blog about it & link to the"
+msgstr "Blog pluginu a odkaz na"
+
+#: ../cookie-notice.php:211
+msgid "plugin page"
+msgstr "stránku pluginu"
+
+#: ../cookie-notice.php:212
+msgid "Check out our other"
+msgstr "Prohlédněte si ostatní"
+
+#: ../cookie-notice.php:212
+msgid "WordPress plugins"
+msgstr "WordPress pluginy"
+
+#: ../cookie-notice.php:238
+msgid "Configuration"
+msgstr "Nastavení"
+
+#: ../cookie-notice.php:239
+msgid "Message"
+msgstr "Zpráva"
+
+#: ../cookie-notice.php:240 ../cookie-notice.php:316
+msgid "Button text"
+msgstr "Text tlačítka"
+
+#: ../cookie-notice.php:241
+msgid "More info"
+msgstr "Další informace"
+
+#: ../cookie-notice.php:242
+msgid "Cookie expiry"
+msgstr "Platnost cookie"
+
+#: ../cookie-notice.php:243
+msgid "Deactivation"
+msgstr "Deaktivace"
+
+#: ../cookie-notice.php:246
+msgid "Design"
+msgstr "Grafika"
+
+#: ../cookie-notice.php:247
+msgid "Position"
+msgstr "Pozice"
+
+#: ../cookie-notice.php:248
+msgid "Animation"
+msgstr "Animace"
+
+#: ../cookie-notice.php:249
+msgid "Button style"
+msgstr "Styl tlačítka"
+
+#: ../cookie-notice.php:250
+msgid "Colors"
+msgstr "Barvy"
+
+#: ../cookie-notice.php:271
+msgid "Enable if you want all plugin data to be deleted on deactivation."
+msgstr ""
+"Povolte, pokud chcete, aby při deaktivaci pluginu se smazala všechna jeho "
+"data."
+
+#: ../cookie-notice.php:282
+msgid "Enter the cookie notice message."
+msgstr "Napište zde informace o souhlasu s cookies."
+
+#: ../cookie-notice.php:292
+msgid "The text to show on the button when cookies have not been accepted"
+msgstr "Text, který se zobrazí v tlačítku, které potvrzuje cookies."
+
+#: ../cookie-notice.php:312
+msgid "Enable or Disable Read more button."
+msgstr "Povoluje, nebo zakazuje tlačítko s dalšími informacemi."
+
+#: ../cookie-notice.php:330
+msgid "Select where to redirect user for more information about cookies."
+msgstr "Zvolte kam má směrovat odkaz z tlačítka s dalšími informacemi."
+
+#: ../cookie-notice.php:333
+msgid "-- select page --"
+msgstr "--- zvolte stránku ---"
+
+#: ../cookie-notice.php:343
+msgid "Select from one of your site's pages"
+msgstr "Vyberte jednu stránku z vašich vytvořených"
+
+#: ../cookie-notice.php:347
+msgid "Enter the full URL starting with http://"
+msgstr "Zadejte celý odkaz počínaje http://"
+
+#: ../cookie-notice.php:368
+msgid "The ammount of time that cookie should be stored for."
+msgstr "Čas po který budou cookies uloženy."
+
+#: ../cookie-notice.php:388
+msgid "Select location for your cookie notice."
+msgstr "Vyberte usmítění lišty s cookie notice."
+
+#: ../cookie-notice.php:408
+msgid "Cookie notice acceptance animation."
+msgstr "Animace po odsouhlasení cookies."
+
+#: ../cookie-notice.php:428
+msgid "Choose buttons style."
+msgstr "Vyberte styl tlačítek."
+
+#: ../cookie-notice.php:555
+msgid "Support"
+msgstr "Podpora"
+
+#: ../cookie-notice.php:586
+msgid "Settings"
+msgstr "Nastavení"

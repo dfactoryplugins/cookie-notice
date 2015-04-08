@@ -1,0 +1,265 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Cookie Notice\n"
+"POT-Creation-Date: 2014-07-25 09:45+0100\n"
+"PO-Revision-Date: 2014-11-13 13:44+0100\n"
+"Last-Translator: Bartosz Arendt <info@dfactory.eu>\n"
+"Language-Team: dFactory <info@dfactory.eu>\n"
+"Language: hr_HR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.10\n"
+"X-Poedit-KeywordsList: gettext;gettext_noop;__;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../cookie-notice.php:101
+msgid "Top"
+msgstr "Vrh stranice"
+
+#: ../cookie-notice.php:102
+msgid "Bottom"
+msgstr "Dno stranice"
+
+#: ../cookie-notice.php:106 ../cookie-notice.php:137
+msgid "None"
+msgstr "Bez"
+
+#: ../cookie-notice.php:107
+msgid "WordPress"
+msgstr "WordPress"
+
+#: ../cookie-notice.php:108
+msgid "Bootstrap"
+msgstr "Bootstrap"
+
+#: ../cookie-notice.php:112
+msgid "Enable"
+msgstr "Omogući"
+
+#: ../cookie-notice.php:113
+msgid "Disable"
+msgstr "Onemogući"
+
+#: ../cookie-notice.php:117
+msgid "Custom link"
+msgstr "Prilagođena poveznica"
+
+#: ../cookie-notice.php:118
+msgid "Page link"
+msgstr "Poveznica ka WordPress stranici"
+
+#: ../cookie-notice.php:122
+msgid "Text color"
+msgstr "Boja teksta"
+
+#: ../cookie-notice.php:123
+msgid "Bar color"
+msgstr "Boja trake"
+
+#: ../cookie-notice.php:127
+msgid "1 day"
+msgstr "1 dan"
+
+#: ../cookie-notice.php:128
+msgid "1 week"
+msgstr "1 tjedan"
+
+#: ../cookie-notice.php:129
+msgid "1 month"
+msgstr "1 mjesec"
+
+#: ../cookie-notice.php:130
+msgid "3 months"
+msgstr "3 mjeseca"
+
+#: ../cookie-notice.php:131
+msgid "6 months"
+msgstr "6 mjeseci"
+
+#: ../cookie-notice.php:132
+msgid "1 year"
+msgstr "1 godina"
+
+#: ../cookie-notice.php:133
+msgid "infinity"
+msgstr "beskonačno"
+
+#: ../cookie-notice.php:138
+msgid "Fade"
+msgstr "Izbljeđivanje"
+
+#: ../cookie-notice.php:139
+msgid "Slide"
+msgstr "Klizanje"
+
+#: ../cookie-notice.php:159
+msgid ""
+"We use cookies to ensure that we give you the best experience on our "
+"website. If you continue to use this site we will assume that you are happy "
+"with it."
+msgstr ""
+"Koristimo kolačiće u svrhu pružanja boljeg korisničkog iskustva na stranici. "
+"Ukoliko nastavite s pregledavanjem ove stranice pretpostavit ćemo da se "
+"slažete s tim."
+
+#: ../cookie-notice.php:160
+msgid "Ok"
+msgstr "Slažem se"
+
+#: ../cookie-notice.php:161
+msgid "Read more"
+msgstr "Više informacija"
+
+#: ../cookie-notice.php:188 ../cookie-notice.php:189 ../cookie-notice.php:201
+#: ../cookie-notice.php:204
+msgid "Cookie Notice"
+msgstr "Cookie Notice (Obavijest o kolačićima)"
+
+#: ../cookie-notice.php:206
+msgid "Need support?"
+msgstr "Trebate podršku?"
+
+#: ../cookie-notice.php:207
+msgid ""
+"If you are having problems with this plugin, please talk about them in the"
+msgstr "Ukoliko imate problema s ovim dodatkom, molimo pišite o tome na"
+
+#: ../cookie-notice.php:207
+msgid "Support forum"
+msgstr "forumu podrške"
+
+#: ../cookie-notice.php:209
+msgid "Do you like this plugin?"
+msgstr "Sviđa Vam se ovaj dodatak?"
+
+#: ../cookie-notice.php:210
+msgid "Rate it 5"
+msgstr "Ocjenite ga s 5"
+
+#: ../cookie-notice.php:210
+msgid "on WordPress.org"
+msgstr "na WordPress.org"
+
+#: ../cookie-notice.php:211
+msgid "Blog about it & link to the"
+msgstr "Pišite na svom blogu i dodajte poveznicu ka"
+
+#: ../cookie-notice.php:211
+msgid "plugin page"
+msgstr "web stranici dodatka"
+
+#: ../cookie-notice.php:212
+msgid "Check out our other"
+msgstr "Provjerite naše ostale"
+
+#: ../cookie-notice.php:212
+msgid "WordPress plugins"
+msgstr "WordPress dodatke"
+
+#: ../cookie-notice.php:238
+msgid "Configuration"
+msgstr "Postavke"
+
+#: ../cookie-notice.php:239
+msgid "Message"
+msgstr "Poruka"
+
+#: ../cookie-notice.php:240 ../cookie-notice.php:316
+msgid "Button text"
+msgstr "Tekst gumba"
+
+#: ../cookie-notice.php:241
+msgid "More info"
+msgstr "Više informacija"
+
+#: ../cookie-notice.php:242
+msgid "Cookie expiry"
+msgstr "Istek kolačića"
+
+#: ../cookie-notice.php:243
+msgid "Deactivation"
+msgstr "Deaktivacija"
+
+#: ../cookie-notice.php:246
+msgid "Design"
+msgstr "Dizajn"
+
+#: ../cookie-notice.php:247
+msgid "Position"
+msgstr "Položaj"
+
+#: ../cookie-notice.php:248
+msgid "Animation"
+msgstr "Animacija"
+
+#: ../cookie-notice.php:249
+msgid "Button style"
+msgstr "Stil gumba"
+
+#: ../cookie-notice.php:250
+msgid "Colors"
+msgstr "Boje"
+
+#: ../cookie-notice.php:271
+msgid "Enable if you want all plugin data to be deleted on deactivation."
+msgstr ""
+"Omogućite ukoliko želite izbrisati sve podatke dodatka prilikom deaktivacije."
+
+#: ../cookie-notice.php:282
+msgid "Enter the cookie notice message."
+msgstr "Unesite poruku obavijesti o kolačićima."
+
+#: ../cookie-notice.php:292
+msgid "The text to show on the button when cookies have not been accepted"
+msgstr ""
+"Tekst koji će biti prikazan na gumbu prije nego što se poruka o kolačićima "
+"potvrdi"
+
+#: ../cookie-notice.php:312
+msgid "Enable or Disable Read more button."
+msgstr "Omogućite ili onemogućite gumb za prikaz više informacija."
+
+#: ../cookie-notice.php:330
+msgid "Select where to redirect user for more information about cookies."
+msgstr ""
+"Odaberite gdje želite preusmjeriti korisnika prilikom odabira dodatnog "
+"prikaza informacija o kolačićima."
+
+#: ../cookie-notice.php:333
+msgid "-- select page --"
+msgstr "-- odaberite stranicu --"
+
+#: ../cookie-notice.php:343
+msgid "Select from one of your site's pages"
+msgstr "Odaberite jednu od Vaših WordPress stranica"
+
+#: ../cookie-notice.php:347
+msgid "Enter the full URL starting with http://"
+msgstr "Unesite puni naziv poveznice počevši s http://"
+
+#: ../cookie-notice.php:368
+msgid "The ammount of time that cookie should be stored for."
+msgstr "Vremenski period pohranjivanja kolačića."
+
+#: ../cookie-notice.php:388
+msgid "Select location for your cookie notice."
+msgstr "Odabeite položaj prikaza obavijesti o kolačićima."
+
+#: ../cookie-notice.php:408
+msgid "Cookie notice acceptance animation."
+msgstr "Animacija nakon potvrde obavijesti o kolačićima."
+
+#: ../cookie-notice.php:428
+msgid "Choose buttons style."
+msgstr "Odaberite stil gumba."
+
+#: ../cookie-notice.php:555
+msgid "Support"
+msgstr "Podrška"
+
+#: ../cookie-notice.php:586
+msgid "Settings"
+msgstr "Postavke"

@@ -1,0 +1,354 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Cookie Notice v1.2.13\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2014-11-17 11:22:00+0000\n"
+"Last-Translator: surbma <peter@surbma.hu>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: CSL v1.x\n"
+"X-Poedit-Language: Hungarian\n"
+"X-Poedit-Country: HUNGARY\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
+
+#. translators: plugin header field 'Name'
+#: cookie-notice.php:0
+#: cookie-notice.php:188
+#: cookie-notice.php:189
+#: cookie-notice.php:201
+#: cookie-notice.php:204
+#@ cookie-notice
+msgid "Cookie Notice"
+msgstr "Süti értesítő"
+
+#. translators: plugin header field 'PluginURI'
+#: cookie-notice.php:0
+#@ cookie-notice
+msgid "http://www.dfactory.eu/plugins/cookie-notice/"
+msgstr "http://www.dfactory.eu/plugins/cookie-notice/"
+
+#. translators: plugin header field 'Description'
+#: cookie-notice.php:0
+#@ cookie-notice
+msgid "Cookie Notice allows you to elegantly inform users that your site uses cookies and to comply with the EU cookie law regulations."
+msgstr "A Süti értesítővel egyszerűen megjeleníthetők az oldalon a süti használattal kapcsolatos jogi követelmények."
+
+#. translators: plugin header field 'Author'
+#: cookie-notice.php:0
+#@ cookie-notice
+msgid "dFactory"
+msgstr "dFactory"
+
+#. translators: plugin header field 'AuthorURI'
+#: cookie-notice.php:0
+#@ cookie-notice
+msgid "http://www.dfactory.eu/"
+msgstr "http://www.dfactory.eu/"
+
+#. translators: plugin header field 'Version'
+#: cookie-notice.php:0
+#@ cookie-notice
+msgid "1.2.13"
+msgstr ""
+
+#: cookie-notice.php:101
+#@ cookie-notice
+msgid "Top"
+msgstr "Felül"
+
+#: cookie-notice.php:102
+#@ cookie-notice
+msgid "Bottom"
+msgstr "Alul"
+
+#: cookie-notice.php:106
+#: cookie-notice.php:137
+#@ cookie-notice
+msgid "None"
+msgstr "Nincs"
+
+#: cookie-notice.php:107
+#@ cookie-notice
+msgid "WordPress"
+msgstr "WordPress"
+
+#: cookie-notice.php:108
+#@ cookie-notice
+msgid "Bootstrap"
+msgstr "Bootstrap"
+
+#: cookie-notice.php:112
+#@ cookie-notice
+msgid "Enable"
+msgstr "Bekapcsolva"
+
+#: cookie-notice.php:113
+#@ cookie-notice
+msgid "Disable"
+msgstr "Kikapcsolva"
+
+#: cookie-notice.php:117
+#@ cookie-notice
+msgid "Custom link"
+msgstr "Egyedi link"
+
+#: cookie-notice.php:118
+#@ cookie-notice
+msgid "Page link"
+msgstr "Meglévő oldal"
+
+#: cookie-notice.php:122
+#@ cookie-notice
+msgid "Text color"
+msgstr "Szöveg színe"
+
+#: cookie-notice.php:123
+#@ cookie-notice
+msgid "Bar color"
+msgstr "Doboz színe"
+
+#: cookie-notice.php:127
+#@ cookie-notice
+msgid "1 day"
+msgstr "1 nap"
+
+#: cookie-notice.php:128
+#@ cookie-notice
+msgid "1 week"
+msgstr "1 hét"
+
+#: cookie-notice.php:129
+#@ cookie-notice
+msgid "1 month"
+msgstr "1 hónap"
+
+#: cookie-notice.php:130
+#@ cookie-notice
+msgid "3 months"
+msgstr "3 hónap"
+
+#: cookie-notice.php:131
+#@ cookie-notice
+msgid "6 months"
+msgstr "6 hónap"
+
+#: cookie-notice.php:132
+#@ cookie-notice
+msgid "1 year"
+msgstr "1 év"
+
+#: cookie-notice.php:133
+#@ cookie-notice
+msgid "infinity"
+msgstr "korlátlan"
+
+#: cookie-notice.php:138
+#@ cookie-notice
+msgid "Fade"
+msgstr "Előtűnés"
+
+#: cookie-notice.php:139
+#@ cookie-notice
+msgid "Slide"
+msgstr "Becsúszás"
+
+#: cookie-notice.php:159
+#@ cookie-notice
+msgid "We use cookies to ensure that we give you the best experience on our website. If you continue to use this site we will assume that you are happy with it."
+msgstr "A weboldalon cookie-kat használunk, amik segítenek minket a lehető legjobb szolgáltatások nyújtásában. Weboldalunk további használatával jóváhagyja, hogy cookie-kat használjunk."
+
+#: cookie-notice.php:160
+#@ cookie-notice
+msgid "Ok"
+msgstr "Ok"
+
+#: cookie-notice.php:161
+#@ cookie-notice
+msgid "Read more"
+msgstr "További információk"
+
+#: cookie-notice.php:206
+#@ cookie-notice
+msgid "Need support?"
+msgstr "Támogatásra van szükséged?"
+
+#: cookie-notice.php:207
+#@ cookie-notice
+msgid "If you are having problems with this plugin, please talk about them in the"
+msgstr "Amennyiben valamilyen probléma van ezzel a bővítménnyel, kérlek jelezd itt:"
+
+#: cookie-notice.php:207
+#@ cookie-notice
+msgid "Support forum"
+msgstr "Támogatói fórum"
+
+#: cookie-notice.php:209
+#@ cookie-notice
+msgid "Do you like this plugin?"
+msgstr "Tetszik ez a bővítmény?"
+
+#: cookie-notice.php:210
+#@ cookie-notice
+msgid "Rate it 5"
+msgstr "Értékeld 5-ösre"
+
+#: cookie-notice.php:210
+#@ cookie-notice
+msgid "on WordPress.org"
+msgstr "a WordPress.org oldalon"
+
+#: cookie-notice.php:211
+#@ cookie-notice
+msgid "Blog about it & link to the"
+msgstr "Írj róla és linkelj a"
+
+#: cookie-notice.php:211
+#@ cookie-notice
+msgid "plugin page"
+msgstr "bővítmény oldalára"
+
+#: cookie-notice.php:212
+#@ cookie-notice
+msgid "Check out our other"
+msgstr "Nézd meg a többi"
+
+#: cookie-notice.php:212
+#@ cookie-notice
+msgid "WordPress plugins"
+msgstr "WordPress bővítményeinket"
+
+#: cookie-notice.php:244
+#@ cookie-notice
+msgid "Configuration"
+msgstr "Beállítások"
+
+#: cookie-notice.php:245
+#@ cookie-notice
+msgid "Message"
+msgstr "Üzenet"
+
+#: cookie-notice.php:246
+#: cookie-notice.php:322
+#@ cookie-notice
+msgid "Button text"
+msgstr "Gomb szövege"
+
+#: cookie-notice.php:247
+#@ cookie-notice
+msgid "More info"
+msgstr "További információk"
+
+#: cookie-notice.php:248
+#@ cookie-notice
+msgid "Cookie expiry"
+msgstr "Süti lejárata"
+
+#: cookie-notice.php:249
+#@ cookie-notice
+msgid "Deactivation"
+msgstr "Kikapcsolás"
+
+#: cookie-notice.php:252
+#@ cookie-notice
+msgid "Design"
+msgstr "Megjelenés"
+
+#: cookie-notice.php:253
+#@ cookie-notice
+msgid "Position"
+msgstr "Pozíció"
+
+#: cookie-notice.php:254
+#@ cookie-notice
+msgid "Animation"
+msgstr "Animáció"
+
+#: cookie-notice.php:255
+#@ cookie-notice
+msgid "Button style"
+msgstr "Gomb stílus"
+
+#: cookie-notice.php:256
+#@ cookie-notice
+msgid "Colors"
+msgstr "Színek"
+
+#: cookie-notice.php:277
+#@ cookie-notice
+msgid "Enable if you want all plugin data to be deleted on deactivation."
+msgstr "Kapcsold be, ha szeretnéd, hogy minden adat törölve legyen a bővítmény kikapcsolásakor."
+
+#: cookie-notice.php:288
+#@ cookie-notice
+msgid "Enter the cookie notice message."
+msgstr "Írd be a süti értesítő szövegét."
+
+#: cookie-notice.php:298
+#@ cookie-notice
+msgid "The text to show on the button when cookies have not been accepted"
+msgstr "A gomb szövege, amíg a sütik még nem lettek elfogadva."
+
+#: cookie-notice.php:318
+#@ cookie-notice
+msgid "Enable or Disable Read more button."
+msgstr "A További információk gomb engedélyezése vagy elrejtése."
+
+#: cookie-notice.php:336
+#@ cookie-notice
+msgid "Select where to redirect user for more information about cookies."
+msgstr "Válaszd ki a További információk gomb cél oldalát."
+
+#: cookie-notice.php:339
+#@ cookie-notice
+msgid "-- select page --"
+msgstr "-- oldal választása --"
+
+#: cookie-notice.php:349
+#@ cookie-notice
+msgid "Select from one of your site's pages"
+msgstr "Válassz a meglévő oldalak közül"
+
+#: cookie-notice.php:353
+#@ cookie-notice
+msgid "Enter the full URL starting with http://"
+msgstr "Add meg a teljes URL-t. Így kezdődjön: http://"
+
+#: cookie-notice.php:374
+#@ cookie-notice
+msgid "The ammount of time that cookie should be stored for."
+msgstr "Az időtartam, ameddig a süti tárolódjon a látogató számítógépén."
+
+#: cookie-notice.php:394
+#@ cookie-notice
+msgid "Select location for your cookie notice."
+msgstr "Válaszd ki a süti értesítő pozícióját."
+
+#: cookie-notice.php:414
+#@ cookie-notice
+msgid "Cookie notice acceptance animation."
+msgstr "Süti értesítő megjelenésének az animációja."
+
+#: cookie-notice.php:434
+#@ cookie-notice
+msgid "Choose buttons style."
+msgstr "Válassz gomb stílust."
+
+#: cookie-notice.php:561
+#@ cookie-notice
+msgid "Support"
+msgstr "Támogatás"
+
+#: cookie-notice.php:592
+#@ cookie-notice
+msgid "Settings"
+msgstr "Beállítások"
+

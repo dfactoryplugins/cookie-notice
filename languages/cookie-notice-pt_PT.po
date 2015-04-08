@@ -1,0 +1,256 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Cookie Notice\n"
+"POT-Creation-Date: 2013-07-02 18:32+0100\n"
+"PO-Revision-Date: 2014-03-27 23:55-0000\n"
+"Last-Translator: Luis Maia <lmsm76@gmail.com>\n"
+"Language-Team: dFactory <info@dfactory.eu>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.4\n"
+"X-Poedit-KeywordsList: gettext;gettext_noop;__;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../cookie-notice.php:84
+msgid "Top"
+msgstr "Topo"
+
+#: ../cookie-notice.php:85
+msgid "Bottom"
+msgstr "Fundo"
+
+#: ../cookie-notice.php:89 ../cookie-notice.php:120
+msgid "None"
+msgstr "Nenhum"
+
+#: ../cookie-notice.php:90
+msgid "WordPress"
+msgstr "WordPress"
+
+#: ../cookie-notice.php:91
+msgid "Bootstrap"
+msgstr "Bootstrap"
+
+#: ../cookie-notice.php:95
+msgid "Enable"
+msgstr "Ativar"
+
+#: ../cookie-notice.php:96
+msgid "Disable"
+msgstr "Desativar"
+
+#: ../cookie-notice.php:100
+msgid "Custom link"
+msgstr "Atalho personalizado"
+
+#: ../cookie-notice.php:101
+msgid "Page link"
+msgstr "Atalho da página"
+
+#: ../cookie-notice.php:105
+msgid "Text color"
+msgstr "Cor do texto"
+
+#: ../cookie-notice.php:106
+msgid "Bar color"
+msgstr "Cor da barra"
+
+#: ../cookie-notice.php:110
+msgid "1 day"
+msgstr "1 dia"
+
+#: ../cookie-notice.php:111
+msgid "1 week"
+msgstr "1 semana"
+
+#: ../cookie-notice.php:112
+msgid "1 month"
+msgstr "1 mês"
+
+#: ../cookie-notice.php:113
+msgid "3 months"
+msgstr "3 meses"
+
+#: ../cookie-notice.php:114
+msgid "6 months"
+msgstr "6 meses"
+
+#: ../cookie-notice.php:115
+msgid "1 year"
+msgstr "1 ano"
+
+#: ../cookie-notice.php:116
+msgid "infinity"
+msgstr "infinito"
+
+#: ../cookie-notice.php:121
+msgid "Fade"
+msgstr "Desvanecer"
+
+#: ../cookie-notice.php:122
+msgid "Slide"
+msgstr "Deslizar"
+
+#: ../cookie-notice.php:154 ../cookie-notice.php:155 ../cookie-notice.php:167
+#: ../cookie-notice.php:180
+msgid "Cookie Notice"
+msgstr "Informação de Cookie"
+
+#: ../cookie-notice.php:182
+msgid "Need support?"
+msgstr "Precisa de suporte?"
+
+#: ../cookie-notice.php:183
+msgid ""
+"If you are having problems with this plugin, please talk about them in the"
+msgstr ""
+"Se experenciou problemas com este plugin, por favor fale acerca dele no"
+
+#: ../cookie-notice.php:183
+msgid "Support forum"
+msgstr "Forum de suporte"
+
+#: ../cookie-notice.php:185
+msgid "Do you like this plugin?"
+msgstr "Gosta deste plugin?"
+
+#: ../cookie-notice.php:186
+msgid "Rate it 5"
+msgstr "Dê-lhe nota 5"
+
+#: ../cookie-notice.php:186
+msgid "on WordPress.org"
+msgstr "em Wordpress.org"
+
+#: ../cookie-notice.php:187
+msgid "Blog about it & link to the"
+msgstr "Escreva acerca dele & crie uma ligação em"
+
+#: ../cookie-notice.php:187
+msgid "plugin page"
+msgstr "página do plugin"
+
+#: ../cookie-notice.php:188
+msgid "Check out our other"
+msgstr "Verifique os outros nossos"
+
+#: ../cookie-notice.php:188
+msgid "WordPress plugins"
+msgstr "Plugins de Wordpress"
+
+#: ../cookie-notice.php:204
+msgid "Configuration"
+msgstr "Configuração"
+
+#: ../cookie-notice.php:205
+msgid "Message"
+msgstr "Mensagem"
+
+#: ../cookie-notice.php:206 ../cookie-notice.php:256
+msgid "Button text"
+msgstr "Botão de texto"
+
+#: ../cookie-notice.php:207
+msgid "More info"
+msgstr "Mais informação"
+
+#: ../cookie-notice.php:208
+msgid "Cookie expiry"
+msgstr "Expiração do Cookie"
+
+# Check Design context
+#: ../cookie-notice.php:211
+msgid "Design"
+msgstr "Projeto"
+
+#: ../cookie-notice.php:212
+msgid "Position"
+msgstr "Posição"
+
+#: ../cookie-notice.php:213
+msgid "Hide animation"
+msgstr "Esconder animação"
+
+#: ../cookie-notice.php:214
+msgid "Button style"
+msgstr "Estilo do botão"
+
+#: ../cookie-notice.php:215
+msgid "Colors"
+msgstr "Cores"
+
+#: ../cookie-notice.php:224
+msgid "Enter the cookie notice message."
+msgstr "Introduza a mensagem de informação do cookie"
+
+#: ../cookie-notice.php:234
+msgid "The text to show on the button when cookies have not been accepted"
+msgstr "O texto a mostrar no botão quando os cookies não são aceites"
+
+#: ../cookie-notice.php:252
+msgid "Enable or Disable Read more button."
+msgstr "Ativar ou Desativar botão Ler mais"
+
+#: ../cookie-notice.php:268
+msgid "Select where to redirect user for more information about cookies."
+msgstr ""
+"Selecionar onde redirecionar o utilizador para mais informações acerca de "
+"cookies"
+
+#: ../cookie-notice.php:271
+msgid "-- select page --"
+msgstr "-- selecionar página --"
+
+#: ../cookie-notice.php:281
+msgid "Select from one of your site's pages"
+msgstr "Selecione de uma das suas páginas"
+
+#: ../cookie-notice.php:285
+msgid "Enter the full URL starting with http://"
+msgstr "Introduzar o URL completo a começar com http://"
+
+#: ../cookie-notice.php:304
+msgid "The ammount of time that cookie should be stored for."
+msgstr "Duração do tempo que o cookie deverá ficar instalado."
+
+#: ../cookie-notice.php:322
+msgid "Select location for your cookie notice."
+msgstr "Selecionar local para a sua informação de cookie"
+
+#: ../cookie-notice.php:340
+msgid "Cookie notice acceptance animation."
+msgstr "Animação da aceitação da informação de Cookie"
+
+#: ../cookie-notice.php:358
+msgid "Choose buttons style."
+msgstr "Selecione estilo dos botões"
+
+#: ../cookie-notice.php:473
+msgid "Support"
+msgstr "Suporte"
+
+#: ../cookie-notice.php:495
+msgid "Settings"
+msgstr "Definições"
+
+#: ../cookie-notice.php:524
+msgid ""
+"We use cookies to ensure that we give you the best experience on our "
+"website. If you continue to use this site we will assume that you are happy "
+"with it."
+msgstr ""
+"Utilizamos cookies para assegurar que lhe fornecemos a melhor experiência na "
+"nossa página web. Se continuar a utilizar esta página pressupomos que está "
+"feliz por a utilizar."
+
+#: ../cookie-notice.php:525
+msgid "Ok"
+msgstr "Ok"
+
+#: ../cookie-notice.php:526
+msgid "Read more"
+msgstr "Ler mais"

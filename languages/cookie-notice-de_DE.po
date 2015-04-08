@@ -1,0 +1,254 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Cookie Notice\n"
+"POT-Creation-Date: 2014-05-04 23:05+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Bartosz Arendt <info@dfactory.eu>\n"
+"Language-Team: Alex Ernst <everywherecoder@gmail.com>\n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.4\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-KeywordsList: __\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../cookie-notice.php:90
+msgid "Top"
+msgstr "Oben"
+
+#: ../cookie-notice.php:91
+msgid "Bottom"
+msgstr "Unten"
+
+#: ../cookie-notice.php:95 ../cookie-notice.php:126
+msgid "None"
+msgstr "Ohne"
+
+#: ../cookie-notice.php:96
+msgid "WordPress"
+msgstr "WordPress"
+
+#: ../cookie-notice.php:97
+msgid "Bootstrap"
+msgstr "Bootstrap"
+
+#: ../cookie-notice.php:101
+msgid "Enable"
+msgstr "Einschalten"
+
+#: ../cookie-notice.php:102
+msgid "Disable"
+msgstr "Ausschalten"
+
+#: ../cookie-notice.php:106
+msgid "Custom link"
+msgstr "Individueller Link"
+
+#: ../cookie-notice.php:107
+msgid "Page link"
+msgstr "Vorhandene Seite"
+
+#: ../cookie-notice.php:111
+msgid "Text color"
+msgstr "Textfarbe"
+
+#: ../cookie-notice.php:112
+msgid "Bar color"
+msgstr "Hintergrundfarbe"
+
+#: ../cookie-notice.php:116
+msgid "1 day"
+msgstr "1 Tag"
+
+#: ../cookie-notice.php:117
+msgid "1 week"
+msgstr "1 Woche"
+
+#: ../cookie-notice.php:118
+msgid "1 month"
+msgstr "1 Monat"
+
+#: ../cookie-notice.php:119
+msgid "3 months"
+msgstr "3 Monate"
+
+#: ../cookie-notice.php:120
+msgid "6 months"
+msgstr "6 Monate"
+
+#: ../cookie-notice.php:121
+msgid "1 year"
+msgstr "1 Jahr"
+
+#: ../cookie-notice.php:122
+msgid "infinity"
+msgstr "unbegrenzt"
+
+#: ../cookie-notice.php:127
+msgid "Fade"
+msgstr "Ausblenden"
+
+#: ../cookie-notice.php:128
+msgid "Slide"
+msgstr "Ausgleiten"
+
+#: ../cookie-notice.php:148
+msgid ""
+"We use cookies to ensure that we give you the best experience on our "
+"website. If you continue to use this site we will assume that you are happy "
+"with it."
+msgstr ""
+"Diese Website benutzen Cookies. Wenn Sie die Website weiter nutzen, stimmen "
+"Sie der Verwendung von Cookies zu."
+
+#: ../cookie-notice.php:149
+msgid "Ok"
+msgstr "Akzeptieren"
+
+#: ../cookie-notice.php:150
+msgid "Read more"
+msgstr "Erfahren Sie mehr"
+
+#: ../cookie-notice.php:177 ../cookie-notice.php:178 ../cookie-notice.php:190
+#: ../cookie-notice.php:193
+msgid "Cookie Notice"
+msgstr "Cookie Notice"
+
+#: ../cookie-notice.php:195
+msgid "Need support?"
+msgstr "Benötigen Sie Hilfe?"
+
+#: ../cookie-notice.php:196
+msgid ""
+"If you are having problems with this plugin, please talk about them in the"
+msgstr "Wenn Sie Probleme mit dem Plugin habe, fragen Sie bitte im"
+
+#: ../cookie-notice.php:196
+msgid "Support forum"
+msgstr "Support forum"
+
+#: ../cookie-notice.php:198
+msgid "Do you like this plugin?"
+msgstr "Gefällt Ihnen das Plugin?"
+
+#: ../cookie-notice.php:199
+msgid "Rate it 5"
+msgstr "Bewerten Sie mit 5"
+
+#: ../cookie-notice.php:199
+msgid "on WordPress.org"
+msgstr "auf WordPress.org"
+
+#: ../cookie-notice.php:200
+msgid "Blog about it & link to the"
+msgstr "Bloggen Sie darüber & verlinken Sie zur"
+
+#: ../cookie-notice.php:200
+msgid "plugin page"
+msgstr "Plugin Seite"
+
+#: ../cookie-notice.php:201
+msgid "Check out our other"
+msgstr "Beachten Sie auch unsere anderen"
+
+#: ../cookie-notice.php:201
+msgid "WordPress plugins"
+msgstr "WordPress Plugins"
+
+#: ../cookie-notice.php:227
+msgid "Configuration"
+msgstr "Einstellungen"
+
+#: ../cookie-notice.php:228
+msgid "Message"
+msgstr "Meldungstext"
+
+#: ../cookie-notice.php:229 ../cookie-notice.php:281
+msgid "Button text"
+msgstr "Buttontext"
+
+#: ../cookie-notice.php:230
+msgid "More info"
+msgstr "Erfahren Sie mehr"
+
+#: ../cookie-notice.php:231
+msgid "Cookie expiry"
+msgstr "Gültigkeitsdauer des Cookies"
+
+#: ../cookie-notice.php:234
+msgid "Design"
+msgstr "Aussehen"
+
+#: ../cookie-notice.php:235
+msgid "Position"
+msgstr "Position"
+
+#: ../cookie-notice.php:236
+msgid "Animation"
+msgstr "Animation"
+
+#: ../cookie-notice.php:237
+msgid "Button style"
+msgstr "Buttonstil"
+
+#: ../cookie-notice.php:238
+msgid "Colors"
+msgstr "Farben"
+
+#: ../cookie-notice.php:247
+msgid "Enter the cookie notice message."
+msgstr "Geben Sie hier den Meldungstext ein."
+
+#: ../cookie-notice.php:257
+msgid "The text to show on the button when cookies have not been accepted"
+msgstr ""
+"Der Text des Buttons, solange die Verwendung von Cookies nicht akzeptiert "
+"wurde."
+
+#: ../cookie-notice.php:277
+msgid "Enable or Disable Read more button."
+msgstr "Button 'Erfahren Sie mehr' ein- bzw. ausschalten."
+
+#: ../cookie-notice.php:295
+msgid "Select where to redirect user for more information about cookies."
+msgstr ""
+"Wählen Sie aus, wo die Besucher weitere Informationen über Cookies finden."
+
+#: ../cookie-notice.php:298
+msgid "-- select page --"
+msgstr "-- Seite auswählen --"
+
+#: ../cookie-notice.php:308
+msgid "Select from one of your site's pages"
+msgstr "Wählen Sie eine der vorhandenen Seiten dieser Site."
+
+#: ../cookie-notice.php:312
+msgid "Enter the full URL starting with http://"
+msgstr "Die vollständige URL mit http:// eingeben"
+
+#: ../cookie-notice.php:333
+msgid "The ammount of time that cookie should be stored for."
+msgstr "Für diesen Zeitraum ist der Cookie gültig."
+
+#: ../cookie-notice.php:353
+msgid "Select location for your cookie notice."
+msgstr "Die Position der Meldung einstellen."
+
+#: ../cookie-notice.php:373
+msgid "Cookie notice acceptance animation."
+msgstr "Animation des Meldungstextes."
+
+#: ../cookie-notice.php:393
+msgid "Choose buttons style."
+msgstr "Style der Buttons einstellen."
+
+#: ../cookie-notice.php:517
+msgid "Support"
+msgstr "Support"
+
+#: ../cookie-notice.php:539
+msgid "Settings"
+msgstr "Einstellungen"

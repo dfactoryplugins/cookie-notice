@@ -1,0 +1,253 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Cookie Notice\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-04-30 09:57+0100\n"
+"PO-Revision-Date: 2014-04-30 09:58+0100\n"
+"Last-Translator: Fernando <fernando@sumun.net>\n"
+"Language-Team: sumun <fernando@sumun.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-KeywordsList: gettext;gettext_noop;__;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Language: NL\n"
+"X-Poedit-Language: Spanish\n"
+"X-Poedit-Country: SPAIN\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../cookie-notice.php:90
+msgid "Top"
+msgstr "Arriba"
+
+#: ../cookie-notice.php:91
+msgid "Bottom"
+msgstr "Abajo"
+
+#: ../cookie-notice.php:95
+#: ../cookie-notice.php:126
+msgid "None"
+msgstr "Ninguno"
+
+#: ../cookie-notice.php:96
+msgid "WordPress"
+msgstr "WordPress"
+
+#: ../cookie-notice.php:97
+msgid "Bootstrap"
+msgstr "Bootstrap"
+
+#: ../cookie-notice.php:101
+msgid "Enable"
+msgstr "Activar"
+
+#: ../cookie-notice.php:102
+msgid "Disable"
+msgstr "Desactivar"
+
+#: ../cookie-notice.php:106
+msgid "Custom link"
+msgstr "Enlace personalizado"
+
+#: ../cookie-notice.php:107
+msgid "Page link"
+msgstr "Enlace a página"
+
+#: ../cookie-notice.php:111
+msgid "Text color"
+msgstr "Color del texto"
+
+#: ../cookie-notice.php:112
+msgid "Bar color"
+msgstr "Color de la barra"
+
+#: ../cookie-notice.php:116
+msgid "1 day"
+msgstr "1 día"
+
+#: ../cookie-notice.php:117
+msgid "1 week"
+msgstr "1 semana"
+
+#: ../cookie-notice.php:118
+msgid "1 month"
+msgstr "1 mes"
+
+#: ../cookie-notice.php:119
+msgid "3 months"
+msgstr "3 meses"
+
+#: ../cookie-notice.php:120
+msgid "6 months"
+msgstr "6 meses"
+
+#: ../cookie-notice.php:121
+msgid "1 year"
+msgstr "1 año"
+
+#: ../cookie-notice.php:122
+msgid "infinity"
+msgstr "Infinito"
+
+#: ../cookie-notice.php:127
+msgid "Fade"
+msgstr "Desvanecer"
+
+#: ../cookie-notice.php:128
+msgid "Slide"
+msgstr "Deslizar"
+
+#: ../cookie-notice.php:148
+msgid "We use cookies to ensure that we give you the best experience on our website. If you continue to use this site we will assume that you are happy with it."
+msgstr "Utilizamos cookies para asegurar que damos la mejor experiencia al usuario en nuestro sitio web. Si continúa utilizando este sitio asumiremos que está de acuerdo."
+
+#: ../cookie-notice.php:149
+msgid "Ok"
+msgstr "Estoy de acuerdo"
+
+#: ../cookie-notice.php:150
+msgid "Read more"
+msgstr "Leer más"
+
+#: ../cookie-notice.php:177
+#: ../cookie-notice.php:178
+#: ../cookie-notice.php:190
+#: ../cookie-notice.php:193
+msgid "Cookie Notice"
+msgstr "Aviso de Cookie"
+
+#: ../cookie-notice.php:195
+msgid "Need support?"
+msgstr "¿Necesitas soporte?"
+
+#: ../cookie-notice.php:196
+msgid "If you are having problems with this plugin, please talk about them in the"
+msgstr "Si tienes problemas con este plugin, por favor coméntalo en el"
+
+#: ../cookie-notice.php:196
+msgid "Support forum"
+msgstr "Foro de Soporte"
+
+#: ../cookie-notice.php:198
+msgid "Do you like this plugin?"
+msgstr "¿Te gusta este plugin?"
+
+#: ../cookie-notice.php:199
+msgid "Rate it 5"
+msgstr "Califícalo con 5 estrellas"
+
+#: ../cookie-notice.php:199
+msgid "on WordPress.org"
+msgstr "en WordPress.org"
+
+#: ../cookie-notice.php:200
+msgid "Blog about it & link to the"
+msgstr "Bloguea sobre ello y enlaza a la"
+
+#: ../cookie-notice.php:200
+msgid "plugin page"
+msgstr "página del plugin"
+
+#: ../cookie-notice.php:201
+msgid "Check out our other"
+msgstr "Echa un vistazo a nuestros"
+
+#: ../cookie-notice.php:201
+msgid "WordPress plugins"
+msgstr "plugins de WordPress"
+
+#: ../cookie-notice.php:227
+msgid "Configuration"
+msgstr "Configuración"
+
+#: ../cookie-notice.php:228
+msgid "Message"
+msgstr "Mensaje"
+
+#: ../cookie-notice.php:229
+#: ../cookie-notice.php:281
+msgid "Button text"
+msgstr "Texto del botón"
+
+#: ../cookie-notice.php:230
+msgid "More info"
+msgstr "Más información"
+
+#: ../cookie-notice.php:231
+msgid "Cookie expiry"
+msgstr "Expiración de la Cookie"
+
+#: ../cookie-notice.php:234
+msgid "Design"
+msgstr "Diseño"
+
+#: ../cookie-notice.php:235
+msgid "Position"
+msgstr "Posición"
+
+#: ../cookie-notice.php:236
+msgid "Animation"
+msgstr "Animación"
+
+#: ../cookie-notice.php:237
+msgid "Button style"
+msgstr "Estilo del botón"
+
+#: ../cookie-notice.php:238
+msgid "Colors"
+msgstr "Colores"
+
+#: ../cookie-notice.php:247
+msgid "Enter the cookie notice message."
+msgstr "Introduce el mensaje de aviso sobre cookies"
+
+#: ../cookie-notice.php:257
+msgid "The text to show on the button when cookies have not been accepted"
+msgstr "El texto a mostrar en el botón cuando las cookies no han sido aceptadas"
+
+#: ../cookie-notice.php:277
+msgid "Enable or Disable Read more button."
+msgstr "Activa o desactiva el botón \"Leer más\""
+
+#: ../cookie-notice.php:295
+msgid "Select where to redirect user for more information about cookies."
+msgstr "Selecciona a dónde redireccionar al usuario para obtener más información sobre las cookies."
+
+#: ../cookie-notice.php:298
+msgid "-- select page --"
+msgstr "-- seleccionar página --"
+
+#: ../cookie-notice.php:308
+msgid "Select from one of your site's pages"
+msgstr "Selecciona de entre una de las páginas de tu sitio"
+
+#: ../cookie-notice.php:312
+msgid "Enter the full URL starting with http://"
+msgstr "Introduce la URL completa, comenzando por http://"
+
+#: ../cookie-notice.php:333
+msgid "The ammount of time that cookie should be stored for."
+msgstr "La cantidad de tiempo que la cookie debe almacenarse."
+
+#: ../cookie-notice.php:353
+msgid "Select location for your cookie notice."
+msgstr "Selecciona la ubicación de tu aviso sobre cookies."
+
+#: ../cookie-notice.php:373
+msgid "Cookie notice acceptance animation."
+msgstr "Animación de la aceptación del aviso sobre cookies."
+
+#: ../cookie-notice.php:393
+msgid "Choose buttons style."
+msgstr "Elige un estilo de botón."
+
+#: ../cookie-notice.php:517
+msgid "Support"
+msgstr "Soporte"
+
+#: ../cookie-notice.php:539
+msgid "Settings"
+msgstr "Ajustes"
+
