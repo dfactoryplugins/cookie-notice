@@ -5,6 +5,15 @@
 		// initialize color picker
 		$('.cn-color').wpColorPicker();
 		
+		// refuse option
+		$('#cn-refuse-opt-yes, #cn-refuse-opt-no').change(function() {
+			if($('#cn-refuse-opt-yes:checked').val() === 'yes') {
+				$('#cn_refuse_text').fadeIn(300);
+			} else if($('#cn-refuse-opt-no:checked').val() === 'no') {
+				$('#cn_refuse_text').fadeOut(300);
+			}
+		});
+
 		// read more option
 		$('#cn-see-more-yes, #cn-see-more-no').change(function() {
 			if($('#cn-see-more-yes:checked').val() === 'yes') {

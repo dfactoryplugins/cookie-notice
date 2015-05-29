@@ -12,6 +12,7 @@ For more information, check out plugin page at [dFactory](http://www.dfactory.eu
 
 * Customize the cookie message
 * Redirect users to specified page for more cookie information
+* Allow users to chose if they want to disable third-party non functional cookies
 * Set cookie expiry
 * Select the position of the cookie message box
 * Animate the message box after cookie is accepted
@@ -19,6 +20,12 @@ For more information, check out plugin page at [dFactory](http://www.dfactory.eu
 * Set the text and bar background colors
 * WPML and Polylang compatible
 * .pot file for translations included
+
+### Usage: ###
+
+	if ( class_exists('Cookie_Notice') && Cookie_Notice::cookies_accepted() ) {
+	  // Your third-party non functional code here
+	}
 
 ### Translations: ###
 
