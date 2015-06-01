@@ -1,7 +1,8 @@
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Cookie Notice\n"
-"POT-Creation-Date: 2015-03-24 11:30+0100\n"
+"POT-Creation-Date: 2015-06-01 19:53+0100\n"
 "PO-Revision-Date: 2015-03-24 11:30+0100\n"
 "Last-Translator: Bartosz Arendt <info@dfactory.eu>\n"
 "Language-Team: dFactory <info@dfactory.eu>\n"
@@ -9,275 +10,302 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.7.5\n"
+"X-Generator: Poedit 1.8.1\n"
 "X-Poedit-KeywordsList: gettext;gettext_noop;__;_e\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../cookie-notice.php:111
+#: ../cookie-notice.php:123
 msgid "Top"
 msgstr ""
 
-#: ../cookie-notice.php:112
+#: ../cookie-notice.php:124
 msgid "Bottom"
 msgstr ""
 
-#: ../cookie-notice.php:116 ../cookie-notice.php:152
+#: ../cookie-notice.php:128 ../cookie-notice.php:159
 msgid "None"
 msgstr ""
 
-#: ../cookie-notice.php:117
+#: ../cookie-notice.php:129
 msgid "WordPress"
 msgstr ""
 
-#: ../cookie-notice.php:118
+#: ../cookie-notice.php:130
 msgid "Bootstrap"
 msgstr ""
 
-#: ../cookie-notice.php:122
-msgid "Enable"
-msgstr ""
-
-#: ../cookie-notice.php:123
-msgid "Disable"
-msgstr ""
-
-#: ../cookie-notice.php:127
+#: ../cookie-notice.php:134
 msgid "Custom link"
 msgstr ""
 
-#: ../cookie-notice.php:128
+#: ../cookie-notice.php:135
 msgid "Page link"
 msgstr ""
 
-#: ../cookie-notice.php:137
+#: ../cookie-notice.php:144
 msgid "Text color"
 msgstr ""
 
-#: ../cookie-notice.php:138
+#: ../cookie-notice.php:145
 msgid "Bar color"
 msgstr ""
 
-#: ../cookie-notice.php:142
+#: ../cookie-notice.php:149
 msgid "1 day"
 msgstr ""
 
-#: ../cookie-notice.php:143
+#: ../cookie-notice.php:150
 msgid "1 week"
 msgstr ""
 
-#: ../cookie-notice.php:144
+#: ../cookie-notice.php:151
 msgid "1 month"
 msgstr ""
 
-#: ../cookie-notice.php:145
+#: ../cookie-notice.php:152
 msgid "3 months"
 msgstr ""
 
-#: ../cookie-notice.php:146
+#: ../cookie-notice.php:153
 msgid "6 months"
 msgstr ""
 
-#: ../cookie-notice.php:147
+#: ../cookie-notice.php:154
 msgid "1 year"
 msgstr ""
 
-#: ../cookie-notice.php:148
+#: ../cookie-notice.php:155
 msgid "infinity"
 msgstr ""
 
-#: ../cookie-notice.php:153
+#: ../cookie-notice.php:160
 msgid "Fade"
 msgstr ""
 
-#: ../cookie-notice.php:154
+#: ../cookie-notice.php:161
 msgid "Slide"
 msgstr ""
 
-#: ../cookie-notice.php:158
+#: ../cookie-notice.php:165
 msgid "Header"
 msgstr ""
 
-#: ../cookie-notice.php:159
+#: ../cookie-notice.php:166
 msgid "Footer"
 msgstr ""
 
-#: ../cookie-notice.php:179
+#: ../cookie-notice.php:185
 msgid ""
 "We use cookies to ensure that we give you the best experience on our "
 "website. If you continue to use this site we will assume that you are happy "
 "with it."
 msgstr ""
 
-#: ../cookie-notice.php:180
+#: ../cookie-notice.php:186
 msgid "Ok"
 msgstr ""
 
-#: ../cookie-notice.php:181
+#: ../cookie-notice.php:187
+msgid "No"
+msgstr ""
+
+#: ../cookie-notice.php:188
 msgid "Read more"
 msgstr ""
 
-#: ../cookie-notice.php:211 ../cookie-notice.php:212 ../cookie-notice.php:227
-#: ../cookie-notice.php:230
+#: ../cookie-notice.php:215 ../cookie-notice.php:225 ../cookie-notice.php:228
 msgid "Cookie Notice"
 msgstr ""
 
-#: ../cookie-notice.php:232
+#: ../cookie-notice.php:230
 msgid "Need support?"
 msgstr ""
 
-#: ../cookie-notice.php:233
+#: ../cookie-notice.php:231
 msgid ""
 "If you are having problems with this plugin, please talk about them in the"
 msgstr ""
 
-#: ../cookie-notice.php:233
+#: ../cookie-notice.php:231
 msgid "Support forum"
 msgstr ""
 
-#: ../cookie-notice.php:235
+#: ../cookie-notice.php:233
 msgid "Do you like this plugin?"
 msgstr ""
 
-#: ../cookie-notice.php:242
+#: ../cookie-notice.php:240
 msgid "Rate it 5"
 msgstr ""
 
-#: ../cookie-notice.php:242
+#: ../cookie-notice.php:240
 msgid "on WordPress.org"
 msgstr ""
 
-#: ../cookie-notice.php:243
+#: ../cookie-notice.php:241
 msgid "Blog about it & link to the"
 msgstr ""
 
-#: ../cookie-notice.php:243
+#: ../cookie-notice.php:241
 msgid "plugin page"
 msgstr ""
 
-#: ../cookie-notice.php:244
+#: ../cookie-notice.php:242
 msgid "Check out our other"
 msgstr ""
 
-#: ../cookie-notice.php:244
+#: ../cookie-notice.php:242
 msgid "WordPress plugins"
 msgstr ""
 
-#: ../cookie-notice.php:272
-msgid "Configuration"
+#: ../cookie-notice.php:257
+msgid "Reset to defaults"
 msgstr ""
 
 #: ../cookie-notice.php:273
+msgid "Configuration"
+msgstr ""
+
+#: ../cookie-notice.php:274
 msgid "Message"
 msgstr ""
 
-#: ../cookie-notice.php:274 ../cookie-notice.php:361
+#: ../cookie-notice.php:275
 msgid "Button text"
 msgstr ""
 
-#: ../cookie-notice.php:275
-msgid "More info"
-msgstr ""
-
 #: ../cookie-notice.php:276
-msgid "Link target"
+msgid "More info link"
 msgstr ""
 
 #: ../cookie-notice.php:277
-msgid "Cookie expiry"
+msgid "Link target"
 msgstr ""
 
 #: ../cookie-notice.php:278
-msgid "Script placement"
+msgid "Refuse button"
 msgstr ""
 
 #: ../cookie-notice.php:279
+msgid "Cookie expiry"
+msgstr ""
+
+#: ../cookie-notice.php:280
+msgid "Script placement"
+msgstr ""
+
+#: ../cookie-notice.php:281
 msgid "Deactivation"
 msgstr ""
 
-#: ../cookie-notice.php:282
+#: ../cookie-notice.php:284
 msgid "Design"
 msgstr ""
 
-#: ../cookie-notice.php:283
+#: ../cookie-notice.php:285
 msgid "Position"
 msgstr ""
 
-#: ../cookie-notice.php:284
+#: ../cookie-notice.php:286
 msgid "Animation"
 msgstr ""
 
-#: ../cookie-notice.php:285
+#: ../cookie-notice.php:287
 msgid "Button style"
 msgstr ""
 
-#: ../cookie-notice.php:286
+#: ../cookie-notice.php:288
 msgid "Colors"
 msgstr ""
 
-#: ../cookie-notice.php:307
+#: ../cookie-notice.php:296
 msgid "Enable if you want all plugin data to be deleted on deactivation."
 msgstr ""
 
-#: ../cookie-notice.php:321
+#: ../cookie-notice.php:306
 msgid "Enter the cookie notice message."
 msgstr ""
 
-#: ../cookie-notice.php:334
+#: ../cookie-notice.php:317
 msgid ""
 "The text of the option to accept the usage of the cookies and make the "
 "notification disappear."
 msgstr ""
 
-#: ../cookie-notice.php:357
-msgid "Enable or Disable Read more button."
+#: ../cookie-notice.php:327
+msgid ""
+"Give to the user the possibility to refuse third party non functional "
+"cookies."
 msgstr ""
 
-#: ../cookie-notice.php:375
+#: ../cookie-notice.php:331
+msgid ""
+"The text of the option to refuse the usage of the cookies. To get the "
+"cookie notice status use <code>cn_cookies_accepted()</code> function."
+msgstr ""
+
+#: ../cookie-notice.php:343
+msgid "Enable Read more link."
+msgstr ""
+
+#: ../cookie-notice.php:348
+msgid "The text of the more info button."
+msgstr ""
+
+#: ../cookie-notice.php:360
 msgid "Select where to redirect user for more information about cookies."
 msgstr ""
 
-#: ../cookie-notice.php:378
+#: ../cookie-notice.php:363
 msgid "-- select page --"
 msgstr ""
 
-#: ../cookie-notice.php:388
+#: ../cookie-notice.php:372
 msgid "Select from one of your site's pages"
 msgstr ""
 
-#: ../cookie-notice.php:392
+#: ../cookie-notice.php:376
 msgid "Enter the full URL starting with http://"
 msgstr ""
 
-#: ../cookie-notice.php:414
+#: ../cookie-notice.php:396
 msgid "Select the link target for more info page."
 msgstr ""
 
-#: ../cookie-notice.php:437
+#: ../cookie-notice.php:416
 msgid "The ammount of time that cookie should be stored for."
 msgstr ""
 
-#: ../cookie-notice.php:458
+#: ../cookie-notice.php:433
 msgid "Select where all the plugin scripts should be placed."
 msgstr ""
 
-#: ../cookie-notice.php:481
+#: ../cookie-notice.php:452
 msgid "Select location for your cookie notice."
 msgstr ""
 
-#: ../cookie-notice.php:504
+#: ../cookie-notice.php:471
 msgid "Cookie notice acceptance animation."
 msgstr ""
 
-#: ../cookie-notice.php:527
+#: ../cookie-notice.php:490
 msgid "Choose buttons style."
 msgstr ""
 
-#: ../cookie-notice.php:663
+#: ../cookie-notice.php:571
+msgid "Settings restored to defaults."
+msgstr ""
+
+#: ../cookie-notice.php:654
 msgid "Support"
 msgstr ""
 
-#: ../cookie-notice.php:691
+#: ../cookie-notice.php:669
 msgid "Settings"
+msgstr ""
+
+#: ../cookie-notice.php:703
+msgid "Are you sure you want to reset these settings to defaults?"
 msgstr ""

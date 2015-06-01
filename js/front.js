@@ -1,49 +1,58 @@
-(function($) {
-	
-	$(document).ready(function() {
+( function ( $ ) {
+
+	$( document ).ready( function () {
 
 		// handle set-cookie button click
-		$(document).on('click', '.cn-set-cookie', function(event) {
-			event.preventDefault();
+		$( document ).on( 'click', '.cn-set-cookie', function ( e ) {
+			e.preventDefault();
 
-			var cnTime = new Date();
-			var cnLater = new Date();
-	
+			var cnTime = new Date(),
+				cnLater = new Date();
+
 			// set expiry time in seconds
-			cnLater.setTime(parseInt(cnTime.getTime()) + parseInt(cnArgs.cookieTime) * 1000);
-	
+			cnLater.setTime( parseInt( cnTime.getTime() ) + parseInt( cnArgs.cookieTime ) * 1000 );
+
 			// set cookie
-			var cookie_value = $(this).data('cookie-set') === 'accept' ? true : false;
-			document.cookie = cnArgs.cookieName+'='+cookie_value+';expires='+cnLater.toGMTString()+';'+(cnArgs.cookieDomain !== undefined && cnArgs.cookieDomain !== '' ? 'domain='+cnArgs.cookieDomain+';' : '')+(cnArgs.cookiePath !== undefined && cnArgs.cookiePath !== '' ? 'path='+cnArgs.cookiePath+';' : '');
-	
-			// hide message container
-			if(cnArgs.hideEffect === 'fade') {
-				$('#cookie-notice').fadeOut(300, function() {
-					$(this).remove();
-				});
-			} else if(cnArgs.hideEffect === 'slide') {
-				$('#cookie-notice').slideUp(300, function() {
-					$(this).remove();
-				});
-			} else {
-				$('#cookie-notice').remove();
-			}
+			var cookie_value = $( this ).data( 'cookie-set' ) === 'accept' ? true : false;
 			
-		});
-	
-		// display cookie notice
-		if(document.cookie.indexOf('cookie_notice_accepted') === -1) {
-			if(cnArgs.hideEffect === 'fade') {
-				$('#cookie-notice').fadeIn(300);
-			} else if(cnArgs.hideEffect === 'slide') {
-				$('#cookie-notice').slideDown(300);
+			document.cookie = cnArgs.cookieName + '=' + cookie_value + ';expires=' + cnLater.toGMTString() + ';' + ( cnArgs.cookieDomain !== undefined && cnArgs.cookieDomain !== '' ? 'domain=' + cnArgs.cookieDomain + ';' : '' ) + ( cnArgs.cookiePath !== undefined && cnArgs.cookiePath !== '' ? 'path=' + cnArgs.cookiePath + ';' : '' );
+			
+			// trigger custom event
+			$.event.trigger({
+				type: "setCookieNotice",
+				value: cookie_value,
+				time: cnTime,
+				expires: cnLater
+			});
+
+			// hide message container
+			if ( cnArgs.hideEffect === 'fade' ) {
+				$( '#cookie-notice' ).fadeOut( 300, function () {
+					$( this ).remove();
+				} );
+			} else if ( cnArgs.hideEffect === 'slide' ) {
+				$( '#cookie-notice' ).slideUp( 300, function () {
+					$( this ).remove();
+				} );
 			} else {
-				$('#cookie-notice').show();
+				$( '#cookie-notice' ).remove();
+			}
+
+		} );
+
+		// display cookie notice
+		if ( document.cookie.indexOf( 'cookie_notice_accepted' ) === -1 ) {
+			if ( cnArgs.hideEffect === 'fade' ) {
+				$( '#cookie-notice' ).fadeIn( 300 );
+			} else if ( cnArgs.hideEffect === 'slide' ) {
+				$( '#cookie-notice' ).slideDown( 300 );
+			} else {
+				$( '#cookie-notice' ).show();
 			}
 		} else {
-			$('#cookie-notice').remove();
+			$( '#cookie-notice' ).remove();
 		}
-		
-	});
-	
-})(jQuery);
+
+	} );
+
+} )( jQuery );

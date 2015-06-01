@@ -23,9 +23,11 @@ For more information, check out plugin page at [dFactory](http://www.dfactory.eu
 
 ### Usage: ###
 
-	if ( class_exists('Cookie_Notice') && Cookie_Notice::cookies_accepted() ) {
-	  // Your third-party non functional code here
-	}
+If you'd like to code a functionality depending on the cookie notice value use the function below:
+
+if ( function_exists('cn_cookies_accepted') && cn_cookies_accepted() ) {
+	// Your third-party non functional code here
+}
 
 ### Translations: ###
 
