@@ -2,13 +2,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Cookie Notice\n"
 "POT-Creation-Date: 2014-07-25 09:45+0100\n"
-"PO-Revision-Date: 2014-09-04 12:39+0100\n"
+"PO-Revision-Date: 2015-05-29 09:16+0100\n"
 "Last-Translator: \n"
 "Language-Team: dFactory <info@dfactory.eu>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.9\n"
+"X-Generator: Poedit 1.5.4\n"
 "X-Poedit-KeywordsList: gettext;gettext_noop;__;_e\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -106,13 +106,40 @@ msgstr ""
 "esperienza sul nostro sito. Se continui ad utilizzare questo sito noi "
 "assumiamo che tu ne sia felice."
 
+#: ../cookie-notice.php:161
+msgid ""
+"We use cookies to ensure that we give you the best experience on our "
+"website. Allow usage of third party non functional cookies?"
+msgstr ""
+"Utilizziamo i cookie per essere sicuri che tu possa avere la migliore "
+"esperienza sul nostro sito. Consenti l'utilizzo di cookie di terze parti non "
+"funzionali?"
+
+#: ../cookie-notice.php:360
+msgid ""
+"Give or not to the user the possibility to refuse third party non functional "
+"cookies."
+msgstr ""
+"Dai o meno all&apos;utente la possibilit&agrave; di rifiutare i cookie di "
+"terze parti non funzionali."
+
 #: ../cookie-notice.php:160
 msgid "Ok"
-msgstr "Ok"
+msgstr "S&iacute;"
+
+#: ../cookie-notice.php:160
+msgid "No"
+msgstr "No"
 
 #: ../cookie-notice.php:161
 msgid "Read more"
 msgstr "Leggi di più"
+
+#: ../cookie-notice.php:196
+msgid "Allow users to refuse third party non functional cookies"
+msgstr ""
+"Dai agli utenti la possibilt&aacute; di rifiutare i cookie di terze parti "
+"non funzionali"
 
 #: ../cookie-notice.php:188 ../cookie-notice.php:189 ../cookie-notice.php:201
 #: ../cookie-notice.php:204
@@ -171,6 +198,10 @@ msgstr "Messaggio"
 #: ../cookie-notice.php:240 ../cookie-notice.php:316
 msgid "Button text"
 msgstr "Testo del bottone"
+
+#: ../cookie-notice.php:240 ../cookie-notice.php:316
+msgid "Enable/Disable Option"
+msgstr "Attiva/Disattiva Opzione"
 
 #: ../cookie-notice.php:241
 msgid "More info"
