@@ -290,6 +290,14 @@ msgstr ""
 msgid "Cookie notice acceptance animation."
 msgstr ""
 
+#: ../cookie-notice.php:280
+msgid "On scroll"
+msgstr ""
+
+#: ../cookie-notice.php:484
+msgid "Enable cookie notice acceptance when users scroll."
+msgstr ""
+
 #: ../cookie-notice.php:490
 msgid "Choose buttons style."
 msgstr ""

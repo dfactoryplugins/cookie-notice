@@ -44,30 +44,31 @@ class Cookie_Notice {
 	private $defaults = array(
 		'general' => array(
 			'position'						=> 'bottom',
-			'message_text'					=> '',
+			'message_text'				=> '',
 			'css_style'						=> 'bootstrap',
 			'accept_text'					=> '',
 			'refuse_text'					=> '',
 			'refuse_opt'					=> 'no',
 			'see_more'						=> 'no',
 			'link_target'					=> '_blank',
-			'time'							=> 'month',
+			'time'								=> 'month',
 			'hide_effect'					=> 'fade',
-			'colors'						=> array(
+			'on_scroll'						=> false,
+			'colors'							=> array(
 				'text'							=> '#fff',
-				'bar'							=> '#000',
+				'bar'								=> '#000',
 			),
-			'see_more_opt' 					=> array(
+			'see_more_opt' 				=> array(
 				'text'							=> '',
-				'link_type'						=> 'custom',
-				'id'							=> 'empty',
+				'link_type'					=> 'custom',
+				'id'								=> 'empty',
 				'link'							=> ''
 			),
-			'script_placement'				=> 'header',
+			'script_placement'		=> 'header',
 			'translate'						=> true,
-			'deactivation_delete'			=> 'no'
+			'deactivation_delete'	=> 'no'
 		),
-		'version'							=> '1.2.24'
+		'version'								=> '1.2.24'
 	);
 	private $positions 			= array();
 	private $styles 			= array();
@@ -276,6 +277,7 @@ class Cookie_Notice {
 		add_settings_field( 'cn_see_more', __( 'More info link', 'cookie-notice' ), array( $this, 'cn_see_more' ), 'cookie_notice_options', 'cookie_notice_configuration' );
 		add_settings_field( 'cn_link_target', __( 'Link target', 'cookie-notice' ), array( $this, 'cn_link_target' ), 'cookie_notice_options', 'cookie_notice_configuration' );
 		add_settings_field( 'cn_refuse_opt', __( 'Refuse button', 'cookie-notice' ), array( $this, 'cn_refuse_opt' ), 'cookie_notice_options', 'cookie_notice_configuration' );
+		add_settings_field( 'cn_on_scroll', __( 'On scroll', 'cookie-notice' ), array( $this, 'cn_on_scroll' ), 'cookie_notice_options', 'cookie_notice_configuration' );
 		add_settings_field( 'cn_time', __( 'Cookie expiry', 'cookie-notice' ), array( $this, 'cn_time' ), 'cookie_notice_options', 'cookie_notice_configuration' );
 		add_settings_field( 'cn_script_placement', __( 'Script placement', 'cookie-notice' ), array( $this, 'cn_script_placement' ), 'cookie_notice_options', 'cookie_notice_configuration' );
 		add_settings_field( 'cn_deactivation_delete', __( 'Deactivation', 'cookie-notice' ), array( $this, 'cn_deactivation_delete' ), 'cookie_notice_options', 'cookie_notice_configuration' );
@@ -473,6 +475,19 @@ class Cookie_Notice {
 	}
 
 	/**
+	 * On scroll option.
+	 */
+	public function cn_on_scroll() {
+		echo '
+		<div id="cn_on_scroll">
+		<fieldset>
+			<label><input id="cn_on_scroll" type="checkbox" name="cookie_notice_options[on_scroll]" value="1" ' . checked( 'yes', $this->options['general']['on_scroll'], false ) . ' />' . __( 'Enable cookie notice acceptance when users scroll.', 'cookie-notice' ) . '</label>';
+		echo '
+		</fieldset>
+		</div>';
+	}
+
+	/**
 	 * CSS style option.
 	 */
 	public function cn_css_style() {
@@ -548,6 +563,9 @@ class Cookie_Notice {
 
 			// hide effect
 			$input['hide_effect'] = sanitize_text_field( isset( $input['hide_effect'] ) && in_array( $input['hide_effect'], array_keys( $this->effects ) ) ? $input['hide_effect'] : $this->defaults['general']['hide_effect'] );
+			
+			// on scroll
+			$input['on_scroll'] = (bool) isset( $input['on_scroll'] ) ? 'yes' : 'no';
 
 			// deactivation
 			$input['deactivation_delete'] = (bool) isset( $input['deactivation_delete'] ) ? 'yes' : 'no';
@@ -719,13 +737,14 @@ class Cookie_Notice {
 
 			wp_localize_script(
 				'cookie-notice-front', 'cnArgs', array(
-				'ajaxurl'		 	=> admin_url( 'admin-ajax.php' ),
-				'hideEffect'	 	=> $this->options['general']['hide_effect'],
-				'cookieName'	 	=> self::$cookie['name'],
+				'ajaxurl'				=> admin_url( 'admin-ajax.php' ),
+				'hideEffect'		=> $this->options['general']['hide_effect'],
+				'onScroll'			=> $this->options['general']['on_scroll'],
+				'cookieName'		=> self::$cookie['name'],
 				'cookieValue'		=> self::$cookie['value'],
-				'cookieTime'	 	=> $this->times[$this->options['general']['time']][1],
-				'cookiePath'	 	=> ( defined( 'COOKIEPATH' ) ? COOKIEPATH : '' ),
-				'cookieDomain'	 	=> ( defined( 'COOKIE_DOMAIN' ) ? COOKIE_DOMAIN : '' )
+				'cookieTime'		=> $this->times[$this->options['general']['time']][1],
+				'cookiePath'		=> ( defined( 'COOKIEPATH' ) ? COOKIEPATH : '' ),
+				'cookieDomain'	=> ( defined( 'COOKIE_DOMAIN' ) ? COOKIE_DOMAIN : '' )
 				)
 			);
 
