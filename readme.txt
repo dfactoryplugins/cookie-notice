@@ -4,7 +4,7 @@ Donate link: http://www.dfactory.eu/
 Tags: cookie, cookies, notice, notification, notify, cookie, cookie compliance, cookie law, eu cookie, privacy, privacy directive, consent, Bootstrap
 Requires at least: 3.3
 Tested up to: 4.2.2
-Stable tag: 1.2.24
+Stable tag: 1.2.25
 License: MIT License
 License URI: http://opensource.org/licenses/MIT
 
@@ -21,7 +21,9 @@ For more information, check out plugin page at [dFactory](http://www.dfactory.eu
 * Customize the cookie message
 * Redirect users to specified page for more cookie information
 * Set cookie expiry
-
+* Link to more info page
+* Option to accept cookies on scroll
+* Option to refuse functional cookies
 * Select the position of the cookie message box
 * Animate the message box after cookie is accepted
 * Select bottons style from None, WordPress and Bootstrap
@@ -74,6 +76,9 @@ No questions yet.
 1. screenshot-1.png
 
 == Changelog ==
+
+= 1.2.25 =
+* New: Option to accept cookies on scroll, thanks to [Cristian Pascottini](http://cristian.pascottini.net/)
 
 = 1.2.24 =
 * New: Option to refuse to accept cookies
@@ -178,6 +183,5 @@ Initial release
 
 == Upgrade Notice ==
 
-= 1.2.24 =
-* New: Option to refuse to accept cookies
-* New: setCookieNotice custom jQuery event
+= 1.2.25 =
+* New: Option to accept cookies on scroll, thanks to [Cristian Pascottini](http://cristian.pascottini.net/)

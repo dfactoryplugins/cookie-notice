@@ -36,7 +36,7 @@
 	});
 	
 	// Set Cookie Notice
-	$.fn.setCookieNotice = function (cookie_value) {
+	$.fn.setCookieNotice = function ( cookie_value ) {
 		
 		var cnTime = new Date(),
 			cnLater = new Date();
