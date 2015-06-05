@@ -422,7 +422,6 @@ class Cookie_Notice {
 	 */
 	public function cn_script_placement() {
 		echo '
-		<div id="cn_time">';
 
 		foreach ( $this->script_placements as $valueue => $label ) {
 			echo '
