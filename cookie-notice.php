@@ -421,16 +421,13 @@ class Cookie_Notice {
 	 * Script placement option.
 	 */
 	public function cn_script_placement() {
-		echo '
-
-		foreach ( $this->script_placements as $valueue => $label ) {
+		foreach ( $this->script_placements as $value => $label ) {
 			echo '
-			<label><input id="cn_script_placement-' . $valueue . '" type="radio" name="cookie_notice_options[script_placement]" value="' . esc_attr( $valueue ) . '" ' . checked( $valueue, $this->options['general']['script_placement'], false ) . ' />' . esc_html( $label ) . '</label>';
+			<label><input id="cn_script_placement-' . $value . '" type="radio" name="cookie_notice_options[script_placement]" value="' . esc_attr( $value ) . '" ' . checked( $value, $this->options['general']['script_placement'], false ) . ' />' . esc_html( $label ) . '</label>';
 		}
 
 		echo '
-			<p class="description">' . __( 'Select where all the plugin scripts should be placed.', 'cookie-notice' ) . '</p>
-		</div>';
+			<p class="description">' . __( 'Select where all the plugin scripts should be placed.', 'cookie-notice' ) . '</p>';
 	}
 
 	/**
