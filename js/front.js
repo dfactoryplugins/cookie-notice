@@ -5,13 +5,13 @@
 		// handle set-cookie button click
 		$( document ).on( 'click', '.cn-set-cookie', function ( e ) {
 			e.preventDefault();
-			$( this ).setCookieNotice();
+			$( this ).setCookieNotice( $( this ).data( 'cookie-set' ) );
 		});
 		
 		// handle on scroll
 		if( cnArgs.onScroll ){
-			$(window).on('scroll', function(){
-				$( this ).setCookieNotice();
+			$(window).on('scroll', function () {
+				$( this ).setCookieNotice( 'accept' );
 				$( this ).off( 'scroll' );
 			});
 		}
@@ -33,7 +33,7 @@
 	});
 	
 	// Set Cookie Notice
-	$.fn.setCookieNotice = function(){
+	$.fn.setCookieNotice = function (cookie_value) {
 		
 		var cnTime = new Date(),
 			cnLater = new Date();
@@ -42,8 +42,7 @@
 		cnLater.setTime( parseInt( cnTime.getTime() ) + parseInt( cnArgs.cookieTime ) * 1000 );
 		
 		// set cookie
-		var cookie_value = $( this ).data( 'cookie-set' ) === 'accept' ? true : false;
-		
+		cookie_value = cookie_value === 'accept' ? true : false;
 		document.cookie = cnArgs.cookieName + '=' + cookie_value + ';expires=' + cnLater.toGMTString() + ';' + ( cnArgs.cookieDomain !== undefined && cnArgs.cookieDomain !== '' ? 'domain=' + cnArgs.cookieDomain + ';' : '' ) + ( cnArgs.cookiePath !== undefined && cnArgs.cookiePath !== '' ? 'path=' + cnArgs.cookiePath + ';' : '' );
 		
 		// trigger custom event
