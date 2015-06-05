@@ -11,8 +11,11 @@
 		// handle on scroll
 		if( cnArgs.onScroll ){
 			$(window).on('scroll', function () {
-				$( this ).setCookieNotice( 'accept' );
-				$( this ).off( 'scroll' );
+				if ($( this ).scrollTop() > 100) {
+					// If user scrolls at least 100 pixels
+					$( this ).setCookieNotice( 'accept' );
+					$( this ).off( 'scroll' );
+				}
 			});
 		}
 
