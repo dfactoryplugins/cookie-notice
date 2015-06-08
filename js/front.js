@@ -9,7 +9,7 @@
 		});
 		
 		// handle on scroll
-		if( cnArgs.onScroll ){
+		if( cnArgs.onScroll == 'yes' ) {
 			$(window).on('scroll', function () {
 				if ($( this ).scrollTop() > 100) {
 					// If user scrolls at least 100 pixels
