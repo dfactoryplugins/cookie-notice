@@ -2,7 +2,7 @@
 /*
 Plugin Name: Cookie Notice
 Description: Cookie Notice allows you to elegantly inform users that your site uses cookies and to comply with the EU cookie law regulations.
-Version: 1.2.25
+Version: 1.2.26
 Author: dFactory
 Author URI: http://www.dfactory.eu/
 Plugin URI: http://www.dfactory.eu/plugins/cookie-notice/
@@ -34,7 +34,7 @@ include_once( plugin_dir_path( __FILE__ ) . 'includes/update.php' );
  * Cookie Notice class.
  *
  * @class Cookie_Notice
- * @version	1.2.25
+ * @version	1.2.26
  */
 class Cookie_Notice {
 
@@ -44,31 +44,31 @@ class Cookie_Notice {
 	private $defaults = array(
 		'general' => array(
 			'position'						=> 'bottom',
-			'message_text'				=> '',
+			'message_text'					=> '',
 			'css_style'						=> 'bootstrap',
 			'accept_text'					=> '',
 			'refuse_text'					=> '',
 			'refuse_opt'					=> 'no',
 			'see_more'						=> 'no',
 			'link_target'					=> '_blank',
-			'time'								=> 'month',
+			'time'							=> 'month',
 			'hide_effect'					=> 'fade',
 			'on_scroll'						=> false,
-			'colors'							=> array(
+			'colors' => array(
 				'text'							=> '#fff',
-				'bar'								=> '#000',
+				'bar'							=> '#000',
 			),
-			'see_more_opt' 				=> array(
-				'text'							=> '',
+			'see_more_opt' => array(
+				'text'						=> '',
 				'link_type'					=> 'custom',
-				'id'								=> 'empty',
-				'link'							=> ''
+				'id'						=> 'empty',
+				'link'						=> ''
 			),
-			'script_placement'		=> 'header',
+			'script_placement'				=> 'header',
 			'translate'						=> true,
-			'deactivation_delete'	=> 'no'
+			'deactivation_delete'			=> 'no'
 		),
-		'version'								=> '1.2.25'
+		'version'							=> '1.2.26'
 	);
 	private $positions 			= array();
 	private $styles 			= array();
@@ -271,7 +271,7 @@ class Cookie_Notice {
 		register_setting( 'cookie_notice_options', 'cookie_notice_options', array( $this, 'validate_options' ) );
 
 		// configuration
-		add_settings_section( 'cookie_notice_configuration', __( 'Configuration', 'cookie-notice' ), '', 'cookie_notice_options' );
+		add_settings_section( 'cookie_notice_configuration', __( 'Configuration', 'cookie-notice' ), array( $this, 'cn_section_configuration' ), 'cookie_notice_options' );
 		add_settings_field( 'cn_message_text', __( 'Message', 'cookie-notice' ), array( $this, 'cn_message_text' ), 'cookie_notice_options', 'cookie_notice_configuration' );
 		add_settings_field( 'cn_accept_text', __( 'Button text', 'cookie-notice' ), array( $this, 'cn_accept_text' ), 'cookie_notice_options', 'cookie_notice_configuration' );
 		add_settings_field( 'cn_see_more', __( 'More info link', 'cookie-notice' ), array( $this, 'cn_see_more' ), 'cookie_notice_options', 'cookie_notice_configuration' );
@@ -283,12 +283,18 @@ class Cookie_Notice {
 		add_settings_field( 'cn_deactivation_delete', __( 'Deactivation', 'cookie-notice' ), array( $this, 'cn_deactivation_delete' ), 'cookie_notice_options', 'cookie_notice_configuration' );
 
 		// design
-		add_settings_section( 'cookie_notice_design', __( 'Design', 'cookie-notice' ), '', 'cookie_notice_options' );
+		add_settings_section( 'cookie_notice_design', __( 'Design', 'cookie-notice' ), array( $this, 'cn_section_design' ), 'cookie_notice_options' );
 		add_settings_field( 'cn_position', __( 'Position', 'cookie-notice' ), array( $this, 'cn_position' ), 'cookie_notice_options', 'cookie_notice_design' );
 		add_settings_field( 'cn_hide_effect', __( 'Animation', 'cookie-notice' ), array( $this, 'cn_hide_effect' ), 'cookie_notice_options', 'cookie_notice_design' );
 		add_settings_field( 'cn_css_style', __( 'Button style', 'cookie-notice' ), array( $this, 'cn_css_style' ), 'cookie_notice_options', 'cookie_notice_design' );
 		add_settings_field( 'cn_colors', __( 'Colors', 'cookie-notice' ), array( $this, 'cn_colors' ), 'cookie_notice_options', 'cookie_notice_design' );
 	}
+
+	/**
+	 * Section callback: fix for WP < 3.3
+	 */
+	public function cn_section_configuration() {}
+	public function cn_section_design() {}
 
 	/**
 	 * Delete plugin data on deactivation.
