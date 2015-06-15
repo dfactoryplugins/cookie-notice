@@ -8,15 +8,19 @@
 			$( this ).setCookieNotice( $( this ).data( 'cookie-set' ) );
 		});
 		
+		
 		// handle on scroll
 		if( cnArgs.onScroll == 'yes' ) {
-			$(window).on('scroll', function () {
-				if ($( this ).scrollTop() > 100) {
+			var cnHandleScroll = function () {				
+				var win = $(this);
+				if (win.scrollTop() > 100) {
 					// If user scrolls at least 100 pixels
-					$( this ).setCookieNotice( 'accept' );
-					$( this ).off( 'scroll' );
+					win.setCookieNotice( 'accept' );
+					win.off( 'scroll', cnHandleScroll ); //remove itself after cookie accept
 				}
-			});
+			};
+			
+			$(window).on('scroll', cnHandleScroll);
 		}
 
 		// display cookie notice
