@@ -4,7 +4,7 @@ Donate link: http://www.dfactory.eu/
 Tags: cookie, cookies, notice, notification, notify, cookie, cookie compliance, cookie law, eu cookie, privacy, privacy directive, consent, Bootstrap
 Requires at least: 3.3
 Tested up to: 4.2.2
-Stable tag: 1.2.26
+Stable tag: 1.2.27
 License: MIT License
 License URI: http://opensource.org/licenses/MIT
 
@@ -76,6 +76,10 @@ No questions yet.
 1. screenshot-1.png
 
 == Changelog ==
+
+= 1.2.27 =
+* Tweak: Correctly remove scroll event, limit possible conflicts
+* Tweak: Italian translation update
 
 = 1.2.26 =
 * Fix: Accept cookies on scroll option working unchecked.
@@ -187,6 +191,6 @@ Initial release
 
 == Upgrade Notice ==
 
-= 1.2.26 =
-* Fix: Accept cookies on scroll option working unchecked.
-* Fix: call_user_func() warning on lower version of WP
+= 1.2.27 =
+* Tweak: Correctly remove scroll event, limit possible conflicts
+* Tweak: Italian translation update
