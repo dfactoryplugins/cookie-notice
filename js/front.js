@@ -12,8 +12,8 @@
 		// handle on scroll
 		if( cnArgs.onScroll == 'yes' ) {
 			var cnHandleScroll = function () {				
-				var win = $(this);
-				if (win.scrollTop() > 100) {
+				var win = $( this );
+				if ( win.scrollTop() > parseInt( cnArgs.onScrollOffset ) ) {
 					// If user scrolls at least 100 pixels
 					win.setCookieNotice( 'accept' );
 					win.off( 'scroll', cnHandleScroll ); //remove itself after cookie accept

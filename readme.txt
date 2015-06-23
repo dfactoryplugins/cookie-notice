@@ -4,7 +4,7 @@ Donate link: http://www.dfactory.eu/
 Tags: cookie, cookies, notice, notification, notify, cookie, cookie compliance, cookie law, eu cookie, privacy, privacy directive, consent, Bootstrap
 Requires at least: 3.3
 Tested up to: 4.2.2
-Stable tag: 1.2.27
+Stable tag: 1.2.28
 License: MIT License
 License URI: http://opensource.org/licenses/MIT
 
@@ -23,6 +23,7 @@ For more information, check out plugin page at [dFactory](http://www.dfactory.eu
 * Set cookie expiry
 * Link to more info page
 * Option to accept cookies on scroll
+* Option to set on scroll offset
 * Option to refuse functional cookies
 * Select the position of the cookie message box
 * Animate the message box after cookie is accepted
@@ -76,6 +77,9 @@ No questions yet.
 1. screenshot-1.png
 
 == Changelog ==
+
+= 1.2.28 =
+* New: Option to set on scroll offset
 
 = 1.2.27 =
 * Tweak: Correctly remove scroll event, limit possible conflicts
@@ -191,6 +195,5 @@ Initial release
 
 == Upgrade Notice ==
 
-= 1.2.27 =
-* Tweak: Correctly remove scroll event, limit possible conflicts
-* Tweak: Italian translation update
+= 1.2.28 =
+* New: Option to set on scroll offset
