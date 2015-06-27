@@ -22,6 +22,15 @@
 				$( '#cn_see_more_opt' ).slideUp( 'fast' );
 			}
 		} );
+		
+		// read more option
+		$( '#cn_on_scroll' ).change( function () {
+			if ( $( this ).is(':checked') ) {
+				$( '#cn_on_scroll_offset' ).slideDown( 'fast' );
+			} else {
+				$( '#cn_on_scroll_offset' ).slideUp( 'fast' );
+			}
+		} );
 
 		// read more link
 		$( '#cn_see_more_link-custom, #cn_see_more_link-page' ).change( function () {

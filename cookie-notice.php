@@ -2,7 +2,7 @@
 /*
 Plugin Name: Cookie Notice
 Description: Cookie Notice allows you to elegantly inform users that your site uses cookies and to comply with the EU cookie law regulations.
-Version: 1.2.26
+Version: 1.2.28
 Author: dFactory
 Author URI: http://www.dfactory.eu/
 Plugin URI: http://www.dfactory.eu/plugins/cookie-notice/
@@ -34,7 +34,7 @@ include_once( plugin_dir_path( __FILE__ ) . 'includes/update.php' );
  * Cookie Notice class.
  *
  * @class Cookie_Notice
- * @version	1.2.26
+ * @version	1.2.28
  */
 class Cookie_Notice {
 
@@ -54,6 +54,7 @@ class Cookie_Notice {
 			'time'							=> 'month',
 			'hide_effect'					=> 'fade',
 			'on_scroll'						=> false,
+			'on_scroll_offset'				=> 100,
 			'colors' => array(
 				'text'							=> '#fff',
 				'bar'							=> '#000',
@@ -68,7 +69,7 @@ class Cookie_Notice {
 			'translate'						=> true,
 			'deactivation_delete'			=> 'no'
 		),
-		'version'							=> '1.2.26'
+		'version'							=> '1.2.28'
 	);
 	private $positions 			= array();
 	private $styles 			= array();
@@ -481,12 +482,14 @@ class Cookie_Notice {
 	 */
 	public function cn_on_scroll() {
 		echo '
-		<div id="cn_on_scroll">
 		<fieldset>
 			<label><input id="cn_on_scroll" type="checkbox" name="cookie_notice_options[on_scroll]" value="1" ' . checked( 'yes', $this->options['general']['on_scroll'], false ) . ' />' . __( 'Enable cookie notice acceptance when users scroll.', 'cookie-notice' ) . '</label>';
 		echo '
-		</fieldset>
-		</div>';
+			<div id="cn_on_scroll_offset"' . ( $this->options['general']['on_scroll'] === 'no' ? ' style="display: none;"' : '' ) . '>
+				<input type="text" class="text" name="cookie_notice_options[on_scroll_offset]" value="' . esc_attr( $this->options['general']['on_scroll_offset'] ) . '" /> <span>px</span>
+				<p class="description">' . __( 'Number of pixels user has to scroll to accept the usage of the cookies and make the notification disappear.', 'cookie-notice' ) . '</p>
+			</div>
+		</fieldset>';
 	}
 
 	/**
@@ -568,6 +571,9 @@ class Cookie_Notice {
 			
 			// on scroll
 			$input['on_scroll'] = (bool) isset( $input['on_scroll'] ) ? 'yes' : 'no';
+			
+			// on scroll offset
+			$input['on_scroll_offset'] = absint( isset( $input['on_scroll_offset'] ) && $input['on_scroll_offset'] !== '' ? $input['on_scroll_offset'] : $this->defaults['general']['on_scroll_offset'] );
 
 			// deactivation
 			$input['deactivation_delete'] = (bool) isset( $input['deactivation_delete'] ) ? 'yes' : 'no';
@@ -720,7 +726,7 @@ class Cookie_Notice {
 		
 		wp_localize_script(
 			'cookie-notice-admin', 'cnArgs', array(
-			'resetToDefaults'	=> __( 'Are you sure you want to reset these settings to defaults?', 'cookie-notice' ),
+				'resetToDefaults'	=> __( 'Are you sure you want to reset these settings to defaults?', 'cookie-notice' )
 			)
 		);
 
@@ -739,14 +745,15 @@ class Cookie_Notice {
 
 			wp_localize_script(
 				'cookie-notice-front', 'cnArgs', array(
-				'ajaxurl'				=> admin_url( 'admin-ajax.php' ),
-				'hideEffect'		=> $this->options['general']['hide_effect'],
-				'onScroll'			=> $this->options['general']['on_scroll'],
-				'cookieName'		=> self::$cookie['name'],
-				'cookieValue'		=> self::$cookie['value'],
-				'cookieTime'		=> $this->times[$this->options['general']['time']][1],
-				'cookiePath'		=> ( defined( 'COOKIEPATH' ) ? COOKIEPATH : '' ),
-				'cookieDomain'	=> ( defined( 'COOKIE_DOMAIN' ) ? COOKIE_DOMAIN : '' )
+					'ajaxurl'				=> admin_url( 'admin-ajax.php' ),
+					'hideEffect'			=> $this->options['general']['hide_effect'],
+					'onScroll'				=> $this->options['general']['on_scroll'],
+					'onScrollOffset'		=> $this->options['general']['on_scroll_offset'],
+					'cookieName'			=> self::$cookie['name'],
+					'cookieValue'			=> self::$cookie['value'],
+					'cookieTime'			=> $this->times[$this->options['general']['time']][1],
+					'cookiePath'			=> ( defined( 'COOKIEPATH' ) ? COOKIEPATH : '' ),
+					'cookieDomain'			=> ( defined( 'COOKIE_DOMAIN' ) ? COOKIE_DOMAIN : '' )
 				)
 			);
 
