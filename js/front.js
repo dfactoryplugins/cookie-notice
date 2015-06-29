@@ -32,9 +32,9 @@
 			} else {
 				$( '#cookie-notice' ).show();
 			}
-			
+			$( 'body' ).addClass( 'cookies-not-accepted' );
 		} else {
-			$( '#cookie-notice' ).remove();
+			this.removeCookieNotice();
 		}
 
 	});
@@ -43,7 +43,8 @@
 	$.fn.setCookieNotice = function ( cookie_value ) {
 		
 		var cnTime = new Date(),
-			cnLater = new Date();
+			cnLater = new Date()
+			self = this;
 		
 		// set expiry time in seconds
 		cnLater.setTime( parseInt( cnTime.getTime() ) + parseInt( cnArgs.cookieTime ) * 1000 );
@@ -63,15 +64,20 @@
 		// hide message container
 		if ( cnArgs.hideEffect === 'fade' ) {
 			$( '#cookie-notice' ).fadeOut( 300, function () {
-				$( this ).remove();
+				self.removeCookieNotice();
 			} );
 		} else if ( cnArgs.hideEffect === 'slide' ) {
 			$( '#cookie-notice' ).slideUp( 300, function () {
-				$( this ).remove();
-				} );
+				self.removeCookieNotice();
+			} );
 		} else {
-			$( '#cookie-notice' ).remove();
+			this.removeCookieNotice();
 		}
 	};
+
+	$.fn.removeCookieNotice = function ( cookie_value ) {
+		$( '#cookie-notice' ).remove();
+		$( 'body' ).removeClass( 'cookies-not-accepted' );
+	}
 
 } )( jQuery );
