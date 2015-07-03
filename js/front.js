@@ -34,12 +34,12 @@
 			}
 			$( 'body' ).addClass( 'cookies-not-accepted' );
 		} else {
-			this.removeCookieNotice();
+			$( this ).removeCookieNotice();
 		}
 
 	});
 	
-	// Set Cookie Notice
+	// set Cookie Notice
 	$.fn.setCookieNotice = function ( cookie_value ) {
 		
 		var cnTime = new Date(),
@@ -71,10 +71,11 @@
 				self.removeCookieNotice();
 			} );
 		} else {
-			this.removeCookieNotice();
+			self.removeCookieNotice();
 		}
 	};
 
+	// remove Cookie Notice
 	$.fn.removeCookieNotice = function ( cookie_value ) {
 		$( '#cookie-notice' ).remove();
 		$( 'body' ).removeClass( 'cookies-not-accepted' );
