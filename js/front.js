@@ -22,19 +22,21 @@
 			
 			$(window).on('scroll', cnHandleScroll);
 		}
-
+		
+		var cnDomNode = $( '#cookie-notice' );
 		// display cookie notice
 		if ( document.cookie.indexOf( 'cookie_notice_accepted' ) === -1 ) {
+			
 			if ( cnArgs.hideEffect === 'fade' ) {
-				$( '#cookie-notice' ).fadeIn( 300 );
+				cnDomNode.fadeIn( 300 );
 			} else if ( cnArgs.hideEffect === 'slide' ) {
-				$( '#cookie-notice' ).slideDown( 300 );
+				cnDomNode.slideDown( 300 );
 			} else {
-				$( '#cookie-notice' ).show();
+				cnDomNode.show();
 			}
 			$( 'body' ).addClass( 'cookies-not-accepted' );
 		} else {
-			$( this ).removeCookieNotice();
+			cnDomNode.removeCookieNotice();
 		}
 
 	});
@@ -77,7 +79,7 @@
 
 	// remove Cookie Notice
 	$.fn.removeCookieNotice = function ( cookie_value ) {
-		$( '#cookie-notice' ).remove();
+		this.remove();
 		$( 'body' ).removeClass( 'cookies-not-accepted' );
 	}
 
