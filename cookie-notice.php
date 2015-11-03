@@ -244,7 +244,7 @@ class Cookie_Notice {
 		__( 'Check out our other', 'cookie-notice' ) . ' <a href="http://dfactory.eu/plugins/" target="_blank" title="' . __( 'WordPress plugins', 'cookie-notice' ) . '">' . __( 'WordPress plugins', 'cookie-notice' ) . '</a>
 						</p>    
 						<hr />
-						<p class="df-link inner">Created by <a href="http://www.dfactory.eu" target="_blank" title="dFactory - Quality plugins for WordPress"><img src="' . plugins_url( '/images/logo-dfactory.png', __FILE__ ) . '" title="dFactory - Quality plugins for WordPress" alt="dFactory - Quality plugins for WordPress" /></a></p>
+						<p class="df-link inner">' . __( 'Created by', 'cookie-notice' ) . ' <a href="http://www.dfactory.eu" target="_blank" title="dFactory - Quality plugins for WordPress"><img src="' . plugins_url( '/images/logo-dfactory.png', __FILE__ ) . '" title="dFactory - Quality plugins for WordPress" alt="dFactory - Quality plugins for WordPress" /></a></p>
 					</div>
 				</div>
 				<form action="options.php" method="post">';
