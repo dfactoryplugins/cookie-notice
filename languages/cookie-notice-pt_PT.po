@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Cookie Notice\n"
 "POT-Creation-Date: 2015-11-03 13:59+0000\n"
-"PO-Revision-Date: 2015-11-03 14:12+0000\n"
+"PO-Revision-Date: 2015-11-03 14:30+0000\n"
 "Last-Translator: Pedro Mendonça <ped.gaspar@gmail.com>\n"
 "Language-Team: dFactory <info@dfactory.eu>\n"
 "Language: pt_PT\n"
@@ -131,7 +131,7 @@ msgstr "Se tiver problemas com este plugin, por favor fale sobre isso no"
 
 #: cookie-notice.php:233
 msgid "Support forum"
-msgstr "Forum de suporte"
+msgstr "fórum de suporte"
 
 #: cookie-notice.php:235
 msgid "Do you like this plugin?"
@@ -283,7 +283,7 @@ msgstr "Seleccione o destino da ligação para a página das informações adici
 
 #: cookie-notice.php:425
 msgid "The ammount of time that cookie should be stored for."
-msgstr "Duração do tempo que o cookie deverá ficar instalado."
+msgstr "Durante quanto tempo o cookie deverá ficar armazenado."
 
 #: cookie-notice.php:439
 msgid "Select where all the plugin scripts should be placed."
