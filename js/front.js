@@ -23,9 +23,11 @@
 
 			$( window ).on( 'scroll', cnHandleScroll );
 		}
-
+		
+		var cnDomNode = $( '#cookie-notice' );
 		// display cookie notice
 		if ( document.cookie.indexOf( 'cookie_notice_accepted' ) === -1 ) {
+			
 			if ( cnArgs.hideEffect === 'fade' ) {
 				cnDomNode.fadeIn( 300 );
 			} else if ( cnArgs.hideEffect === 'slide' ) {
@@ -80,7 +82,7 @@
 
 	// remove Cookie Notice
 	$.fn.removeCookieNotice = function ( cookie_value ) {
-		$( '#cookie-notice' ).remove();
+		this.remove();
 		$( 'body' ).removeClass( 'cookies-not-accepted' );
 	}
 
