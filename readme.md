@@ -12,8 +12,11 @@ For more information, check out plugin page at [dFactory](http://www.dfactory.eu
 
 * Customize the cookie message
 * Redirect users to specified page for more cookie information
-* Allow users to chose if they want to disable third-party non functional cookies
 * Set cookie expiry
+* Link to more info page
+* Option to accept cookies on scroll
+* Option to set on scroll offset
+* Option to refuse functional cookies
 * Select the position of the cookie message box
 * Animate the message box after cookie is accepted
 * Select bottons style from None, WordPress and Bootstrap
@@ -31,23 +34,6 @@ if ( function_exists('cn_cookies_accepted') && cn_cookies_accepted() ) {
 }
 `
 
-### Translations: ###
-
-* Croatian - by [Marko Beus](http://www.markobeus.com/)
-* Czech - by [Adam Laita](http://laita.cz)
-* Danish - by Lui Wallentin Gottler
-* Dutch - by [Heleen van den Bos](http://www.bostekst.nl/)
-* French - by [Laura Orsal](http://www.traductrice-independante.fr)
-* German - by Alex Ernst
-* Hebrew - by [Ahrale Shrem](http://atar4u.com/)
-* Hungarian - by [Surbma](http://surbma.hu)
-* Italian - by [Luca](http://www.lucacicca.it)
-* Polish - by Bartosz Arendt
-* Portuguese - by Luis Maia
-* Slovenian - by Thomas Cuk
-* Spanish - by Fernando Blasco
-* Swedish - by [Daniel Storgards](http://www.danielstorgards.com/)
-
 ### Get involved ###
 
 Feel free to contribute to the source code on the [dFactory GitHub Repository](https://github.com/dfactoryplugins).
@@ -59,6 +45,11 @@ Feel free to contribute to the source code on the [dFactory GitHub Repository](h
 3. Go to the Cookie Notice settings and set your options.
 
 ## Changelog ##
+
+#### 1.2.35 ####
+* Tweak: Use html_entity_decode on non-functional code block
+* Tweak: get_pages() function placement optimization
+* Tweak: Filterable manage cookie notice capability
 
 #### 1.2.21 ####
 * New: Plugin development moved to [dFactory GitHub Repository](https://github.com/dfactoryplugins)

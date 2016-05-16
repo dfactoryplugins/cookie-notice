@@ -3,8 +3,8 @@ Contributors: dfactory
 Donate link: http://www.dfactory.eu/
 Tags: cookie, cookies, notice, notification, notify, cookie, cookie compliance, cookie law, eu cookie, privacy, privacy directive, consent, Bootstrap
 Requires at least: 3.3
-Tested up to: 4.2.2
-Stable tag: 1.2.30
+Tested up to: 4.5
+Stable tag: 1.2.35
 License: MIT License
 License URI: http://opensource.org/licenses/MIT
 
@@ -53,6 +53,7 @@ Feel free to contribute to the source code on the [dFactory GitHub Repository](h
 * Finnish - by [Daniel Storgards](www.danielstorgards.com)
 * French - by [Laura Orsal](http://www.traductrice-independante.fr)
 * German - by Alex Ernst
+* Greek - by Elias Stefanidis
 * Hebrew - by [Ahrale Shrem](http://atar4u.com/)
 * Hungarian - by [Surbma](http://surbma.hu)
 * Italian - by [Luca](http://www.lucacicca.it)
@@ -77,6 +78,24 @@ No questions yet.
 1. screenshot-1.png
 
 == Changelog ==
+
+= 1.2.35 =
+* Tweak: Use html_entity_decode on non-functional code block
+* Tweak: get_pages() function placement optimization
+* Tweak: Filterable manage cookie notice capability
+
+= 1.2.34 =
+* Fix: Empty href in links HTML validation issue
+
+= 1.2.33 =
+* New: Greek translation thanks to Elias Stefanidis
+
+= 1.2.32 =
+* Fix: Accept cookie button hidden on acceptance instead of the cookie message container
+
+= 1.2.31 =
+* New: Non functional Javascript code field
+* Fix: Minified Javascript caching issue
 
 = 1.2.30 =
 * Fix: jQuery error after accepting cookies
@@ -202,5 +221,7 @@ Initial release
 
 == Upgrade Notice ==
 
-= 1.2.30 =
-* Fix: jQuery error after accepting cookies
+= 1.2.35 =
+* Tweak: Use html_entity_decode on non-functional code block
+* Tweak: get_pages() function placement optimization
+* Tweak: Filterable manage cookie notice capability

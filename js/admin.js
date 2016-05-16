@@ -8,9 +8,9 @@
 		// refuse option
 		$( '#cn_refuse_opt' ).change( function () {
 			if ( $( this ).is(':checked') ) {
-				$( '#cn_refuse_text' ).slideDown( 'fast' );
+				$( '#cn_refuse_opt_container' ).slideDown( 'fast' );
 			} else {
-				$( '#cn_refuse_text' ).slideUp( 'fast' );
+				$( '#cn_refuse_opt_container' ).slideUp( 'fast' );
 			}
 		} );
 
