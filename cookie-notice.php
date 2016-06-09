@@ -659,7 +659,7 @@ class Cookie_Notice {
 				</div>
 			</div>';
 
-			echo apply_filters( 'cn_cookie_notice_output', $output );
+			echo apply_filters( 'cn_cookie_notice_output', $output, $options );
 		}
 	}
 
