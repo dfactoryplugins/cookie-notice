@@ -130,7 +130,8 @@ class Cookie_Notice {
 		$this->styles = array(
 			'none'		 		=> __( 'None', 'cookie-notice' ),
 			'wp-default' 		=> __( 'WordPress', 'cookie-notice' ),
-			'bootstrap'	 		=> __( 'Bootstrap', 'cookie-notice' )
+			'bootstrap'	 		=> __( 'Bootstrap', 'cookie-notice' ),
+			'cn-modern'	 		=> __( 'Modern', 'cookie-notice' )
 		);
 
 		$this->links = array(
