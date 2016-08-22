@@ -14,6 +14,10 @@
     padding: 20px 8% 15px;
 }
 
+#cn-notice-text{
+    display:block;
+}
+
 .cn-top {
     top: 0;
 }
@@ -23,7 +27,7 @@
 }
 
 #cookie-notice .button {
-    margin-left: 10px;
+    margin: 10px;
 }
 
 #cookie-notice .button.wp-default {
