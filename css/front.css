@@ -4,14 +4,14 @@
     min-width: 100%;
     height: auto;
     z-index: 100000;
-    font-size: 12px;
-    line-height: 18px;
+    font-size: 14px;
+    line-height: 20px;
     left: 0;
     text-align: center;
 }
 
 .cookie-notice-container {
-    padding: 10px;
+    padding: 20px 8% 15px;
 }
 
 .cn-top {
