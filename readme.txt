@@ -3,8 +3,8 @@ Contributors: dfactory
 Donate link: http://www.dfactory.eu/
 Tags: cookie, cookies, notice, notification, notify, cookie, cookie compliance, cookie law, eu cookie, privacy, privacy directive, consent, Bootstrap
 Requires at least: 3.3
-Tested up to: 4.5
-Stable tag: 1.2.35
+Tested up to: 4.7
+Stable tag: 1.2.37
 License: MIT License
 License URI: http://opensource.org/licenses/MIT
 
@@ -44,25 +44,6 @@ If you'd like to code a functionality depending on the cookie notice value use t
 
 Feel free to contribute to the source code on the [dFactory GitHub Repository](https://github.com/dfactoryplugins).
 
-= Translations: =
-
-* Croatian - by [Marko Beus](http://www.markobeus.com/)
-* Czech - by [Adam Laita](http://laita.cz)
-* Danish - by Lui Wallentin Gottler
-* Dutch - by [Heleen van den Bos](http://www.bostekst.nl/)
-* Finnish - by [Daniel Storgards](www.danielstorgards.com)
-* French - by [Laura Orsal](http://www.traductrice-independante.fr)
-* German - by Alex Ernst
-* Greek - by Elias Stefanidis
-* Hebrew - by [Ahrale Shrem](http://atar4u.com/)
-* Hungarian - by [Surbma](http://surbma.hu)
-* Italian - by [Luca](http://www.lucacicca.it)
-* Polish - by Bartosz Arendt
-* Portuguese - by Luis Maia
-* Slovenian - by Thomas Cuk
-* Spanish - by Fernando Blasco
-* Swedish - by [Daniel Storgards](http://www.danielstorgards.com/)
-
 == Installation ==
 
 1. Install Cookie Notice either via the WordPress.org plugin directory, or by uploading the files to your server
@@ -78,6 +59,19 @@ No questions yet.
 1. screenshot-1.png
 
 == Changelog ==
+
+= 1.2.37 =
+* Tweak: Add aria landmark role="banner"
+* Tweak: Extend cn_cookie_notice_args with button class
+
+= 1.2.36.1 =
+* Fix: Repository upload issue with 1.2.36
+
+= 1.2.36 =
+* Fix: String translation support for WMPL 3.2+ 
+* Fix: Global var possible conflict with other plugins
+* Tweak: Add $options array to "cn_cookie_notice_output" filter, thanks to [chesio](https://github.com/chesio).
+* Tweak: Removed local translation files in favor of WP repository translations.
 
 = 1.2.35 =
 * Tweak: Use html_entity_decode on non-functional code block
@@ -221,7 +215,6 @@ Initial release
 
 == Upgrade Notice ==
 
-= 1.2.35 =
-* Tweak: Use html_entity_decode on non-functional code block
-* Tweak: get_pages() function placement optimization
-* Tweak: Filterable manage cookie notice capability
+= 1.2.37 =
+* Tweak: Add aria landmark role="banner"
+* Tweak: Extend cn_cookie_notice_args with button class

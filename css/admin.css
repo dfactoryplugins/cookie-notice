@@ -33,6 +33,10 @@
     padding: 5px 0 0 4px;
 }
 
+.df-promo h4 {
+    margin-bottom: 0;
+}
+
 .cookie-notice-settings .df-credits form {
     min-width: 260px;
     margin-bottom: 1em;

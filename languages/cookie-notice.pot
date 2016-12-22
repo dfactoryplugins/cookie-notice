@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Cookie Notice\n"
-"POT-Creation-Date: 2015-07-21 13:29+0200\n"
+"POT-Creation-Date: 2016-12-07 10:49+0100\n"
 "PO-Revision-Date: 2015-03-24 11:30+0100\n"
 "Last-Translator: Bartosz Arendt <info@dfactory.eu>\n"
 "Language-Team: dFactory <info@dfactory.eu>\n"
@@ -10,322 +10,314 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.2\n"
-"X-Poedit-KeywordsList: gettext;gettext_noop;__;_e\n"
+"X-Generator: Poedit 1.8.11\n"
+"X-Poedit-KeywordsList: gettext;gettext_noop;__;_e;_n\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../cookie-notice.php:127
+#: ../cookie-notice.php:126
 msgid "Top"
 msgstr ""
 
-#: ../cookie-notice.php:128
+#: ../cookie-notice.php:127
 msgid "Bottom"
 msgstr ""
 
-#: ../cookie-notice.php:132 ../cookie-notice.php:163
+#: ../cookie-notice.php:131 ../cookie-notice.php:162
 msgid "None"
 msgstr ""
 
-#: ../cookie-notice.php:133
+#: ../cookie-notice.php:132
 msgid "WordPress"
 msgstr ""
 
-#: ../cookie-notice.php:134
+#: ../cookie-notice.php:133
 msgid "Bootstrap"
 msgstr ""
 
-#: ../cookie-notice.php:138
+#: ../cookie-notice.php:137
 msgid "Custom link"
 msgstr ""
 
-#: ../cookie-notice.php:139
+#: ../cookie-notice.php:138
 msgid "Page link"
 msgstr ""
 
-#: ../cookie-notice.php:148
+#: ../cookie-notice.php:147
 msgid "Text color"
 msgstr ""
 
-#: ../cookie-notice.php:149
+#: ../cookie-notice.php:148
 msgid "Bar color"
 msgstr ""
 
-#: ../cookie-notice.php:153
+#: ../cookie-notice.php:152
 msgid "1 day"
 msgstr ""
 
-#: ../cookie-notice.php:154
+#: ../cookie-notice.php:153
 msgid "1 week"
 msgstr ""
 
-#: ../cookie-notice.php:155
+#: ../cookie-notice.php:154
 msgid "1 month"
 msgstr ""
 
-#: ../cookie-notice.php:156
+#: ../cookie-notice.php:155
 msgid "3 months"
 msgstr ""
 
-#: ../cookie-notice.php:157
+#: ../cookie-notice.php:156
 msgid "6 months"
 msgstr ""
 
-#: ../cookie-notice.php:158
+#: ../cookie-notice.php:157
 msgid "1 year"
 msgstr ""
 
-#: ../cookie-notice.php:159
+#: ../cookie-notice.php:158
 msgid "infinity"
 msgstr ""
 
-#: ../cookie-notice.php:164
+#: ../cookie-notice.php:163
 msgid "Fade"
 msgstr ""
 
-#: ../cookie-notice.php:165
+#: ../cookie-notice.php:164
 msgid "Slide"
 msgstr ""
 
-#: ../cookie-notice.php:169
+#: ../cookie-notice.php:168
 msgid "Header"
 msgstr ""
 
-#: ../cookie-notice.php:170
+#: ../cookie-notice.php:169
 msgid "Footer"
 msgstr ""
 
-#: ../cookie-notice.php:189
-msgid ""
-"We use cookies to ensure that we give you the best experience on our "
-"website. If you continue to use this site we will assume that you are happy "
-"with it."
+#: ../cookie-notice.php:175
+msgid "We use cookies to ensure that we give you the best experience on our website. If you continue to use this site we will assume that you are happy with it."
 msgstr ""
 
-#: ../cookie-notice.php:190
+#: ../cookie-notice.php:176
 msgid "Ok"
 msgstr ""
 
-#: ../cookie-notice.php:191
+#: ../cookie-notice.php:177
 msgid "No"
 msgstr ""
 
-#: ../cookie-notice.php:192
+#: ../cookie-notice.php:178
 msgid "Read more"
 msgstr ""
 
-#: ../cookie-notice.php:219 ../cookie-notice.php:229 ../cookie-notice.php:232
+#: ../cookie-notice.php:238 ../cookie-notice.php:250 ../cookie-notice.php:253
 msgid "Cookie Notice"
 msgstr ""
 
-#: ../cookie-notice.php:234
+#: ../cookie-notice.php:255
 msgid "Need support?"
 msgstr ""
 
-#: ../cookie-notice.php:235
-msgid ""
-"If you are having problems with this plugin, please talk about them in the"
+#: ../cookie-notice.php:256
+msgid "If you are having problems with this plugin, please talk about them in the"
 msgstr ""
 
-#: ../cookie-notice.php:235
+#: ../cookie-notice.php:256
 msgid "Support forum"
 msgstr ""
 
-#: ../cookie-notice.php:237
+#: ../cookie-notice.php:258
 msgid "Do you like this plugin?"
 msgstr ""
 
-#: ../cookie-notice.php:244
+#: ../cookie-notice.php:259
 msgid "Rate it 5"
 msgstr ""
 
-#: ../cookie-notice.php:244
+#: ../cookie-notice.php:259
 msgid "on WordPress.org"
 msgstr ""
 
-#: ../cookie-notice.php:245
+#: ../cookie-notice.php:260
 msgid "Blog about it & link to the"
 msgstr ""
 
-#: ../cookie-notice.php:245
+#: ../cookie-notice.php:260
 msgid "plugin page"
 msgstr ""
 
-#: ../cookie-notice.php:246
+#: ../cookie-notice.php:261
 msgid "Check out our other"
 msgstr ""
 
-#: ../cookie-notice.php:246
+#: ../cookie-notice.php:261
 msgid "WordPress plugins"
 msgstr ""
 
-#: ../cookie-notice.php:261
+#: ../cookie-notice.php:276
 msgid "Reset to defaults"
 msgstr ""
 
-#: ../cookie-notice.php:277
+#: ../cookie-notice.php:292
 msgid "Configuration"
 msgstr ""
 
-#: ../cookie-notice.php:278
+#: ../cookie-notice.php:293
 msgid "Message"
 msgstr ""
 
-#: ../cookie-notice.php:279
+#: ../cookie-notice.php:294
 msgid "Button text"
 msgstr ""
 
-#: ../cookie-notice.php:280
+#: ../cookie-notice.php:295
 msgid "More info link"
 msgstr ""
 
-#: ../cookie-notice.php:281
+#: ../cookie-notice.php:296
 msgid "Link target"
 msgstr ""
 
-#: ../cookie-notice.php:282
+#: ../cookie-notice.php:297
 msgid "Refuse button"
 msgstr ""
 
-#: ../cookie-notice.php:283
+#: ../cookie-notice.php:298
 msgid "On scroll"
 msgstr ""
 
-#: ../cookie-notice.php:284
+#: ../cookie-notice.php:299
 msgid "Cookie expiry"
 msgstr ""
 
-#: ../cookie-notice.php:285
+#: ../cookie-notice.php:300
 msgid "Script placement"
 msgstr ""
 
-#: ../cookie-notice.php:286
+#: ../cookie-notice.php:301
 msgid "Deactivation"
 msgstr ""
 
-#: ../cookie-notice.php:289
+#: ../cookie-notice.php:304
 msgid "Design"
 msgstr ""
 
-#: ../cookie-notice.php:290
+#: ../cookie-notice.php:305
 msgid "Position"
 msgstr ""
 
-#: ../cookie-notice.php:291
+#: ../cookie-notice.php:306
 msgid "Animation"
 msgstr ""
 
-#: ../cookie-notice.php:292
+#: ../cookie-notice.php:307
 msgid "Button style"
 msgstr ""
 
-#: ../cookie-notice.php:293
+#: ../cookie-notice.php:308
 msgid "Colors"
 msgstr ""
 
-#: ../cookie-notice.php:307
+#: ../cookie-notice.php:322
 msgid "Enable if you want all plugin data to be deleted on deactivation."
 msgstr ""
 
-#: ../cookie-notice.php:317
+#: ../cookie-notice.php:332
 msgid "Enter the cookie notice message."
 msgstr ""
 
-#: ../cookie-notice.php:328
-msgid ""
-"The text of the option to accept the usage of the cookies and make the "
-"notification disappear."
-msgstr ""
-
-#: ../cookie-notice.php:338
-msgid ""
-"Give to the user the possibility to refuse third party non functional "
-"cookies."
-msgstr ""
-
 #: ../cookie-notice.php:343
-msgid ""
-"The text of the option to refuse the usage of the cookies. To get the "
-"cookie notice status use <code>cn_cookies_accepted()</code> function."
+msgid "The text of the option to accept the usage of the cookies and make the notification disappear."
 msgstr ""
 
-#: ../cookie-notice.php:348
-msgid ""
-"Enter non functional cookies Javascript code here (for e.g. Google "
-"Analitycs). It will be used after cookies are accepted."
+#: ../cookie-notice.php:353
+msgid "Give to the user the possibility to refuse third party non functional cookies."
 msgstr ""
 
-#: ../cookie-notice.php:361
+#: ../cookie-notice.php:358
+msgid "The text of the option to refuse the usage of the cookies. To get the cookie notice status use <code>cn_cookies_accepted()</code> function."
+msgstr ""
+
+#: ../cookie-notice.php:363
+msgid "Enter non functional cookies Javascript code here (for e.g. Google Analitycs). It will be used after cookies are accepted."
+msgstr ""
+
+#: ../cookie-notice.php:389
 msgid "Enable Read more link."
 msgstr ""
 
-#: ../cookie-notice.php:366
+#: ../cookie-notice.php:390
+#, php-format
+msgid "Need a Cookie Policy? Generate one with <a href=\"%s\" target=\"_blank\" title=\"iubenda\">iubenda</a>"
+msgstr ""
+
+#: ../cookie-notice.php:396
 msgid "The text of the more info button."
 msgstr ""
 
-#: ../cookie-notice.php:378
+#: ../cookie-notice.php:410
 msgid "Select where to redirect user for more information about cookies."
 msgstr ""
 
-#: ../cookie-notice.php:381
+#: ../cookie-notice.php:413
 msgid "-- select page --"
 msgstr ""
 
-#: ../cookie-notice.php:390
+#: ../cookie-notice.php:424
 msgid "Select from one of your site's pages"
 msgstr ""
 
-#: ../cookie-notice.php:394
+#: ../cookie-notice.php:428
 msgid "Enter the full URL starting with http://"
 msgstr ""
 
-#: ../cookie-notice.php:414
+#: ../cookie-notice.php:448
 msgid "Select the link target for more info page."
 msgstr ""
 
-#: ../cookie-notice.php:434
+#: ../cookie-notice.php:468
 msgid "The ammount of time that cookie should be stored for."
 msgstr ""
 
-#: ../cookie-notice.php:448
+#: ../cookie-notice.php:482
 msgid "Select where all the plugin scripts should be placed."
 msgstr ""
 
-#: ../cookie-notice.php:466
+#: ../cookie-notice.php:500
 msgid "Select location for your cookie notice."
 msgstr ""
 
-#: ../cookie-notice.php:485
+#: ../cookie-notice.php:519
 msgid "Cookie notice acceptance animation."
 msgstr ""
 
-#: ../cookie-notice.php:495
+#: ../cookie-notice.php:529
 msgid "Enable cookie notice acceptance when users scroll."
 msgstr ""
 
-#: ../cookie-notice.php:499
-msgid ""
-"Number of pixels user has to scroll to accept the usage of the cookies and "
-"make the notification disappear."
+#: ../cookie-notice.php:533
+msgid "Number of pixels user has to scroll to accept the usage of the cookies and make the notification disappear."
 msgstr ""
 
-#: ../cookie-notice.php:519
+#: ../cookie-notice.php:553
 msgid "Choose buttons style."
 msgstr ""
 
-#: ../cookie-notice.php:610
+#: ../cookie-notice.php:657
 msgid "Settings restored to defaults."
 msgstr ""
 
-#: ../cookie-notice.php:693
+#: ../cookie-notice.php:758
 msgid "Support"
 msgstr ""
 
-#: ../cookie-notice.php:708
+#: ../cookie-notice.php:777
 msgid "Settings"
 msgstr ""
 
-#: ../cookie-notice.php:742
+#: ../cookie-notice.php:811
 msgid "Are you sure you want to reset these settings to defaults?"
 msgstr ""
+
