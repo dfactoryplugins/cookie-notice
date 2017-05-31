@@ -1,0 +1,409 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Cookie Notice\n"
+"POT-Creation-Date: 2017-05-31 18:21+0200\n"
+"PO-Revision-Date: 2017-05-31 18:36+0200\n"
+"Last-Translator: Laura Orsal <laura@orsal.fr>\n"
+"Language-Team: dFactory <info@dfactory.eu>\n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.11\n"
+"X-Poedit-KeywordsList: gettext;gettext_noop;__;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../cookie-notice.php:126
+msgid "Top"
+msgstr "Haut"
+
+#: ../cookie-notice.php:127
+msgid "Bottom"
+msgstr "Bas"
+
+#: ../cookie-notice.php:131 ../cookie-notice.php:162
+msgid "None"
+msgstr "Aucun"
+
+#: ../cookie-notice.php:132
+msgid "WordPress"
+msgstr "WordPress"
+
+#: ../cookie-notice.php:133
+msgid "Bootstrap"
+msgstr "Bootstrap"
+
+#: ../cookie-notice.php:137
+msgid "Custom link"
+msgstr "Lien personnalisé"
+
+#: ../cookie-notice.php:138
+msgid "Page link"
+msgstr "Lien de page"
+
+#: ../cookie-notice.php:147
+msgid "Text color"
+msgstr "Couleur du texte"
+
+#: ../cookie-notice.php:148
+msgid "Bar color"
+msgstr "Couleur de la barre"
+
+#: ../cookie-notice.php:152
+msgid "1 day"
+msgstr "1 jour"
+
+#: ../cookie-notice.php:153
+msgid "1 week"
+msgstr "1 semaine"
+
+#: ../cookie-notice.php:154
+msgid "1 month"
+msgstr "1 mois"
+
+#: ../cookie-notice.php:155
+msgid "3 months"
+msgstr "3 mois"
+
+#: ../cookie-notice.php:156
+msgid "6 months"
+msgstr "6 mois"
+
+#: ../cookie-notice.php:157
+msgid "1 year"
+msgstr "1 année"
+
+#: ../cookie-notice.php:158
+msgid "infinity"
+msgstr "illimitée"
+
+#: ../cookie-notice.php:163
+msgid "Fade"
+msgstr "Fondu"
+
+#: ../cookie-notice.php:164
+msgid "Slide"
+msgstr "Glissement"
+
+#: ../cookie-notice.php:168
+msgid "Header"
+msgstr "Entête"
+
+#: ../cookie-notice.php:169
+msgid "Footer"
+msgstr "Pied de page"
+
+#: ../cookie-notice.php:175
+msgid ""
+"We use cookies to ensure that we give you the best experience on our "
+"website. If you continue to use this site we will assume that you are happy "
+"with it."
+msgstr ""
+"Nous utilisons des cookies pour vous garantir la meilleure expérience sur "
+"notre site. Si vous continuez à utiliser ce dernier, nous considérerons que "
+"vous acceptez l'utilisation des cookies."
+
+#: ../cookie-notice.php:176
+msgid "Ok"
+msgstr "Ok"
+
+#: ../cookie-notice.php:177
+msgid "No"
+msgstr "Non"
+
+#: ../cookie-notice.php:178
+msgid "Read more"
+msgstr "En savoir plus"
+
+#: ../cookie-notice.php:238 ../cookie-notice.php:250 ../cookie-notice.php:253
+msgid "Cookie Notice"
+msgstr "Cookie Notice"
+
+#: ../cookie-notice.php:255
+msgid "Need support?"
+msgstr "Besoin d'aide ?"
+
+#: ../cookie-notice.php:256
+#, php-format
+msgid ""
+"If you are having problems with this plugin, please browse it's <a href=\"%s"
+"\" target=\"_blank\">Documentation</a> or talk about them in the <a href=\"%s"
+"\" target=\"_blank\">Support forum</a>"
+msgstr ""
+"Si vous avez des problèmes avec ce plugin, merci de consulter la <a href=\"%s"
+"\" target=\"_blank\">Documentation</a> ou de contacter le <a href=\"%s\" "
+"target=\"_blank\">Support sur le forum</a>"
+
+#: ../cookie-notice.php:258
+msgid "Do you like this plugin?"
+msgstr "Vous aimez ce plugin ?"
+
+#: ../cookie-notice.php:259
+#, php-format
+msgid "<a href=\"%s\" target=\"_blank\">Rate it 5</a> on WordPress.org"
+msgstr "<a href=\"%s\" target=\"_blank\">Donnez un 5</a> sur WordPress.org"
+
+#: ../cookie-notice.php:260
+#, php-format
+msgid ""
+"Blog about it & link to the <a href=\"%s\" target=\"_blank\">plugin page</a>."
+msgstr ""
+"Parlez de ce module et mettez un lien vers <a href=\"%s\" target=\"_blank"
+"\">la page du plugin</a>."
+
+#: ../cookie-notice.php:261
+#, php-format
+msgid ""
+"Check out our other <a href=\"%s\" target=\"_blank\">WordPress plugins</a>."
+msgstr ""
+"Allez voir nos autres <a href=\"%s\" target=\"_blank\">plugins WordPress</a>."
+
+#: ../cookie-notice.php:276
+msgid "Reset to defaults"
+msgstr "Remise à zéro"
+
+#: ../cookie-notice.php:292
+msgid "Configuration"
+msgstr "Configuration"
+
+#: ../cookie-notice.php:293
+msgid "Message"
+msgstr "Message"
+
+#: ../cookie-notice.php:294
+msgid "Button text"
+msgstr "Texte du bouton"
+
+#: ../cookie-notice.php:295
+msgid "More info link"
+msgstr "Lien \"en savoir plus\""
+
+#: ../cookie-notice.php:296
+msgid "Link target"
+msgstr "Cible du lien"
+
+#: ../cookie-notice.php:297
+msgid "Refuse button"
+msgstr "Bouton \"refus\""
+
+#: ../cookie-notice.php:298
+msgid "Script blocking"
+msgstr "Blocage de script"
+
+#: ../cookie-notice.php:299
+msgid "On scroll"
+msgstr "En cas de défilement"
+
+#: ../cookie-notice.php:300
+msgid "Cookie expiry"
+msgstr "Expiration des cookies"
+
+#: ../cookie-notice.php:301
+msgid "Script placement"
+msgstr "Position du script"
+
+#: ../cookie-notice.php:302
+msgid "Deactivation"
+msgstr "Désactivation"
+
+#: ../cookie-notice.php:305
+msgid "Design"
+msgstr "Design"
+
+#: ../cookie-notice.php:306
+msgid "Position"
+msgstr "Position"
+
+#: ../cookie-notice.php:307
+msgid "Animation"
+msgstr "Animation"
+
+#: ../cookie-notice.php:308
+msgid "Button style"
+msgstr "Style du bouton"
+
+#: ../cookie-notice.php:309
+msgid "Colors"
+msgstr "Couleurs"
+
+#: ../cookie-notice.php:323
+msgid "Enable if you want all plugin data to be deleted on deactivation."
+msgstr "Activez pour effacer toute donnée en cas de désactivation."
+
+#: ../cookie-notice.php:333
+msgid "Enter the cookie notice message."
+msgstr "Saisir le message d'avis relatif aux cookies."
+
+#: ../cookie-notice.php:344
+msgid ""
+"The text of the option to accept the usage of the cookies and make the "
+"notification disappear."
+msgstr ""
+"Le texte du bouton pour accepter l'utilisation des cookies et faire "
+"disparaître le bandeau."
+
+#: ../cookie-notice.php:354
+msgid ""
+"Give to the user the possibility to refuse third party non functional "
+"cookies."
+msgstr ""
+"Donnez à l'utilisateur la possibilité de refuser les cookies tiers non "
+"indispensables."
+
+#: ../cookie-notice.php:359
+msgid "The text of the option to refuse the usage of the cookies."
+msgstr "Le texte de l'option pour refuser l'utilisation de cookies."
+
+#: ../cookie-notice.php:373
+msgid ""
+"Enter non functional cookies Javascript code here (for e.g. Google "
+"Analitycs) to be used after cookies are accepted."
+msgstr ""
+"Entrez du code javascript qui sera bloqué si l'utilisateur refuse les "
+"cookies non essentiels."
+
+#: ../cookie-notice.php:373
+msgid ""
+"To get the cookie notice status use <code>cn_cookies_accepted()</code> "
+"function."
+msgstr ""
+"Pour obtenir le status d'acceptation des cookies, utilisez "
+"<code>cn_cookies_accepted()</code>."
+
+#: ../cookie-notice.php:396
+msgid "Enable Read more link."
+msgstr "Activez le lien \"En savoir plus\""
+
+#: ../cookie-notice.php:397
+#, php-format
+msgid ""
+"Need a Cookie Policy? Generate one with <a href=\"%s\" target=\"_blank\" "
+"title=\"iubenda\">iubenda</a>"
+msgstr ""
+"Vous avez besoin d'une page d'explication sur les cookies ? Générez-en une "
+"ici : <a href=\"%s\" target=\"_blank\" title=\"iubenda\">iubenda</a>"
+
+#: ../cookie-notice.php:403
+msgid "The text of the more info button."
+msgstr "Le texte du bouton \"En savoir plus\""
+
+#: ../cookie-notice.php:417
+msgid "Select where to redirect user for more information about cookies."
+msgstr ""
+"Sélectionner l'endroit où rediriger l'utilisateur pour plus d'informations "
+"sur les cookies."
+
+#: ../cookie-notice.php:420
+msgid "-- select page --"
+msgstr "-- sélectionner page --"
+
+#: ../cookie-notice.php:431
+msgid "Select from one of your site's pages"
+msgstr "Sélectionner une page de votre site"
+
+#: ../cookie-notice.php:435
+msgid "Enter the full URL starting with http://"
+msgstr "Saisir l'URL complète en commençant par http://"
+
+#: ../cookie-notice.php:455
+msgid "Select the link target for more info page."
+msgstr "Choisissez la cible du lien pour la page \"En savoir plus\""
+
+#: ../cookie-notice.php:475
+msgid "The ammount of time that cookie should be stored for."
+msgstr "La durée de stockage des cookies."
+
+#: ../cookie-notice.php:489
+msgid "Select where all the plugin scripts should be placed."
+msgstr "Choisissez où tous les scripts seront placés."
+
+#: ../cookie-notice.php:507
+msgid "Select location for your cookie notice."
+msgstr "Sélectionner la position de votre avis relatif aux cookies."
+
+#: ../cookie-notice.php:526
+msgid "Cookie notice acceptance animation."
+msgstr "Animation de l'acceptation de l'avis relatif aux cookies."
+
+#: ../cookie-notice.php:536
+msgid "Enable cookie notice acceptance when users scroll."
+msgstr ""
+"Autoriser l'acceptation automatique quand l'utilisateur fait défiler la page "
+"(interdit en France)."
+
+#: ../cookie-notice.php:540
+msgid ""
+"Number of pixels user has to scroll to accept the usage of the cookies and "
+"make the notification disappear."
+msgstr ""
+"Nombre de pixels de défilement pour accepter les cookies et faire "
+"disparaitre les notifications."
+
+#: ../cookie-notice.php:560
+msgid "Choose buttons style."
+msgstr "Choisir le style des boutons."
+
+#: ../cookie-notice.php:665
+msgid "Settings restored to defaults."
+msgstr "Paramètres remis à zéro"
+
+#: ../cookie-notice.php:766
+msgid "Support"
+msgstr "Support"
+
+#: ../cookie-notice.php:785
+msgid "Settings"
+msgstr "Paramètres"
+
+#: ../cookie-notice.php:819
+msgid "Are you sure you want to reset these settings to defaults?"
+msgstr "Êtes-vous sûr de vouloir remettre tous les paramètres à zéros ?"
+
+#~ msgid "Enable"
+#~ msgstr "Activer"
+
+#~ msgid "Disable"
+#~ msgstr "Désactiver"
+
+#~ msgid ""
+#~ "If you are having problems with this plugin, please talk about them in the"
+#~ msgstr ""
+#~ "Si vous rencontrez des problèmes avec ce plugin, veuillez en parler dans "
+#~ "le"
+
+#~ msgid "Support forum"
+#~ msgstr "Forum pour le support"
+
+#~ msgid "Rate it 5"
+#~ msgstr "Noter sur 5"
+
+#~ msgid "on WordPress.org"
+#~ msgstr "sur WordPress.org"
+
+#~ msgid "Blog about it & link to the"
+#~ msgstr "Blog et lien vers la"
+
+#~ msgid "plugin page"
+#~ msgstr "page du plugin"
+
+#~ msgid "Check out our other"
+#~ msgstr "Découvrir nos autres"
+
+#~ msgid "WordPress plugins"
+#~ msgstr "plugins WordPress"
+
+#~ msgid "More info"
+#~ msgstr "En savoir plus"
+
+#~ msgid "Hide animation"
+#~ msgstr "Cacher l'animation"
+
+#~ msgid "The text to show on the button when cookies have not been accepted"
+#~ msgstr ""
+#~ "Texte à afficher sur le bouton si les cookies n'ont pas été acceptés."
+
+#~ msgid "Enable or Disable Read more button."
+#~ msgstr "Activer ou désactiver le bouton En savoir plus."
