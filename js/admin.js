@@ -18,8 +18,10 @@
 	$( '#cn_see_more' ).change( function () {
 	    if ( $( this ).is( ':checked' ) ) {
 		$( '#cn_see_more_opt' ).slideDown( 'fast' );
+		$('#cn_link_target').closest('tr').slideDown('fast');
 	    } else {
 		$( '#cn_see_more_opt' ).slideUp( 'fast' );
+		$('#cn_link_target').closest('tr').slideUp('fast');
 	    }
 	} );
 
