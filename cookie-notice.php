@@ -68,7 +68,8 @@ class Cookie_Notice {
 			),
 			'script_placement'				=> 'header',
 			'translate'						=> true,
-			'deactivation_delete'			=> 'no'
+			'deactivation_delete'			=> 'no',
+			'iframe_disable'				=> true
 		),
 		'version'							=> '1.2.37'
 	);
@@ -299,6 +300,7 @@ class Cookie_Notice {
 		add_settings_field( 'cn_time', __( 'Cookie expiry', 'cookie-notice' ), array( $this, 'cn_time' ), 'cookie_notice_options', 'cookie_notice_configuration' );
 		add_settings_field( 'cn_script_placement', __( 'Script placement', 'cookie-notice' ), array( $this, 'cn_script_placement' ), 'cookie_notice_options', 'cookie_notice_configuration' );
 		add_settings_field( 'cn_deactivation_delete', __( 'Deactivation', 'cookie-notice' ), array( $this, 'cn_deactivation_delete' ), 'cookie_notice_options', 'cookie_notice_configuration' );
+		add_settings_field( 'cn_iframe_disable', __( 'Iframes', 'cookie-notice' ), array( $this, 'cn_iframe_disable' ), 'cookie_notice_options', 'cookie_notice_configuration' );
 
 		// design
 		add_settings_section( 'cookie_notice_design', __( 'Design', 'cookie-notice' ), array( $this, 'cn_section_design' ), 'cookie_notice_options' );
@@ -320,6 +322,15 @@ class Cookie_Notice {
 	public function cn_deactivation_delete() {
 		echo '
 		<label><input id="cn_deactivation_delete" type="checkbox" name="cookie_notice_options[deactivation_delete]" value="1" ' . checked( 'yes', $this->options['general']['deactivation_delete'], false ) . '/>' . __( 'Enable if you want all plugin data to be deleted on deactivation.', 'cookie-notice' ) . '</label>';
+	}
+
+	/**
+	 * Disable in iframes.
+	 */
+	public function cn_iframe_disable() {
+		echo '
+		
+		<label><input id="cn_iframe_disable" type="checkbox" name="cookie_notice_options[iframe_disable]" value="1" ' . checked( 'yes', $this->options['general']['iframe_disable'], false ) . '/>' . __( 'Show cookie notice in iframes.', 'cookie-notice' ) . '</label>';
 	}
 
 	/**
@@ -628,6 +639,9 @@ class Cookie_Notice {
 			// deactivation
 			$input['deactivation_delete'] = (bool) isset( $input['deactivation_delete'] ) ? 'yes' : 'no';
 
+			// iframe
+			$input['iframe_disable'] = (bool) isset( $input['iframe_disable'] ) ? 'yes' : 'no';
+
 			// read more
 			$input['see_more'] = (bool) isset( $input['see_more'] ) ? 'yes' : 'no';
 			$input['see_more_opt']['text'] = sanitize_text_field( isset( $input['see_more_opt']['text'] ) && $input['see_more_opt']['text'] !== '' ? $input['see_more_opt']['text'] : $this->defaults['general']['see_more_opt']['text'] );
@@ -831,6 +845,7 @@ class Cookie_Notice {
 					'hideEffect'			=> $this->options['general']['hide_effect'],
 					'onScroll'				=> $this->options['general']['on_scroll'],
 					'onScrollOffset'		=> $this->options['general']['on_scroll_offset'],
+					'onIframe'				=> $this->options['general']['iframe_disable'],
 					'cookieName'			=> self::$cookie['name'],
 					'cookieValue'			=> self::$cookie['value'],
 					'cookieTime'			=> $this->times[$this->options['general']['time']][1],
