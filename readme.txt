@@ -2,9 +2,9 @@
 Contributors: dfactory
 Donate link: http://www.dfactory.eu/
 Tags: cookie, cookies, notice, notification, notify, cookie, cookie compliance, cookie law, eu cookie, privacy, privacy directive, consent, Bootstrap
-Requires at least: 3.3
-Tested up to: 4.7
-Stable tag: 1.2.37
+Requires at least: 4.9.6
+Tested up to: 4.9.6
+Stable tag: 1.3
 License: MIT License
 License URI: http://opensource.org/licenses/MIT
 
@@ -68,7 +68,7 @@ No questions yet.
 * Fix: Repository upload issue with 1.2.36
 
 = 1.2.36 =
-* Fix: String translation support for WMPL 3.2+ 
+* Fix: String translation support for WMPL 3.2+
 * Fix: Global var possible conflict with other plugins
 * Tweak: Add $options array to "cn_cookie_notice_output" filter, thanks to [chesio](https://github.com/chesio).
 * Tweak: Removed local translation files in favor of WP repository translations.
@@ -144,7 +144,7 @@ No questions yet.
 * New: Hebrew translation, thanks to [Ahrale Shrem](http://atar4u.com/)
 
 = 1.2.16 =
-* Tweak: Dutch translation missing due to a typo 
+* Tweak: Dutch translation missing due to a typo
 
 = 1.2.15 =
 * New: Danish translation, thanks to Hans C. Jorgensen

@@ -82,6 +82,7 @@ class Cookie_Notice {
 	private $effects 			= array();
 	private $times 				= array();
 	private $script_placements 	= array();
+	private $is_network = false;
 	private $in_network_context = false;
 	private $is_network_values_forced = false;
 
@@ -109,12 +110,21 @@ class Cookie_Notice {
 			    require_once( ABSPATH . '/wp-admin/includes/plugin.php' );
 			}
 			if ( is_plugin_active_for_network( basename(__DIR__).'/'.basename(__FILE__) ) ) {
+				$this->is_network = true;
+				// Get network settings
 				$this->network_options = array(
 					'general' => array_merge( $this->defaults['general'], get_site_option( 'cookie_notice_options', $this->defaults['general'] ) )
 				);
+				// If network settings are forced, override local settings
 				if(isset($this->network_options['general']['force_network_values']) && $this->network_options['general']['force_network_values']==='yes'){
 					$this->options = $this->network_options;
 					$this->is_network_values_forced = true;
+				}
+				// Load local settings with network ones as default
+				else{
+					$this->options = array(
+						'general' => array_merge( $this->network_options['general'], get_option( 'cookie_notice_options', $this->network_options['general'] ) )
+					);
 				}
 			}
 		}
@@ -774,7 +784,8 @@ class Cookie_Notice {
 			}
 		} elseif ( isset( $_POST['reset_cookie_notice_options'] ) ) {
 
-			$input = $this->defaults['general'];
+			$input = $this->is_network ? $this->network_options['general'] : $this->defaults['general'];
+
 
 			add_settings_error( 'reset_cookie_notice_options', 'reset_cookie_notice_options', __( 'Settings restored to defaults.', 'cookie-notice' ), 'updated' );
 
@@ -830,7 +841,7 @@ class Cookie_Notice {
 			} elseif($options['see_more_opt']['link_type'] === 'page'){
 				$see_more_url = get_permalink( $options['see_more_opt']['id'] );
 			} elseif($options['see_more_opt']['link_type'] === 'legacy'){
-				$see_more_url = get_permalink( get_option('wp_page_for_privacy_policy') );
+				$see_more_url = get_privacy_policy_url();
 			}
 			// message output
 			$output = '
