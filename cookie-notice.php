@@ -83,6 +83,7 @@ class Cookie_Notice {
 	private $times 				= array();
 	private $script_placements 	= array();
 	private $in_network_context = false;
+	private $is_network_values_forced = false;
 
 	/**
 	 * @var $cookie, holds cookie name
@@ -100,16 +101,22 @@ class Cookie_Notice {
 		register_deactivation_hook( __FILE__, array( $this, 'deactivation' ) );
 
 		// settings
-		$this->network_options = array(
-			'general' => array_merge( $this->defaults['general'], get_site_option( 'cookie_notice_options', $this->defaults['general'] ) )
+		$this->options = array(
+			'general' => array_merge( $this->defaults['general'], get_option( 'cookie_notice_options', $this->defaults['general'] ) )
 		);
-		if(isset($this->network_options['general']['force_network_values']) && $this->network_options['general']['force_network_values']==='yes'){
-			$this->options = $this->network_options;
-		}
-		else{
-			$this->options = array(
-				'general' => array_merge( $this->defaults['general'], get_option( 'cookie_notice_options', $this->defaults['general'] ) )
-			);
+		if(is_multisite()){
+			if(! function_exists( 'is_plugin_active_for_network' ) ) {
+			    require_once( ABSPATH . '/wp-admin/includes/plugin.php' );
+			}
+			if ( is_plugin_active_for_network( basename(__DIR__).'/'.basename(__FILE__) ) ) {
+				$this->network_options = array(
+					'general' => array_merge( $this->defaults['general'], get_site_option( 'cookie_notice_options', $this->defaults['general'] ) )
+				);
+				if(isset($this->network_options['general']['force_network_values']) && $this->network_options['general']['force_network_values']==='yes'){
+					$this->options = $this->network_options;
+					$this->is_network_values_forced = true;
+				}
+			}
 		}
 
 		// actions
@@ -300,15 +307,21 @@ class Cookie_Notice {
 			. '</label></p>';
 
 		}
-		do_settings_sections( 'cookie_notice_options' );
 
-		echo '
-				<p class="submit">';
-		submit_button( '', 'primary', 'save_cookie_notice_options', false );
-		echo ' ';
-		submit_button( __( 'Reset to defaults', 'cookie-notice' ), 'secondary', 'reset_cookie_notice_options', false );
-		echo '
-				</p>
+		if($network || !$this->is_network_values_forced){
+			do_settings_sections( 'cookie_notice_options' );
+			echo '
+					<p class="submit">';
+			submit_button( '', 'primary', 'save_cookie_notice_options', false );
+			echo ' ';
+			submit_button( __( 'Reset to defaults', 'cookie-notice' ), 'secondary', 'reset_cookie_notice_options', false );
+			echo '
+				</p>';
+		}
+		else{
+			echo '<p>'.__('Settings are managed on the whole network.', 'cookie-notice').'</p>';
+		}
+		echo'
 				</form>
 			</div>
 			<div class="clear"></div>
