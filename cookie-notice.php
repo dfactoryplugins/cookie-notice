@@ -146,7 +146,8 @@ class Cookie_Notice {
 
 		$this->links = array(
 			'custom' 			=> __( 'Custom link', 'cookie-notice' ),
-			'page'	 			=> __( 'Page link', 'cookie-notice' )
+			'page'	 			=> __( 'Page link', 'cookie-notice' ),
+			'legacy'			=> __( 'Page for Privacy Policy', 'cookie-notice'),
 		);
 
 		$this->link_target = array(
@@ -490,20 +491,19 @@ class Cookie_Notice {
 					<label><input id="cn_see_more_link-' . $value . '" type="radio" name="cookie_notice_options[see_more_opt][link_type]" value="' . $value . '" ' . checked( $value, $options['general']['see_more_opt']['link_type'], false ) . ' />' . esc_html( $label ) . '</label>';
 			}
 		}
-		echo '</div>';
+		echo '</div>
+		<p class="description">' . __( 'Select where to redirect user for more information about cookies.', 'cookie-notice' ) . '</p>';
 
 		if($this->in_network_context){
 			echo '
-			<p class="description">' . __( 'Select where to redirect user for more information about cookies.', 'cookie-notice' ) . '</p>
-			<div id="cn_see_more_opt_page"' . ($options['general']['see_more_opt']['link_type'] === 'custom' ? ' style="display: none;"' : '') . '>
+			<div id="cn_see_more_opt_page" class="cn_see_more_opt"' . ($options['general']['see_more_opt']['link_type'] !== 'page' ? ' style="display: none;"' : '') . '>
 			<input type="hidden" name="cookie_notice_options[see_more_opt][id]" value="">
 			<p class="description">' . __( 'Page redirect not available in network context', 'cookie-notice' ) . '</p>
-			</div';
+			</div>';
 		}
 		else{
 			echo '
-				<p class="description">' . __( 'Select where to redirect user for more information about cookies.', 'cookie-notice' ) . '</p>
-				<div id="cn_see_more_opt_page"' . ($options['general']['see_more_opt']['link_type'] === 'custom' ? ' style="display: none;"' : '') . '>
+				<div id="cn_see_more_opt_page" class="cn_see_more_opt"' . ($options['general']['see_more_opt']['link_type'] !== 'page' ? ' style="display: none;"' : '') . '>
 					<select name="cookie_notice_options[see_more_opt][id]">
 						<option value="empty" ' . selected( 'empty', $options['general']['see_more_opt']['id'], false ) . '>' . __( '-- select page --', 'cookie-notice' ) . '</option>';
 
@@ -520,9 +520,19 @@ class Cookie_Notice {
 				</div>';
 		}
 		echo '
-			<div id="cn_see_more_opt_link"' . ($options['general']['see_more_opt']['link_type'] === 'page' ? ' style="display: none;"' : '') . '>
+			<div id="cn_see_more_opt_custom" class="cn_see_more_opt"' . ($options['general']['see_more_opt']['link_type'] !== 'custom' ? ' style="display: none;"' : '') . '>
 				<input type="text" class="regular-text" name="cookie_notice_options[see_more_opt][link]" value="' . esc_attr( $options['general']['see_more_opt']['link'] ) . '" />
 				<p class="description">' . __( 'Enter the full URL starting with http://', 'cookie-notice' ) . '</p>
+			</div>
+			<div id="cn_see_more_opt_legacy" class="cn_see_more_opt"' . ($options['general']['see_more_opt']['link_type'] !== 'legacy' ? ' style="display: none;"' : '') . '>
+				<p class="description">';
+				if($this->in_network_context){
+					_e( 'Manage privacy policy page in each site', 'cookie-notice' );
+				}
+				else{
+					echo '<a href="'.admin_url('privacy.php').'" target="_blank">' . __( 'Manage privacy policy page', 'cookie-notice' ) . '</a>';
+				}
+				echo '</p>
 			</div>
 		</div>
 		</fieldset>';
@@ -801,13 +811,21 @@ class Cookie_Notice {
 				'link_target'		=> $this->options['general']['link_target'],
 			) );
 
+			$see_more_url = '#';
+			if($options['see_more_opt']['link_type'] === 'custom'){
+				$see_more_url = $options['see_more_opt']['link'];
+			} elseif($options['see_more_opt']['link_type'] === 'page'){
+				$see_more_url = get_permalink( $options['see_more_opt']['id'] );
+			} elseif($options['see_more_opt']['link_type'] === 'legacy'){
+				$see_more_url = get_permalink( get_option('wp_page_for_privacy_policy') );
+			}
 			// message output
 			$output = '
 			<div id="cookie-notice" role="banner" class="cn-' . ($options['position']) . ($options['css_style'] !== 'none' ? ' ' . $options['css_style'] : '') . '" style="color: ' . $options['colors']['text'] . '; background-color: ' . $options['colors']['bar'] . ';">'
 				. '<div class="cookie-notice-container"><span id="cn-notice-text">'. $options['message_text'] .'</span>'
 				. '<a href="#" id="cn-accept-cookie" data-cookie-set="accept" class="cn-set-cookie ' . $options['button_class'] . ($options['css_style'] !== 'none' ? ' ' . $options['css_style'] : '') . '">' . $options['accept_text'] . '</a>'
 				. ($options['refuse_opt'] === 'yes' ? '<a href="#" id="cn-refuse-cookie" data-cookie-set="refuse" class="cn-set-cookie ' . $options['button_class'] . ($options['css_style'] !== 'none' ? ' ' . $options['css_style'] : '') . '">' . $options['refuse_text'] . '</a>' : '' )
-				. ($options['see_more'] === 'yes' ? '<a href="' . ($options['see_more_opt']['link_type'] === 'custom' ? $options['see_more_opt']['link'] : get_permalink( $options['see_more_opt']['id'] )) . '" target="' . $options['link_target'] . '" id="cn-more-info" class="' . $options['button_class'] . ($options['css_style'] !== 'none' ? ' ' . $options['css_style'] : '') . '">' . $options['see_more_opt']['text'] . '</a>' : '') . '
+				. ($options['see_more'] === 'yes' ? '<a href="' . $see_more_url . '" id="cn-more-info" class="' . $options['button_class'] . ($options['css_style'] !== 'none' ? ' ' . $options['css_style'] : '') . '">' . $options['see_more_opt']['text'] . '</a>' : '') . '
 				</div>
 			</div>';
 
