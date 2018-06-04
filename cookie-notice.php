@@ -250,15 +250,19 @@ class Cookie_Notice {
 		if ( $this->cookies_accepted() ) {
 			$scripts = html_entity_decode( trim( wp_kses( $content, $this->get_allowed_html() ) ) );
 
-			if ( ! empty( $scripts ) )
+			if ( ! empty($scripts) ) {
+				if ( preg_match_all( '/' . get_shortcode_regex() . '/', $content ) ) {
+					$scripts = do_shortcode( $scripts );
+				}
 				return $scripts;
+			}
 		}
 
 		return '';
 	}
 
 	/**
-	 * Register cookies accepted shortcode.
+	 * Register cookies revoke button shortcode.
 	 *
 	 * @param array $args
 	 * @param mixed $content
