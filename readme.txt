@@ -3,33 +3,39 @@ Contributors: dfactory
 Donate link: http://www.dfactory.eu/
 Tags: cookie, cookies, notice, notification, notify, cookie, cookie compliance, cookie law, eu cookie, privacy, privacy directive, consent, Bootstrap
 Requires at least: 3.3
-Tested up to: 4.7
-Stable tag: 1.2.37
+Tested up to: 4.9.6
+Stable tag: 1.2.43
 License: MIT License
 License URI: http://opensource.org/licenses/MIT
 
-Cookie Notice allows you to elegantly inform users that your site uses cookies and to comply with the EU cookie law regulations.
+Cookie Notice allows you to elegantly inform users that your site uses cookies and to comply with the EU cookie law GDPR regulations.
 
 == Description ==
 
-[Cookie Notice](http://www.dfactory.eu/plugins/cookie-notice/) allows you to elegantly inform users that your site uses cookies and to comply with the EU cookie law regulations.
+[Cookie Notice](http://www.dfactory.eu/plugins/cookie-notice/) allows you to elegantly inform users that your site uses cookies and to comply with the EU cookie law GDPR regulations.
 
 For more information, check out plugin page at [dFactory](http://www.dfactory.eu/) or plugin [support forum](http://www.dfactory.eu/support/forum/cookie-notice/).
 
 = Features include: =
 
-* Customize the cookie message
-* Redirect users to specified page for more cookie information
-* Set cookie expiry
-* Link to more info page
+* 100% GDPR compliant
+* Customizable the cookie message
+* Redirects users to specified page for more cookie information
+* Multiple cookie expiry options
+* Link to Privacy Policy page
+* WordPress Privacy Policy page synchronization
 * Option to accept cookies on scroll
 * Option to set on scroll offset
 * Option to refuse functional cookies
+* Option to revoke the user consent
+* Option to manually block scripts
+* Option to reload the page after cookies are accepted
 * Select the position of the cookie message box
 * Animate the message box after cookie is accepted
 * Select bottons style from None, WordPress and Bootstrap
 * Set the text and bar background colors
 * WPML and Polylang compatible
+* SEO friendly
 * .pot file for translations included
 
 = Usage: =
@@ -59,6 +65,34 @@ No questions yet.
 1. screenshot-1.png
 
 == Changelog ==
+
+= 1.2.43 =
+* New: Option to revoke the user consent
+* New: Script blocking extended to header and footer
+* New: Synchronization with WordPress 4.9.6 Privacy Policy page
+* New: Custom button class option
+* Tweak: Added 1 hour cookie expiry option
+
+= 1.2.42 =
+* New: Introducing [cookies_accepted][/cookies_accepted] shortcode
+* Fix: Infinite cookie expiry issue
+
+= 1.2.41 =
+* Fix: Infinite redirection loop with scroll enabled
+
+= 1.2.40 =
+* Fix: Div align center on some themes
+* Tweak: Extended list of allowed HTML tags in refuse code
+* Tweak: Minified CSS and JS
+
+= 1.2.39 =
+* New: Option to reload the page after cookies are accepted
+
+= 1.2.38 =
+* Tweak: Move frontend cookie js functions before the document ready call, thanks to [fgreinus](https://github.com/fgreinus)
+* Tweak: Adjust functional javascript code handling 
+* Fix: Chhromium infinity expiration date not valid
+* Fix: Remove deprecated screen_icon() function
 
 = 1.2.37 =
 * Tweak: Add aria landmark role="banner"
@@ -215,6 +249,7 @@ Initial release
 
 == Upgrade Notice ==
 
-= 1.2.37 =
-* Tweak: Add aria landmark role="banner"
-* Tweak: Extend cn_cookie_notice_args with button class
+= 1.2.43 =
+* New: Option to revoke the user consent
+* New: Script blocking extended to header and footer
+* New: Synchronization with WordPress 4.9.6 Privacy Policy page
