@@ -13,6 +13,10 @@
 .cookie-notice-container {
     padding: 10px;
     text-align: center;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .cn-top {
@@ -104,4 +108,12 @@
     -moz-transition: background-position 0.1s linear;
     -o-transition: background-position 0.1s linear;
     transition: background-position 0.1s linear;
+}
+
+@media all and (max-width: 900px) {
+    
+    .cookie-notice-container span {
+        display: block;
+    }
+    
 }
