@@ -4,9 +4,9 @@ msgstr ""
 "Project-Id-Version: Cookie Notice\n"
 "POT-Creation-Date: 2016-12-07 10:49+0100\n"
 "PO-Revision-Date: 2015-03-24 11:30+0100\n"
-"Last-Translator: Bartosz Arendt <info@dfactory.eu>\n"
+"Last-Translator: Ali Balouchi <info@dfactory.eu>\n"
 "Language-Team: dFactory <info@dfactory.eu>\n"
-"Language: en\n"
+"Language: persian\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -17,307 +17,307 @@ msgstr ""
 "X-Poedit-SearchPath-0: ..\n"
 
 #: ../cookie-notice.php:126
-msgid "Top"
+msgid "بالا"
 msgstr ""
 
 #: ../cookie-notice.php:127
-msgid "Bottom"
+msgid "پایین"
 msgstr ""
 
 #: ../cookie-notice.php:131 ../cookie-notice.php:162
-msgid "None"
+msgid "هیچی"
 msgstr ""
 
 #: ../cookie-notice.php:132
-msgid "WordPress"
+msgid "وردپرس"
 msgstr ""
 
 #: ../cookie-notice.php:133
-msgid "Bootstrap"
+msgid "بوت استرپ"
 msgstr ""
 
 #: ../cookie-notice.php:137
-msgid "Custom link"
+msgid "لینک دلخواه"
 msgstr ""
 
 #: ../cookie-notice.php:138
-msgid "Page link"
+msgid "لینک صفحه"
 msgstr ""
 
 #: ../cookie-notice.php:147
-msgid "Text color"
+msgid "رنگ متن ها"
 msgstr ""
 
 #: ../cookie-notice.php:148
-msgid "Bar color"
+msgid "رنگ نوار"
 msgstr ""
 
 #: ../cookie-notice.php:152
-msgid "1 day"
+msgid "یک روز"
 msgstr ""
 
 #: ../cookie-notice.php:153
-msgid "1 week"
+msgid "یک هفته"
 msgstr ""
 
 #: ../cookie-notice.php:154
-msgid "1 month"
+msgid "یک ماه"
 msgstr ""
 
 #: ../cookie-notice.php:155
-msgid "3 months"
+msgid "سه ماه"
 msgstr ""
 
 #: ../cookie-notice.php:156
-msgid "6 months"
+msgid "شش ماه"
 msgstr ""
 
 #: ../cookie-notice.php:157
-msgid "1 year"
+msgid "یک سال"
 msgstr ""
 
 #: ../cookie-notice.php:158
-msgid "infinity"
+msgid "بدون محدودیت"
 msgstr ""
 
 #: ../cookie-notice.php:163
-msgid "Fade"
+msgid "آرام ظاهر شدن"
 msgstr ""
 
 #: ../cookie-notice.php:164
-msgid "Slide"
+msgid "بیرون آمدن"
 msgstr ""
 
 #: ../cookie-notice.php:168
-msgid "Header"
+msgid "تیتر"
 msgstr ""
 
 #: ../cookie-notice.php:169
-msgid "Footer"
+msgid "پانویس"
 msgstr ""
 
 #: ../cookie-notice.php:175
-msgid "We use cookies to ensure that we give you the best experience on our website. If you continue to use this site we will assume that you are happy with it."
+msgid "استفاده از کوکی باعث می شود که بهترین تجربه را در این سایت داشته باشید اگر به استفاده از سایت ادامه دهید یعنی شما با استفاده از کوکی مشکلی ندارید."
 msgstr ""
 
 #: ../cookie-notice.php:176
-msgid "Ok"
+msgid "قبول"
 msgstr ""
 
 #: ../cookie-notice.php:177
-msgid "No"
+msgid "نه"
 msgstr ""
 
 #: ../cookie-notice.php:178
-msgid "Read more"
+msgid "اطلاعات بیشتر"
 msgstr ""
 
 #: ../cookie-notice.php:238 ../cookie-notice.php:250 ../cookie-notice.php:253
-msgid "Cookie Notice"
+msgid "توجه به کوکی"
 msgstr ""
 
 #: ../cookie-notice.php:255
-msgid "Need support?"
+msgid "کمک میخواهید؟"
 msgstr ""
 
 #: ../cookie-notice.php:256
-msgid "If you are having problems with this plugin, please talk about them in the"
+msgid "اگر در اسفاده از این افزونه مشکلی دارید لطفا در ...... به اشتراک بگذارید"
 msgstr ""
 
 #: ../cookie-notice.php:256
-msgid "Support forum"
+msgid "تبادل نظر برای کمک"
 msgstr ""
 
 #: ../cookie-notice.php:258
-msgid "Do you like this plugin?"
+msgid "آیا این افزونه را دوست دارید؟"
 msgstr ""
 
 #: ../cookie-notice.php:259
-msgid "Rate it 5"
+msgid "از پنج نمره امتیاز دهید"
 msgstr ""
 
 #: ../cookie-notice.php:259
-msgid "on WordPress.org"
+msgid "در سایت WordPress.org"
 msgstr ""
 
 #: ../cookie-notice.php:260
-msgid "Blog about it & link to the"
+msgid "در مورد این پست گذاشته و لینک آن را در ........ قرار دهید"
 msgstr ""
 
 #: ../cookie-notice.php:260
-msgid "plugin page"
+msgid "صفحه افزونه"
 msgstr ""
 
 #: ../cookie-notice.php:261
-msgid "Check out our other"
+msgid "محصولات دیگر ما را ببینید"
 msgstr ""
 
 #: ../cookie-notice.php:261
-msgid "WordPress plugins"
+msgid "افزونه های ورد پرس"
 msgstr ""
 
 #: ../cookie-notice.php:276
-msgid "Reset to defaults"
+msgid "بازگشت به حالت اولیه"
 msgstr ""
 
 #: ../cookie-notice.php:292
-msgid "Configuration"
+msgid "اطلاعات"
 msgstr ""
 
 #: ../cookie-notice.php:293
-msgid "Message"
+msgid "پیام"
 msgstr ""
 
 #: ../cookie-notice.php:294
-msgid "Button text"
+msgid "متن دکمه"
 msgstr ""
 
 #: ../cookie-notice.php:295
-msgid "More info link"
+msgid "لینک اطلاعات بیشتر"
 msgstr ""
 
 #: ../cookie-notice.php:296
-msgid "Link target"
+msgid "لینک مقصد"
 msgstr ""
 
 #: ../cookie-notice.php:297
-msgid "Refuse button"
+msgid "دکمه عدم تمایل"
 msgstr ""
 
 #: ../cookie-notice.php:298
-msgid "On scroll"
+msgid "وقتی که بر روی صفخه جا به جا شد"
 msgstr ""
 
 #: ../cookie-notice.php:299
-msgid "Cookie expiry"
+msgid "انقضای کوکی"
 msgstr ""
 
 #: ../cookie-notice.php:300
-msgid "Script placement"
+msgid "محل قرار گیری متن"
 msgstr ""
 
 #: ../cookie-notice.php:301
-msgid "Deactivation"
+msgid "غیر فعال"
 msgstr ""
 
 #: ../cookie-notice.php:304
-msgid "Design"
+msgid "طراحی"
 msgstr ""
 
 #: ../cookie-notice.php:305
-msgid "Position"
+msgid "محل قرار گیری"
 msgstr ""
 
 #: ../cookie-notice.php:306
-msgid "Animation"
+msgid "انیمیشن"
 msgstr ""
 
 #: ../cookie-notice.php:307
-msgid "Button style"
+msgid "ترکیب دکمه"
 msgstr ""
 
 #: ../cookie-notice.php:308
-msgid "Colors"
+msgid "رنگ ها"
 msgstr ""
 
 #: ../cookie-notice.php:322
-msgid "Enable if you want all plugin data to be deleted on deactivation."
+msgid "اگر میخواهید بعد از غیر فعال شدن افزونه همه اطلاعات پاک شود کلیک کنید"
 msgstr ""
 
 #: ../cookie-notice.php:332
-msgid "Enter the cookie notice message."
+msgid "پیام توجه به کوکی ها را بنویسید"
 msgstr ""
 
 #: ../cookie-notice.php:343
-msgid "The text of the option to accept the usage of the cookies and make the notification disappear."
+msgid "متنی که اگر استفاده از کوکی را قبول کرد ناپدید می شود ."
 msgstr ""
 
 #: ../cookie-notice.php:353
-msgid "Give to the user the possibility to refuse third party non functional cookies."
+msgid "امکان عدم قبول استفاده از کوکی های غیر کاربردیه سوم شخص ."
 msgstr ""
 
 #: ../cookie-notice.php:358
-msgid "The text of the option to refuse the usage of the cookies. To get the cookie notice status use <code>cn_cookies_accepted()</code> function."
+msgid "متن برای قبول نکردن استفاده از کوکی ها توسط کاربر. برای استفاده از توجه به کوکی از دستور<code>cn_cookies_accepted()</code> استفاده کنید"
 msgstr ""
 
 #: ../cookie-notice.php:363
-msgid "Enter non functional cookies Javascript code here (for e.g. Google Analitycs). It will be used after cookies are accepted."
+msgid "کدهای غیرقابل استفاده کوکی ها را در این محل وارد کنید (برای مثال آنالیزهای گوگل). که بعد از قبول استفاده از کوکی توسط کاربر فعال می شود ."
 msgstr ""
 
 #: ../cookie-notice.php:389
-msgid "Enable Read more link."
+msgid "فعال سازی لینک اطلاعات بیشتر"
 msgstr ""
 
 #: ../cookie-notice.php:390
 #, php-format
-msgid "Need a Cookie Policy? Generate one with <a href=\"%s\" target=\"_blank\" title=\"iubenda\">iubenda</a>"
+msgid "سیاست کوکی جدید میخواهید ؟با استفاده از این کد یکی درست کنید <a href=\"%s\" target=\"_blank\" title=\"iubenda\">iubenda</a>"
 msgstr ""
 
 #: ../cookie-notice.php:396
-msgid "The text of the more info button."
+msgid "متن دکمه اطلاعات بیشتر"
 msgstr ""
 
 #: ../cookie-notice.php:410
-msgid "Select where to redirect user for more information about cookies."
+msgid "برای انتقال کاربر در صورت کلیک کردن بر روی دکمه اطلاعات بیشتر سایت به کجا برود ؟"
 msgstr ""
 
 #: ../cookie-notice.php:413
-msgid "-- select page --"
+msgid "-- انتخاب صفحه --"
 msgstr ""
 
 #: ../cookie-notice.php:424
-msgid "Select from one of your site's pages"
+msgid "از صفحه های موجود در سایت خودتان استفاده کنید"
 msgstr ""
 
 #: ../cookie-notice.php:428
-msgid "Enter the full URL starting with http://"
+msgid "لینک کامل را که با http:// شروع می شود را وارد کنید "
 msgstr ""
 
 #: ../cookie-notice.php:448
-msgid "Select the link target for more info page."
+msgid "بر روی لینک زیر برای اطلاعات بیشتر کلیک کنید"
 msgstr ""
 
 #: ../cookie-notice.php:468
-msgid "The ammount of time that cookie should be stored for."
+msgid "زمانی که کوکی باید ذخیره شود ."
 msgstr ""
 
 #: ../cookie-notice.php:482
-msgid "Select where all the plugin scripts should be placed."
+msgid "محل قرار گیری متن های این افزونه را انتخاب کنید ."
 msgstr ""
 
 #: ../cookie-notice.php:500
-msgid "Select location for your cookie notice."
+msgid "محل توجه به کوکی را اتنخاب کنید"
 msgstr ""
 
 #: ../cookie-notice.php:519
-msgid "Cookie notice acceptance animation."
+msgid "انیمیشن برای وقتی که کاربر موافقت خود با استفاده از کوکی را اعلام کرد"
 msgstr ""
 
 #: ../cookie-notice.php:529
-msgid "Enable cookie notice acceptance when users scroll."
+msgid "فعال کردن موافقت کاربر با استفاده از کوکی وقتی که کاربر اسکرول میکند"
 msgstr ""
 
 #: ../cookie-notice.php:533
-msgid "Number of pixels user has to scroll to accept the usage of the cookies and make the notification disappear."
+msgid "چند پیکسل باید کاربر جا به جا شود تا موافقت خودش با استفاده از کوکی را اعلام کند و پیام ناپدید شود ."
 msgstr ""
 
 #: ../cookie-notice.php:553
-msgid "Choose buttons style."
+msgid "طراحی دکمه را انتخاب کنید"
 msgstr ""
 
 #: ../cookie-notice.php:657
-msgid "Settings restored to defaults."
+msgid "اطلاعات به حالت اولیه برگشت"
 msgstr ""
 
 #: ../cookie-notice.php:758
-msgid "Support"
+msgid "کمک"
 msgstr ""
 
 #: ../cookie-notice.php:777
-msgid "Settings"
+msgid "تنظیمات"
 msgstr ""
 
 #: ../cookie-notice.php:811
-msgid "Are you sure you want to reset these settings to defaults?"
+msgid "آیا از بازگشت تنظیمات به حالت اولیه اطمینان دارید‌ ؟"
 msgstr ""
 
