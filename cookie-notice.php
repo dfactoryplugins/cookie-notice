@@ -791,8 +791,10 @@ class Cookie_Notice {
 	 * Deactivate the plugin.
 	 */
 	public function deactivation() {
-		if ( $this->options['general']['deactivation_delete'] === 'yes' )
+		if ( $this->options['general']['deactivation_delete'] === 'yes' ) {
 			delete_option( 'cookie_notice_options' );
+			delete_option( 'cookie_notice_version' );
+		}
 	}
 
 	/**
