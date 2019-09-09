@@ -1,4 +1,11 @@
 (function ($) {
+    $.fn.isCrossOriginFrame = function () {
+        try {
+            return (!window.top.location.hostname);
+        } catch (e) {
+            return true;
+        }
+    }
 
     // set Cookie Notice
     $.fn.setCookieNotice = function (cookie_value) {
@@ -67,19 +74,21 @@
             $(window).on('scroll', cnHandleScroll);
         }
 
-        // display cookie notice
-        if (document.cookie.indexOf('cookie_notice_accepted') === -1) {
-            if (cnArgs.hideEffect === 'fade') {
-                cnDomNode.fadeIn(300);
-            } else if (cnArgs.hideEffect === 'slide') {
-                cnDomNode.slideDown(300);
+        // check if we're in an iframe
+        if (!($(this).isCrossOriginFrame() && cnArgs.onIframe == 'no')) {
+            // display cookie notice
+            if (document.cookie.indexOf('cookie_notice_accepted') === -1) {
+                if (cnArgs.hideEffect === 'fade') {
+                    cnDomNode.fadeIn(300);
+                } else if (cnArgs.hideEffect === 'slide') {
+                    cnDomNode.slideDown(300);
+                } else {
+                    cnDomNode.show();
+                }
+                $('body').addClass('cookies-not-accepted');
             } else {
-                cnDomNode.show();
+                cnDomNode.removeCookieNotice();
             }
-            $('body').addClass('cookies-not-accepted');
-        } else {
-            cnDomNode.removeCookieNotice();
         }
-
     })
 })(jQuery);

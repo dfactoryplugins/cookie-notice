@@ -31,6 +31,7 @@ For more information, check out plugin page at [dFactory](http://www.dfactory.eu
 * Set the text and bar background colors
 * WPML and Polylang compatible
 * .pot file for translations included
+* Option to disable the warning in iframes.
 
 = Usage: =
 
