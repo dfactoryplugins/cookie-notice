@@ -1,15 +1,15 @@
-=== Cookie Notice for GDPR ===
+=== Cookie Notice for GDPR & CCPA ===
 Contributors: dfactory
 Donate link: http://www.dfactory.eu/
-Tags: gdpr, cookie, cookies, notice, notification, notify, cookie, cookie compliance, cookie law, eu cookie, privacy, privacy directive, consent
+Tags: gdpr, ccpa, cookie, cookies, notice, notification, notify, cookie, cookie law, privacy, policy, consent, law
 Requires at least: 3.3
 Requires PHP: 5.2.4
-Tested up to: 5.3
-Stable tag: 1.2.48
+Tested up to: 5.3.1
+Stable tag: 1.2.49
 License: MIT License
 License URI: http://opensource.org/licenses/MIT
 
-Cookie Notice allows you to elegantly inform users that your site uses cookies and to comply with the EU cookie law GDPR regulations.
+Cookie Notice allows you to elegantly inform users that your site uses cookies and to comply with the EU GDPR cookie law and CCPA regulations.
 
 == Description ==
 
@@ -31,6 +31,7 @@ For more information, check out plugin page at [dFactory](http://www.dfactory.eu
 * Option to manually block scripts
 * Option to reload the page after cookies are accepted
 * Select the position of the cookie message box
+* Select the position of the privacy policy link
 * Animate the message box after cookie is accepted
 * Select bottons style from None, WordPress and Bootstrap
 * Set the text and bar background colors
@@ -65,6 +66,9 @@ No questions yet.
 1. screenshot-1.png
 
 == Changelog ==
+
+= 1.2.49 =
+* Tweak: Remove jQuery dependency
 
 = 1.2.48 =
 * Fix: HTML tags stripped from cookie message
@@ -271,6 +275,5 @@ Initial release
 
 == Upgrade Notice ==
 
-= 1.2.48 =
-* Fix: HTML tags stripped from cookie message
-* Fix: Link target not accepted in inline privacy link
+= 1.2.49 =
+* Tweak: Remove jQuery dependency
