@@ -1,8 +1,6 @@
 ( function( window, document, undefined ) {
 
 	var cookieNotice = new function () {
-		var _this = this;
-
 		// cookie status
 		this.cookiesAccepted = null;
 		// notice container
@@ -10,6 +8,8 @@
 
 		// set cookie value
 		this.setStatus = function ( cookieValue ) {
+			var _this = this;
+			
 			// remove listening to scroll event
 			if ( cnArgs.onScroll === 'yes' )
 				window.removeEventListener( 'scroll', this.handleScroll );
@@ -55,11 +55,11 @@
 				// show cookie notice after the revoke is hidden
 				this.noticeContainer.addEventListener( 'animationend', function handler() {
 					_this.showRevokeNotice();
-					this.removeEventListener( 'animationend', handler );
+					_this.noticeContainer.removeEventListener( 'animationend', handler );
 				} );
 				this.noticeContainer.addEventListener( 'webkitAnimationEnd', function handler() {
 					_this.showRevokeNotice();
-					this.removeEventListener( 'webkitAnimationEnd', handler );
+					_this.noticeContainer.removeEventListener( 'webkitAnimationEnd', handler );
 				} );
 			}
 
@@ -130,12 +130,12 @@
 			// detect animation
 			this.noticeContainer.addEventListener( 'animationend', function handler() {
 				_this.noticeContainer.classList.remove( 'cn-animated' );
-				this.removeEventListener( 'animationend', handler );
+				_this.noticeContainer.removeEventListener( 'animationend', handler );
 				// console.log( 'show end' );
 			} ); 
 			this.noticeContainer.addEventListener( 'webkitAnimationEnd', function handler() {
 				_this.noticeContainer.classList.remove( 'cn-animated' );
-				this.removeEventListener( 'webkitAnimationEnd', handler );
+				_this.noticeContainer.removeEventListener( 'webkitAnimationEnd', handler );
 				// console.log( 'show end' );
 			} ); 
 		};
@@ -165,12 +165,12 @@
 			this.noticeContainer.addEventListener( 'animationend', function handler() {
 				_this.noticeContainer.classList.remove( 'cn-animated' );
 				_this.noticeContainer.classList.add( 'cookie-notice-hidden' );
-				this.removeEventListener( 'animationend', handler );
+				_this.noticeContainer.removeEventListener( 'animationend', handler );
 			} ); 
 			this.noticeContainer.addEventListener( 'webkitAnimationEnd', function handler() {
 				_this.noticeContainer.classList.remove( 'cn-animated' );
 				_this.noticeContainer.classList.add( 'cookie-notice-hidden' );
-				this.removeEventListener( 'webkitAnimationEnd', handler );
+				_this.noticeContainer.removeEventListener( 'webkitAnimationEnd', handler );
 			} );
 		};
 
@@ -198,11 +198,11 @@
 			// detect animation
 			this.noticeContainer.addEventListener( 'animationend', function handler() {
 				_this.noticeContainer.classList.remove( 'cn-animated' );
-				this.removeEventListener( 'animationend', handler );
+				_this.noticeContainer.removeEventListener( 'animationend', handler );
 			} ); 
 			this.noticeContainer.addEventListener( 'webkitAnimationEnd', function handler() {
 				_this.noticeContainer.classList.remove( 'cn-animated' );
-				this.removeEventListener( 'webkitAnimationEnd', handler );
+				_this.noticeContainer.removeEventListener( 'webkitAnimationEnd', handler );
 			} );
 		};
 
@@ -231,12 +231,12 @@
 			this.noticeContainer.addEventListener( 'animationend', function handler() {
 				_this.noticeContainer.classList.remove( 'cn-animated' );
 				_this.noticeContainer.classList.add( 'cookie-revoke-hidden' );
-				this.removeEventListener( 'animationend', handler );
+				_this.noticeContainer.removeEventListener( 'animationend', handler );
 			} ); 
 			this.noticeContainer.addEventListener( 'webkitAnimationEnd', function handler() {
 				_this.noticeContainer.classList.remove( 'cn-animated' );
 				_this.noticeContainer.classList.add( 'cookie-revoke-hidden' );
-				this.removeEventListener( 'webkitAnimationEnd', handler );
+				_this.noticeContainer.removeEventListener( 'webkitAnimationEnd', handler );
 			} ); 
 		};
 
@@ -335,11 +335,11 @@
 						// show cookie notice after the revoke is hidden
 						_this.noticeContainer.addEventListener( 'animationend', function handler() {
 							_this.showCookieNotice();
-							this.removeEventListener( 'animationend', handler );
+							_this.noticeContainer.removeEventListener( 'animationend', handler );
 						} ); 
 						_this.noticeContainer.addEventListener( 'webkitAnimationEnd', function handler() {
 							_this.showCookieNotice();
-							this.removeEventListener( 'webkitAnimationEnd', handler );
+							_this.noticeContainer.removeEventListener( 'webkitAnimationEnd', handler );
 						} ); 
 					// show cookie notice
 					} else {
