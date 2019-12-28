@@ -297,7 +297,9 @@
 			if ( this.cookiesAccepted === null ) {
 				// handle on scroll
 				if ( cnArgs.onScroll === 'yes' )
-					window.addEventListener( 'scroll', this.handleScroll );
+					window.addEventListener( 'scroll', function ( e ) {
+						_this.handleScroll();
+					} );
 
 				this.setBodyClass( [ 'cookies-not-set' ] );
 
