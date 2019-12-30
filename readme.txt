@@ -69,6 +69,7 @@ No questions yet.
 
 = 1.2.49 =
 * Tweak: Remove jQuery dependency
+* Tweak: Improve the CSS and HTML structure
 
 = 1.2.48 =
 * Fix: HTML tags stripped from cookie message
