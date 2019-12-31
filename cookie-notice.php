@@ -59,6 +59,7 @@ class Cookie_Notice {
 			'hide_effect'			=> 'fade',
 			'on_scroll'				=> false,
 			'on_scroll_offset'		=> 100,
+			'on_click'				=> false,
 			'colors' => array(
 				'text'	=> '#fff',
 				'bar'	=> '#000'
@@ -642,6 +643,7 @@ class Cookie_Notice {
 		add_settings_field( 'cn_refuse_code', __( 'Script blocking', 'cookie-notice' ), array( $this, 'cn_refuse_code' ), 'cookie_notice_options', 'cookie_notice_configuration' );
 		add_settings_field( 'cn_redirection', __( 'Reloading', 'cookie-notice' ), array( $this, 'cn_redirection' ), 'cookie_notice_options', 'cookie_notice_configuration' );
 		add_settings_field( 'cn_on_scroll', __( 'On scroll', 'cookie-notice' ), array( $this, 'cn_on_scroll' ), 'cookie_notice_options', 'cookie_notice_configuration' );
+		add_settings_field( 'cn_on_click', __( 'On click', 'cookie-notice' ), array( $this, 'cn_on_click' ), 'cookie_notice_options', 'cookie_notice_configuration' );
 		add_settings_field( 'cn_time', __( 'Cookie expiry', 'cookie-notice' ), array( $this, 'cn_time' ), 'cookie_notice_options', 'cookie_notice_configuration' );
 		add_settings_field( 'cn_script_placement', __( 'Script placement', 'cookie-notice' ), array( $this, 'cn_script_placement' ), 'cookie_notice_options', 'cookie_notice_configuration' );
 		add_settings_field( 'cn_deactivation_delete', __( 'Deactivation', 'cookie-notice' ), array( $this, 'cn_deactivation_delete' ), 'cookie_notice_options', 'cookie_notice_configuration' );
@@ -957,6 +959,16 @@ class Cookie_Notice {
 			</div>
 		</fieldset>';
 	}
+	
+	/**
+	 * On click option.
+	 */
+	public function cn_on_click() {
+		echo '
+		<fieldset>
+			<label><input id="cn_on_click" type="checkbox" name="cookie_notice_options[on_click]" value="1" ' . checked( 'yes', $this->options['general']['on_click'], false ) . ' />' . __( 'Enable to accept the notice on any click on the page.', 'cookie-notice' ) . '</label>
+		</fieldset>';
+	}
 
 	/**
 	 * CSS style option.
@@ -1074,14 +1086,17 @@ class Cookie_Notice {
 			// hide effect
 			$input['hide_effect'] = sanitize_text_field( isset( $input['hide_effect'] ) && in_array( $input['hide_effect'], array_keys( $this->effects ) ) ? $input['hide_effect'] : $this->defaults['general']['hide_effect'] );
 			
+			// redirection
+			$input['redirection'] = isset( $input['redirection'] );
+			
 			// on scroll
 			$input['on_scroll'] = (bool) isset( $input['on_scroll'] ) ? 'yes' : 'no';
 
-			// on scroll
-			$input['redirection'] = isset( $input['redirection'] );
-
 			// on scroll offset
 			$input['on_scroll_offset'] = absint( isset( $input['on_scroll_offset'] ) && $input['on_scroll_offset'] !== '' ? $input['on_scroll_offset'] : $this->defaults['general']['on_scroll_offset'] );
+			
+			// on click
+			$input['on_click'] = (bool) isset( $input['on_click'] ) ? 'yes' : 'no';
 
 			// deactivation
 			$input['deactivation_delete'] = (bool) isset( $input['deactivation_delete'] ) ? 'yes' : 'no';
@@ -1194,8 +1209,9 @@ class Cookie_Notice {
 			. '<span id="cn-notice-text" class="cn-text-container">'. $options['message_text'] . '</span>'
 			. '<span id="cn-notice-buttons" class="cn-buttons-container"><a href="#" id="cn-accept-cookie" data-cookie-set="accept" class="cn-set-cookie ' . $options['button_class'] . ( $options['css_style'] !== 'none' ? ' ' . $options['css_style'] : '' ) . ( $options['css_class'] !== '' ? ' ' . $options['css_class'] : '' ) . '">' . $options['accept_text'] . '</a>'
 			. ( $options['refuse_opt'] === 'yes' ? '<a href="#" id="cn-refuse-cookie" data-cookie-set="refuse" class="cn-set-cookie ' . $options['button_class'] . ( $options['css_style'] !== 'none' ? ' ' . $options['css_style'] : '' ) . ( $options['css_class'] !== '' ? ' ' . $options['css_class'] : '' ) . '">' . $options['refuse_text'] . '</a>' : '' )
-			. ( $options['see_more'] === 'yes' && $options['link_position'] === 'banner' ? '<a href="' . ( $options['see_more_opt']['link_type'] === 'custom' ? $options['see_more_opt']['link'] : get_permalink( $options['see_more_opt']['id'] ) ) . '" target="' . $options['link_target'] . '" id="cn-more-info" class="cn-more-info ' . $options['button_class'] . ( $options['css_style'] !== 'none' ? ' ' . $options['css_style'] : '' ) . ( $options['css_class'] !== '' ? ' ' . $options['css_class'] : '' ) . '">' . $options['see_more_opt']['text'] . '</a>' : '' ) . '</span>
-			</div>
+			. ( $options['see_more'] === 'yes' && $options['link_position'] === 'banner' ? '<a href="' . ( $options['see_more_opt']['link_type'] === 'custom' ? $options['see_more_opt']['link'] : get_permalink( $options['see_more_opt']['id'] ) ) . '" target="' . $options['link_target'] . '" id="cn-more-info" class="cn-more-info ' . $options['button_class'] . ( $options['css_style'] !== 'none' ? ' ' . $options['css_style'] : '' ) . ( $options['css_class'] !== '' ? ' ' . $options['css_class'] : '' ) . '">' . $options['see_more_opt']['text'] . '</a>' : '' ) 
+			. '</span>' // '<a href="#" id="cn-close-notice" data-cookie-set="accept" class="cn-close-icon"></a>
+			. '</div>
 			' . ( $options['refuse_opt'] === 'yes' && $options['revoke_cookies'] == true ? 
 			'<div class="cookie-revoke-container" style="color: ' . $options['colors']['text'] . ';">'
 			. ( ! empty( $options['revoke_message_text'] ) ? '<span id="cn-revoke-text" class="cn-text-container">'. $options['revoke_message_text'] . '</span>' : '' )
@@ -1378,6 +1394,7 @@ class Cookie_Notice {
 				'hideEffect'			=> $this->options['general']['hide_effect'],
 				'onScroll'				=> $this->options['general']['on_scroll'],
 				'onScrollOffset'		=> $this->options['general']['on_scroll_offset'],
+				'onClick'				=> $this->options['general']['on_click'],
 				'cookieName'			=> 'cookie_notice_accepted',
 				'cookieValue'			=> 'true',
 				'cookieTime'			=> $this->times[$this->options['general']['time']][1],

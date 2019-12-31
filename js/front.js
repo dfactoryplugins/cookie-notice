@@ -264,6 +264,35 @@
 				// console.log( 'scrolling' );
 			}
 		};
+		
+		// cross browser compatible closest function
+		this.getClosest = function ( elem, selector ) {
+
+			// element.matches() polyfill
+			if ( ! Element.prototype.matches ) {
+				Element.prototype.matches =
+					Element.prototype.matchesSelector ||
+					Element.prototype.mozMatchesSelector ||
+					Element.prototype.msMatchesSelector ||
+					Element.prototype.oMatchesSelector ||
+					Element.prototype.webkitMatchesSelector ||
+					function ( s ) {
+						var matches = ( this.document || this.ownerDocument ).querySelectorAll( s ),
+							i = matches.length;
+						while ( --i >= 0 && matches.item( i ) !== this ) {
+						}
+						return i > -1;
+					};
+			}
+
+			// get the closest matching element
+			for ( ; elem && elem !== document; elem = elem.parentNode ) {
+				if ( elem.matches( selector ) )
+					return elem;
+			}
+			return null;
+
+		};
 
 		// initialize
 		this.init = function () {
@@ -300,6 +329,20 @@
 					window.addEventListener( 'scroll', function ( e ) {
 						_this.handleScroll();
 					} );
+				
+				// handle on click
+				if ( cnArgs.onClick === 'yes' )
+					window.addEventListener( 'click', function ( e ) {
+						// e.preventDefault();
+							
+						var outerContainer = _this.getClosest( e.target, '#cookie-notice' );
+						
+						// accept notice if clicked element is not inside the container
+						if ( outerContainer === null ) {
+							_this.setStatus( 'accept' );
+						}
+
+					}, true );
 
 				this.setBodyClass( [ 'cookies-not-set' ] );
 
