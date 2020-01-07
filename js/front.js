@@ -113,9 +113,7 @@
 						time: date,
 						expires: laterDate,
 						data: cnArgs
-					},
-					bubbles: true,
-					cancelable: true
+					}
 				}
 			);
 
@@ -155,11 +153,6 @@
 				}
 
 				return;
-			} else {
-				// show revoke notice if enabled
-				if ( cnArgs.revoke_cookies == 1 && cnArgs.revoke_cookies_opt === 'automatic' ) {
-					// cnShowRevokeNotice();
-				}
 			}
 		};
 
@@ -189,9 +182,7 @@
 				{
 					detail: {
 						data: cnArgs,
-					},
-					bubbles: true,
-					cancelable: true
+					}
 				}
 			);
 
@@ -224,15 +215,14 @@
 				{
 					detail: {
 						data: cnArgs,
-					},
-					bubbles: true,
-					cancelable: true
+					}
 				}
 			);
 
 			document.dispatchEvent( event );
 			
-			// console.log( 'hide' );
+			console.log( event );
+			console.log( 'hide' );
 
 			this.noticeContainer.classList.add( 'cn-animated' );
 			this.noticeContainer.classList.remove( 'cookie-notice-visible' );
@@ -260,9 +250,7 @@
 				{
 					detail: {
 						data: cnArgs,
-					},
-					bubbles: true,
-					cancelable: true
+					}
 				}
 			);
 
@@ -295,9 +283,7 @@
 				{
 					detail: {
 						data: cnArgs,
-					},
-					bubbles: true,
-					cancelable: true
+					}
 				}
 			);
 
@@ -446,6 +432,8 @@
 			for ( var i = 0; i < cookieButtons.length; i++ ) {
 				cookieButtons[i].addEventListener( 'click', function ( e ) {
 					e.preventDefault();
+					// Chrome double click event fix
+					e.stopPropagation();
 
 					_this.setStatus( this.dataset.cookieSet );
 				} );
@@ -479,8 +467,8 @@
 	}
 
 	// initialie plugin
-	window.onload = function() {
+	window.addEventListener( 'load', function () {
 		cookieNotice.init();
-	};
+	}, false );
 
 } )( window, document, undefined );
