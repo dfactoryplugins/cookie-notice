@@ -434,7 +434,7 @@
 				// show cookie notice
 				this.showCookieNotice();
 			} else {
-				this.setBodyClass( [ 'cookies-set', this.cookiesAccepted === 'true' ? 'cookies-accepted' : 'cookies-refused' ] );
+				this.setBodyClass( [ 'cookies-set', this.cookiesAccepted === true ? 'cookies-accepted' : 'cookies-refused' ] );
 
 				// show revoke notice if enabled
 				if ( cnArgs.revoke_cookies == 1 && cnArgs.revoke_cookies_opt === 'automatic' ) {
