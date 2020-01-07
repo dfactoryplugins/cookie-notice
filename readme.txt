@@ -5,15 +5,15 @@ Tags: gdpr, ccpa, cookie, cookies, notice, notification, notify, cookie, cookie 
 Requires at least: 3.3
 Requires PHP: 5.2.4
 Tested up to: 5.3.2
-Stable tag: 1.2.49
+Stable tag: 1.2.50
 License: MIT License
 License URI: http://opensource.org/licenses/MIT
 
-Cookie Notice allows you to elegantly inform users that your site uses cookies and to comply with the EU GDPR cookie law and CCPA regulations.
+Cookie Notice allows you to you elegantly inform users that your site uses cookies and helps you comply with the EU GDPR cookie law and CCPA regulations.
 
 == Description ==
 
-[Cookie Notice](http://www.dfactory.eu/plugins/cookie-notice/) allows you to elegantly inform users that your site uses cookies and to comply with the EU GDPR cookie law and CCPA regulations.
+[Cookie Notice](http://www.dfactory.eu/plugins/cookie-notice/) allows you to elegantly inform users that your site uses cookies and helps you comply with the EU GDPR cookie law and CCPA regulations.
 
 For more information, check out plugin page at [dFactory](http://www.dfactory.eu/) or plugin [support forum](http://www.dfactory.eu/support/forum/cookie-notice/).
 
@@ -67,6 +67,11 @@ No questions yet.
 1. screenshot-1.png
 
 == Changelog ==
+
+= 1.2.50 =
+* Fix: The body css class always set to "cookies-refused"
+* Tweak: Improve IE & Safari CustomEvent and ClassList support
+* Tweak: Change the plugin js init event
 
 = 1.2.49 =
 * New: Option to accept the notice with any page click
@@ -279,5 +284,5 @@ Initial release
 
 == Upgrade Notice ==
 
-= 1.2.49 =
-* New: Option to accept the notice with any page click
+= 1.2.50 =
+* Fix: The body css class always set to "cookies-refused"

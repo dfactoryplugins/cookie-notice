@@ -220,9 +220,8 @@
 			);
 
 			document.dispatchEvent( event );
-			
-			console.log( event );
-			console.log( 'hide' );
+
+			// console.log( 'hide' );
 
 			this.noticeContainer.classList.add( 'cn-animated' );
 			this.noticeContainer.classList.remove( 'cookie-notice-visible' );

@@ -1,8 +1,8 @@
 <?php
 /*
 Plugin Name: Cookie Notice
-Description: Cookie Notice allows you to elegantly inform users that your site uses cookies and to comply with the EU GDPR cookie law and CCPA regulations.
-Version: 1.2.49
+Description: Cookie Notice allows you to elegantly inform users that your site uses cookies and helps you comply with the EU GDPR cookie law and CCPA regulations.
+Version: 1.2.50
 Author: dFactory
 Author URI: http://www.dfactory.eu/
 Plugin URI: http://www.dfactory.eu/plugins/cookie-notice/
@@ -29,7 +29,7 @@ if ( ! defined( 'ABSPATH' ) )
  * Cookie Notice class.
  *
  * @class Cookie_Notice
- * @version	1.2.49
+ * @version	1.2.50
  */
 class Cookie_Notice {
 
@@ -78,7 +78,7 @@ class Cookie_Notice {
 			'update_notice'			=> true,
 			'update_delay_date'		=> 0
 		),
-		'version'	=> '1.2.49'
+		'version'	=> '1.2.50'
 	);
 	private $positions = array();
 	private $styles = array();
