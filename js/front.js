@@ -159,7 +159,7 @@
 		// get cookie value
 		this.getStatus = function ( bool ) {
 			var value = "; " + document.cookie,
-				parts = value.split( '; cookie_notice_accepted=' );
+				parts = value.split( '; '+ cnArgs.cookieName + '=' );
 
 			if ( parts.length === 2 ) {
 				var val = parts.pop().split( ';' ).shift();

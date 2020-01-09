@@ -73,6 +73,7 @@ class Cookie_Notice {
 			),
 			'script_placement'		=> 'header',
 			'translate'				=> true,
+			'cookie_name'			=> 'cookie_notice_accepted',
 			'deactivation_delete'	=> 'no',
 			'update_version'		=> 1,
 			'update_notice'			=> true,
@@ -646,6 +647,7 @@ class Cookie_Notice {
 		add_settings_field( 'cn_on_click', __( 'On click', 'cookie-notice' ), array( $this, 'cn_on_click' ), 'cookie_notice_options', 'cookie_notice_configuration' );
 		add_settings_field( 'cn_time', __( 'Cookie expiry', 'cookie-notice' ), array( $this, 'cn_time' ), 'cookie_notice_options', 'cookie_notice_configuration' );
 		add_settings_field( 'cn_script_placement', __( 'Script placement', 'cookie-notice' ), array( $this, 'cn_script_placement' ), 'cookie_notice_options', 'cookie_notice_configuration' );
+		add_settings_field( 'cn_cookie_name', __( 'Cookie name', 'cookie-notice' ), array( $this, 'cn_cookie_name' ), 'cookie_notice_options', 'cookie_notice_configuration' );
 		add_settings_field( 'cn_deactivation_delete', __( 'Deactivation', 'cookie-notice' ), array( $this, 'cn_deactivation_delete' ), 'cookie_notice_options', 'cookie_notice_configuration' );
 
 		// design
@@ -662,6 +664,19 @@ class Cookie_Notice {
 	 */
 	public function cn_section_configuration() {}
 	public function cn_section_design() {}
+
+	/**
+	 * Change name of cookie notice acceptance cookie
+	 */
+	public function cn_cookie_name() {
+		echo '
+		<fieldset>
+			<div id="cn_cookie_name">
+				<input type="text" class="regular-text" name="cookie_notice_options[cookie_name]" value="' . esc_attr( $this->options['general']['cookie_name'] ) . '" />
+				<p class="description">' . __( 'Change the name of the cookie used for storing cookie notice acceptance status.', 'cookie-notice' ) . '</p>
+			</div>
+		</fieldset>';
+	}
 
 	/**
 	 * Delete plugin data on deactivation.
@@ -1098,6 +1113,9 @@ class Cookie_Notice {
 			// on click
 			$input['on_click'] = (bool) isset( $input['on_click'] ) ? 'yes' : 'no';
 
+			// cookie name
+			$input['cookie_name'] = sanitize_text_field( isset( $input['cookie_name'] ) ? $input['cookie_name'] : $this->defaults['general']['cookie_name'] );
+
 			// deactivation
 			$input['deactivation_delete'] = (bool) isset( $input['deactivation_delete'] ) ? 'yes' : 'no';
 
@@ -1191,6 +1209,7 @@ class Cookie_Notice {
 			'see_more_opt'			=> $this->options['general']['see_more_opt'],
 			'link_target'			=> $this->options['general']['link_target'],
 			'link_position'			=> $this->options['general']['link_position'],
+			'cookie_name'			=> $this->options['general']['cookie_name'],
 			'aria_label'			=> __( 'Cookie Notice', 'cookie-notice' )
 		) );
 
@@ -1229,7 +1248,8 @@ class Cookie_Notice {
 	 * @return bool
 	 */
 	public static function cookies_accepted() {
-		return apply_filters( 'cn_is_cookie_accepted', isset( $_COOKIE['cookie_notice_accepted'] ) && $_COOKIE['cookie_notice_accepted'] === 'true' );
+		$cookie_name =  get_option('general')['cookie_name'];
+		return apply_filters( 'cn_is_cookie_accepted', isset( $_COOKIE[$cookie_name] ) && $_COOKIE[$cookie_name] === 'true' );
 	}
 
 	/**
@@ -1238,7 +1258,7 @@ class Cookie_Notice {
 	 * @return boolean Whether cookies are set
 	 */
 	public function cookies_set() {
-		return apply_filters( 'cn_is_cookie_set', isset( $_COOKIE['cookie_notice_accepted'] ) );
+		return apply_filters( 'cn_is_cookie_set', isset( $_COOKIE[ get_option('general')['cookie_name'] ] ) );
 	}
 	
 	/**
@@ -1395,7 +1415,7 @@ class Cookie_Notice {
 				'onScroll'				=> $this->options['general']['on_scroll'],
 				'onScrollOffset'		=> $this->options['general']['on_scroll_offset'],
 				'onClick'				=> $this->options['general']['on_click'],
-				'cookieName'			=> 'cookie_notice_accepted',
+				'cookieName'			=> $this->options['general']['cookie_name'],
 				'cookieValue'			=> 'true',
 				'cookieTime'			=> $this->times[$this->options['general']['time']][1],
 				'cookiePath'			=> ( defined( 'COOKIEPATH' ) ? (string) COOKIEPATH : '' ),
