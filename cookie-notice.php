@@ -1395,7 +1395,7 @@ class Cookie_Notice {
 				'onScroll'				=> $this->options['general']['on_scroll'],
 				'onScrollOffset'		=> $this->options['general']['on_scroll_offset'],
 				'onClick'				=> $this->options['general']['on_click'],
-				'cookieName'			=> 'cookie_notice_accepted',
+				'cookieName'			=> apply_filters( 'cn_cookie_name', 'cookie_notice_accepted' ),
 				'cookieValue'			=> 'true',
 				'cookieTime'			=> $this->times[$this->options['general']['time']][1],
 				'cookiePath'			=> ( defined( 'COOKIEPATH' ) ? (string) COOKIEPATH : '' ),
