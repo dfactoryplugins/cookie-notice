@@ -56,6 +56,7 @@ class Cookie_Notice {
 			'link_target'			=> '_blank',
 			'link_position'			=> 'banner',
 			'time'					=> 'month',
+			'time_rejected' => 'month',
 			'hide_effect'			=> 'fade',
 			'on_scroll'				=> false,
 			'on_scroll_offset'		=> 100,
@@ -645,6 +646,7 @@ class Cookie_Notice {
 		add_settings_field( 'cn_on_scroll', __( 'On scroll', 'cookie-notice' ), array( $this, 'cn_on_scroll' ), 'cookie_notice_options', 'cookie_notice_configuration' );
 		add_settings_field( 'cn_on_click', __( 'On click', 'cookie-notice' ), array( $this, 'cn_on_click' ), 'cookie_notice_options', 'cookie_notice_configuration' );
 		add_settings_field( 'cn_time', __( 'Cookie expiry', 'cookie-notice' ), array( $this, 'cn_time' ), 'cookie_notice_options', 'cookie_notice_configuration' );
+		add_settings_field( 'cn_time_rejected', __( 'Cookie expiry', 'cookie-notice' ), array( $this, 'cn_time_rejected' ), 'cookie_notice_options', 'cookie_notice_configuration' );
 		add_settings_field( 'cn_script_placement', __( 'Script placement', 'cookie-notice' ), array( $this, 'cn_script_placement' ), 'cookie_notice_options', 'cookie_notice_configuration' );
 		add_settings_field( 'cn_deactivation_delete', __( 'Deactivation', 'cookie-notice' ), array( $this, 'cn_deactivation_delete' ), 'cookie_notice_options', 'cookie_notice_configuration' );
 
@@ -888,6 +890,29 @@ class Cookie_Notice {
 	}
 
 	/**
+	 * Expiration time option.
+	 */
+	public function cn_time_rejected() {
+		echo '
+		<fieldset>
+			<div id="cn_time_rejected">
+				<select name="cookie_notice_options[time_rejected]">';
+
+		foreach ( $this->times as $time => $arr ) {
+			$time = esc_attr( $time );
+
+			echo '
+					<option value="' . $time . '" ' . selected( $time, $this->options['general']['time_rejected'] ) . '>' . esc_html( $arr[0] ) . '</option>';
+		}
+
+		echo '
+				</select>
+				<p class="description">' . __( 'The amount of time that the cookie should be stored for when the user doesn\'t accept other cookies.', 'cookie-notice' ) . '</p>
+			</div>
+		</fieldset>';
+	}
+
+	/**
 	 * Script placement option.
 	 */
 	public function cn_script_placement() {
@@ -1079,6 +1104,7 @@ class Cookie_Notice {
 
 			// time
 			$input['time'] = sanitize_text_field( isset( $input['time'] ) && in_array( $input['time'], array_keys( $this->times ) ) ? $input['time'] : $this->defaults['general']['time'] );
+			$input['time_rejected'] = sanitize_text_field( isset( $input['time_rejected'] ) && in_array( $input['time_rejected'], array_keys( $this->times ) ) ? $input['time_rejected'] : $this->defaults['general']['time_rejected'] );
 
 			// script placement
 			$input['script_placement'] = sanitize_text_field( isset( $input['script_placement'] ) && in_array( $input['script_placement'], array_keys( $this->script_placements ) ) ? $input['script_placement'] : $this->defaults['general']['script_placement'] );
@@ -1398,6 +1424,7 @@ class Cookie_Notice {
 				'cookieName'			=> 'cookie_notice_accepted',
 				'cookieValue'			=> 'true',
 				'cookieTime'			=> $this->times[$this->options['general']['time']][1],
+				'cookieTimeRejected' => $this->times[$this->options['general']['time_rejected']][1],
 				'cookiePath'			=> ( defined( 'COOKIEPATH' ) ? (string) COOKIEPATH : '' ),
 				'cookieDomain'			=> ( defined( 'COOKIE_DOMAIN' ) ? (string) COOKIE_DOMAIN : '' ),
 				'redirection'			=> $this->options['general']['redirection'],

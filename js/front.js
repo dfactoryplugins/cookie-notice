@@ -92,11 +92,14 @@
 			var date = new Date(),
 				laterDate = new Date();
 
-			// set expiry time in seconds
-			laterDate.setTime( parseInt( date.getTime() ) + parseInt( cnArgs.cookieTime ) * 1000 );
-
-			// set cookie type
-			cookieValue = cookieValue === 'accept' ? 'true' : 'false';
+			// set cookie type and expiry time in seconds
+			if (cookieValue === 'accept') {
+				cookieValue = 'true';
+				laterDate.setTime( parseInt( date.getTime() ) + parseInt( cnArgs.cookieTime ) * 1000 );
+			} else {
+				cookieValue = 'false';
+				laterDate.setTime( parseInt( date.getTime() ) + parseInt( cnArgs.cookieTimeRejected ) * 1000 );
+			}
 
 			// set cookie
 			document.cookie = cnArgs.cookieName + '=' + cookieValue + ';expires=' + laterDate.toUTCString() + ';' + ( cnArgs.cookieDomain !== '' ? 'domain=' + cnArgs.cookieDomain + ';' : '' ) + ( cnArgs.cookiePath !== '' ? 'path=' + cnArgs.cookiePath + ';' : '' ) + ( cnArgs.secure === '1' ? 'secure;' : '' );
