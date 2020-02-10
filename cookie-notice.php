@@ -1402,6 +1402,9 @@ class Cookie_Notice {
 	 */
 	public function wp_enqueue_scripts() {
 		
+		if ( $this->is_cookie_policy_page() )
+			return;
+		
 		wp_enqueue_script(
 			'cookie-notice-front', plugins_url( 'js/front' . ( ! ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '.min' : '' ) . '.js', __FILE__ ), array(), $this->defaults['version'], isset( $this->options['general']['script_placement'] ) && $this->options['general']['script_placement'] === 'footer' ? true : false
 		);
@@ -1466,6 +1469,24 @@ class Cookie_Notice {
 			if ( ! empty( $scripts ) )
 				echo $scripts;
 		}
+	}
+	
+	/**
+	 * Indicate if current page is the Cookie Policy page
+	 *
+	 * @return bool
+	 */
+	public function is_cookie_policy_page() {
+		$see_more = $this->options['general']['see_more_opt'];
+		if ( $see_more['link_type'] !== 'page' )
+			return false;
+
+		$cp_id = $see_more['id'];
+		$cp_slug = get_post_field( 'post_name', $cp_id );
+
+		$current_page = sanitize_post( $GLOBALS['wp_the_query']->get_queried_object() );
+
+		return $current_page->post_name === $cp_slug;
 	}
 }
 
