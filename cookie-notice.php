@@ -1375,16 +1375,7 @@ class Cookie_Notice {
 	 * Load scripts and styles - frontend.
 	 */
 	public function wp_enqueue_scripts() {
-		
-		wp_enqueue_script(
-			'cookie-notice-front', plugins_url( 'js/front' . ( ! ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '.min' : '' ) . '.js', __FILE__ ), array(), $this->defaults['version'], isset( $this->options['general']['script_placement'] ) && $this->options['general']['script_placement'] === 'footer' ? true : false
-		);
-		
-		/*
-		wp_enqueue_script(
-			'cookie-notice-front', plugins_url( 'js/front.js', __FILE__ ), array(), $this->defaults['version'], isset( $this->options['general']['script_placement'] ) && $this->options['general']['script_placement'] === 'footer' ? true : false
-		);
-		*/
+		wp_enqueue_script( 'cookie-notice-front', plugins_url( 'js/front' . ( ! ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '.min' : '' ) . '.js', __FILE__ ), array(), $this->defaults['version'], isset( $this->options['general']['script_placement'] ) && $this->options['general']['script_placement'] === 'footer' );
 
 		wp_localize_script(
 			'cookie-notice-front',
@@ -1396,7 +1387,6 @@ class Cookie_Notice {
 				'onScrollOffset'		=> $this->options['general']['on_scroll_offset'],
 				'onClick'				=> $this->options['general']['on_click'],
 				'cookieName'			=> 'cookie_notice_accepted',
-				'cookieValue'			=> 'true',
 				'cookieTime'			=> $this->times[$this->options['general']['time']][1],
 				'cookiePath'			=> ( defined( 'COOKIEPATH' ) ? (string) COOKIEPATH : '' ),
 				'cookieDomain'			=> ( defined( 'COOKIE_DOMAIN' ) ? (string) COOKIE_DOMAIN : '' ),
@@ -1410,7 +1400,6 @@ class Cookie_Notice {
 		);
 
 		wp_enqueue_style( 'cookie-notice-front', plugins_url( 'css/front' . ( ! ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '.min' : '' ) . '.css', __FILE__ ) );
-		// wp_enqueue_style( 'cookie-notice-front', plugins_url( 'css/front.css', __FILE__ ) );
 	}
 
 	/**
@@ -1449,9 +1438,8 @@ function Cookie_Notice() {
 	static $instance;
 
 	// first call to instance() initializes the plugin
-	if ( $instance === null || ! ($instance instanceof Cookie_Notice) ) {
+	if ( $instance === null || ! ($instance instanceof Cookie_Notice) )
 		$instance = Cookie_Notice::instance();
-	}
 
 	return $instance;
 }

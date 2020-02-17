@@ -13,15 +13,15 @@
 }
 
 #cookie-notice.cn-animated {
-	-webkit-animation-duration: 0.5s;
-	animation-duration: 0.5s;
+	-webkit-animation-duration: 0.5s !important;
+	animation-duration: 0.5s !important;
 	-webkit-animation-fill-mode: both;
 	animation-fill-mode: both;
 }
 
 #cookie-notice.cn-animated.cn-effect-none {
-	-webkit-animation-duration: 0s;
-	animation-duration: 0s;
+	-webkit-animation-duration: 0.001s !important;
+	animation-duration: 0.001s !important;
 }
 
 #cookie-notice .cookie-notice-container {
