@@ -97,7 +97,7 @@
 				laterDate = new Date();
 
 			// set cookie type and expiry time in seconds
-			if (cookieValue === 'accept') {
+			if ( cookieValue === 'accept' ) {
 				cookieValue = 'true';
 				laterDate.setTime( parseInt( date.getTime() ) + parseInt( cnArgs.cookieTime ) * 1000 );
 			} else {

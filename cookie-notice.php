@@ -56,7 +56,7 @@ class Cookie_Notice {
 			'link_target'			=> '_blank',
 			'link_position'			=> 'banner',
 			'time'					=> 'month',
-			'time_rejected' => 'month',
+			'time_rejected'			=> 'month',
 			'hide_effect'			=> 'fade',
 			'on_scroll'				=> false,
 			'on_scroll_offset'		=> 100,
@@ -1414,7 +1414,7 @@ class Cookie_Notice {
 				'onClick'				=> $this->options['general']['on_click'],
 				'cookieName'			=> 'cookie_notice_accepted',
 				'cookieTime'			=> $this->times[$this->options['general']['time']][1],
-				'cookieTimeRejected' => $this->times[$this->options['general']['time_rejected']][1],
+				'cookieTimeRejected'	=> $this->times[$this->options['general']['time_rejected']][1],
 				'cookiePath'			=> ( defined( 'COOKIEPATH' ) ? (string) COOKIEPATH : '' ),
 				'cookieDomain'			=> ( defined( 'COOKIE_DOMAIN' ) ? (string) COOKIE_DOMAIN : '' ),
 				'redirection'			=> $this->options['general']['redirection'],
@@ -1456,23 +1456,21 @@ class Cookie_Notice {
 				echo $scripts;
 		}
 	}
-	
+
 	/**
-	 * Indicate if current page is the Cookie Policy page
+	 * Indicate if current page is the Cookie Policy page.
 	 *
 	 * @return bool
 	 */
 	public function is_cookie_policy_page() {
 		$see_more = $this->options['general']['see_more_opt'];
+
 		if ( $see_more['link_type'] !== 'page' )
 			return false;
 
-		$cp_id = $see_more['id'];
-		$cp_slug = get_post_field( 'post_name', $cp_id );
-
 		$current_page = sanitize_post( $GLOBALS['wp_the_query']->get_queried_object() );
 
-		return $current_page->post_name === $cp_slug;
+		return $current_page->post_name === get_post_field( 'post_name', $see_more['id'] );
 	}
 }
 
