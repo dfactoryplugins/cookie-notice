@@ -2,7 +2,7 @@
 /*
 Plugin Name: Cookie Notice
 Description: Cookie Notice allows you to elegantly inform users that your site uses cookies and helps you comply with the EU GDPR cookie law and CCPA regulations.
-Version: 1.2.50
+Version: 1.2.51
 Author: dFactory
 Author URI: http://www.dfactory.eu/
 Plugin URI: http://www.dfactory.eu/plugins/cookie-notice/
@@ -29,7 +29,7 @@ if ( ! defined( 'ABSPATH' ) )
  * Cookie Notice class.
  *
  * @class Cookie_Notice
- * @version	1.2.50
+ * @version	1.2.51
  */
 class Cookie_Notice {
 
@@ -56,7 +56,7 @@ class Cookie_Notice {
 			'link_target'			=> '_blank',
 			'link_position'			=> 'banner',
 			'time'					=> 'month',
-			'time_rejected' => 'month',
+			'time_rejected'			=> 'month',
 			'hide_effect'			=> 'fade',
 			'on_scroll'				=> false,
 			'on_scroll_offset'		=> 100,
@@ -79,7 +79,7 @@ class Cookie_Notice {
 			'update_notice'			=> true,
 			'update_delay_date'		=> 0
 		),
-		'version'	=> '1.2.50'
+		'version'	=> '1.2.51'
 	);
 	private $positions = array();
 	private $styles = array();
@@ -645,8 +645,8 @@ class Cookie_Notice {
 		add_settings_field( 'cn_redirection', __( 'Reloading', 'cookie-notice' ), array( $this, 'cn_redirection' ), 'cookie_notice_options', 'cookie_notice_configuration' );
 		add_settings_field( 'cn_on_scroll', __( 'On scroll', 'cookie-notice' ), array( $this, 'cn_on_scroll' ), 'cookie_notice_options', 'cookie_notice_configuration' );
 		add_settings_field( 'cn_on_click', __( 'On click', 'cookie-notice' ), array( $this, 'cn_on_click' ), 'cookie_notice_options', 'cookie_notice_configuration' );
-		add_settings_field( 'cn_time', __( 'Cookie expiry', 'cookie-notice' ), array( $this, 'cn_time' ), 'cookie_notice_options', 'cookie_notice_configuration' );
-		add_settings_field( 'cn_time_rejected', __( 'Cookie expiry', 'cookie-notice' ), array( $this, 'cn_time_rejected' ), 'cookie_notice_options', 'cookie_notice_configuration' );
+		add_settings_field( 'cn_time', __( 'Accepted expiry', 'cookie-notice' ), array( $this, 'cn_time' ), 'cookie_notice_options', 'cookie_notice_configuration' );
+		add_settings_field( 'cn_time_rejected', __( 'Rejected expiry', 'cookie-notice' ), array( $this, 'cn_time_rejected' ), 'cookie_notice_options', 'cookie_notice_configuration' );
 		add_settings_field( 'cn_script_placement', __( 'Script placement', 'cookie-notice' ), array( $this, 'cn_script_placement' ), 'cookie_notice_options', 'cookie_notice_configuration' );
 		add_settings_field( 'cn_deactivation_delete', __( 'Deactivation', 'cookie-notice' ), array( $this, 'cn_deactivation_delete' ), 'cookie_notice_options', 'cookie_notice_configuration' );
 
@@ -884,7 +884,7 @@ class Cookie_Notice {
 
 		echo '
 				</select>
-				<p class="description">' . __( 'The amount of time that the cookie should be stored for.', 'cookie-notice' ) . '</p>
+				<p class="description">' . __( 'The amount of time that the cookie should be stored for when user accepts the notice.', 'cookie-notice' ) . '</p>
 			</div>
 		</fieldset>';
 	}
@@ -907,7 +907,7 @@ class Cookie_Notice {
 
 		echo '
 				</select>
-				<p class="description">' . __( 'The amount of time that the cookie should be stored for when the user doesn\'t accept other cookies.', 'cookie-notice' ) . '</p>
+				<p class="description">' . __( 'The amount of time that the cookie should be stored for when the user doesn\'t accept the notice.', 'cookie-notice' ) . '</p>
 			</div>
 		</fieldset>';
 	}
@@ -1464,6 +1464,7 @@ class Cookie_Notice {
 	 */
 	public function is_cookie_policy_page() {
 		$see_more = $this->options['general']['see_more_opt'];
+		
 		if ( $see_more['link_type'] !== 'page' )
 			return false;
 
@@ -1474,6 +1475,7 @@ class Cookie_Notice {
 
 		return $current_page->post_name === $cp_slug;
 	}
+
 }
 
 /**
@@ -1483,7 +1485,7 @@ function Cookie_Notice() {
 	static $instance;
 
 	// first call to instance() initializes the plugin
-	if ( $instance === null || ! ($instance instanceof Cookie_Notice) )
+	if ( $instance === null || ! ( $instance instanceof Cookie_Notice ) )
 		$instance = Cookie_Notice::instance();
 
 	return $instance;

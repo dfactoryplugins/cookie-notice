@@ -5,7 +5,7 @@ Tags: gdpr, ccpa, cookie, cookies, notice, notification, notify, cookie, cookie 
 Requires at least: 3.3
 Requires PHP: 5.2.4
 Tested up to: 5.3.2
-Stable tag: 1.2.50
+Stable tag: 1.2.51
 License: MIT License
 License URI: http://opensource.org/licenses/MIT
 
@@ -67,6 +67,10 @@ No questions yet.
 1. screenshot-1.png
 
 == Changelog ==
+
+= 1.2.51 =
+* Fix: Problems with iOS and OK/Reject button
+* Tweak: Added Separate cookie expiry for Reject, props Carlos Buchart
 
 = 1.2.50 =
 * Fix: The body css class always set to "cookies-refused"
@@ -284,5 +288,6 @@ Initial release
 
 == Upgrade Notice ==
 
-= 1.2.50 =
-* Fix: The body css class always set to "cookies-refused"
+= 1.2.51 =
+* Fix: Problems with iOS and OK/Reject button
+* Tweak: Added Separate cookie expiry for Reject, props Carlos Buchart
