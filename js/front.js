@@ -38,7 +38,7 @@
 	ClassList.prototype = {
 		add: function () {
 			forEach( arguments, function ( name ) {
-				if ( ! this.contains( name ) ) {
+				if ( !this.contains( name ) ) {
 					this.element.className += this.element.className.length > 0 ? ' ' + name : name;
 				}
 			}, this );
@@ -63,7 +63,7 @@
 	};
 
 	// IE8/9, Safari
-	if ( ! ( 'classList' in Element.prototype ) ) {
+	if ( !( 'classList' in Element.prototype ) ) {
 		Object.defineProperty( Element.prototype, 'classList', {
 			get: function () {
 				return new ClassList( this );
@@ -76,7 +76,7 @@
 } )();
 
 // cookieNotice
-( function( window, document, undefined ) {
+( function ( window, document, undefined ) {
 
 	var cookieNotice = new function () {
 		// cookie status
@@ -106,7 +106,7 @@
 			}
 
 			// set cookie
-			document.cookie = cnArgs.cookieName + '=' + cookieValue + ';expires=' + laterDate.toUTCString() + ';' + ( !! cnArgs.cookieDomain ? 'domain=' + cnArgs.cookieDomain + ';' : '' ) + ( !! cnArgs.cookiePath ? 'path=' + cnArgs.cookiePath + ';' : '' ) + ( cnArgs.secure === '1' ? 'secure;' : '' );
+			document.cookie = cnArgs.cookieName + '=' + cookieValue + ';expires=' + laterDate.toUTCString() + ';' + ( !!cnArgs.cookieDomain ? 'domain=' + cnArgs.cookieDomain + ';' : '' ) + ( !!cnArgs.cookiePath ? 'path=' + cnArgs.cookiePath + ';' : '' ) + ( cnArgs.secure === '1' ? 'secure;' : '' );
 
 			// update global status
 			this.cookiesAccepted = cookieValue === 'true';
@@ -180,7 +180,7 @@
 		};
 
 		// display cookie notice
-		this.showCookieNotice = function() {
+		this.showCookieNotice = function () {
 			var _this = this;
 
 			// trigger custom event
@@ -213,7 +213,7 @@
 		// hide cookie notice
 		this.hideCookieNotice = function () {
 			var _this = this;
-			
+
 			// trigger custom event
 			var event = new CustomEvent(
 				'hideCookieNotice',
@@ -245,7 +245,7 @@
 		// display revoke notice
 		this.showRevokeNotice = function () {
 			var _this = this;
-			
+
 			// trigger custom event
 			var event = new CustomEvent(
 				'showRevokeNotice',
@@ -276,7 +276,7 @@
 		// hide revoke notice
 		this.hideRevokeNotice = function () {
 			var _this = this;
-			
+
 			// trigger custom event
 			var event = new CustomEvent(
 				'hideRevokeNotice',
@@ -322,17 +322,17 @@
 
 		// handle mouse scrolling
 		this.handleScroll = function () {
-			var scrollTop = window.pageYOffset || (document.documentElement || document.body.parentNode || document.body).scrollTop
+			var scrollTop = window.pageYOffset || ( document.documentElement || document.body.parentNode || document.body ).scrollTop
 
 			// accept cookie
 			if ( scrollTop > parseInt( cnArgs.onScrollOffset ) )
 				this.setStatus( 'accept' );
 		};
-		
+
 		// cross browser compatible closest function
 		this.getClosest = function ( elem, selector ) {
 			// element.matches() polyfill
-			if ( ! Element.prototype.matches ) {
+			if ( !Element.prototype.matches ) {
 				Element.prototype.matches =
 					Element.prototype.matchesSelector ||
 					Element.prototype.mozMatchesSelector ||
@@ -371,19 +371,19 @@
 			this.noticeContainer.classList.add( 'cn-effect-' + cnArgs.hideEffect );
 
 			/*
-			// add refuse class
-			this.noticeContainer.classList.add( cnArgs.refuse === 'yes' ? 'cn-refuse-active' : 'cn-refuse-inactive' );
-
-			// add revoke class
-			if ( cnArgs.revoke_cookies === '1' ) {
-				this.noticeContainer.classList.add( 'cn-revoke-active' );
-
-				// add revoke type class (manual or automatic)
-				this.noticeContainer.classList.add( 'cn-revoke-' + cnArgs.revoke_cookies_opt );
-			} else {
-				this.noticeContainer.classList.add( 'cn-revoke-inactive' );
-			}
-			*/
+			 // add refuse class
+			 this.noticeContainer.classList.add( cnArgs.refuse === 'yes' ? 'cn-refuse-active' : 'cn-refuse-inactive' );
+			 
+			 // add revoke class
+			 if ( cnArgs.revoke_cookies === '1' ) {
+			 this.noticeContainer.classList.add( 'cn-revoke-active' );
+			 
+			 // add revoke type class (manual or automatic)
+			 this.noticeContainer.classList.add( 'cn-revoke-' + cnArgs.revoke_cookies_opt );
+			 } else {
+			 this.noticeContainer.classList.add( 'cn-revoke-inactive' );
+			 }
+			 */
 
 			// check cookies status
 			if ( this.cookiesAccepted === null ) {
@@ -392,7 +392,7 @@
 					window.addEventListener( 'scroll', function ( e ) {
 						_this.handleScroll();
 					} );
-				
+
 				// handle on click
 				if ( cnArgs.onClick === 'yes' )
 					window.addEventListener( 'click', function ( e ) {
@@ -444,7 +444,7 @@
 							_this.noticeContainer.removeEventListener( 'webkitAnimationEnd', handler );
 							_this.showCookieNotice();
 						} );
-					// show cookie notice
+						// show cookie notice
 					} else if ( _this.noticeContainer.classList.contains( 'cookie-notice-hidden' ) && _this.noticeContainer.classList.contains( 'cookie-revoke-hidden' ) ) {
 						_this.showCookieNotice();
 					}
