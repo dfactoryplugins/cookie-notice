@@ -2,7 +2,7 @@
 /*
 Plugin Name: Cookie Notice
 Description: Cookie Notice allows you to elegantly inform users that your site uses cookies and helps you comply with the EU GDPR cookie law and CCPA regulations.
-Version: 1.3.0
+Version: 1.3.1
 Author: dFactory
 Author URI: http://www.dfactory.eu/
 Plugin URI: http://www.dfactory.eu/plugins/cookie-notice/
@@ -29,7 +29,7 @@ if ( ! defined( 'ABSPATH' ) )
  * Cookie Notice class.
  *
  * @class Cookie_Notice
- * @version	1.3.0
+ * @version	1.3.1
  */
 class Cookie_Notice {
 
@@ -64,12 +64,12 @@ class Cookie_Notice {
 			'colors' => array(
 				'text'			=> '#fff',
 				'bar'			=> '#000',
-				'bar_opacity'	=> 80
+				'bar_opacity'	=> 100
 			),
 			'see_more_opt' => array(
 				'text'		=> '',
 				'link_type'	=> 'page',
-				'id'		=> 'empty',
+				'id'		=> 0,
 				'link'		=> '',
 				'sync'		=> false
 			),
@@ -98,7 +98,7 @@ class Cookie_Notice {
 			'update_notice'				=> true,
 			'update_delay_date'			=> 0
 		),
-		'version'	=> '1.3.0'
+		'version'	=> '1.3.1'
 	);
 	private $positions = array();
 	private $styles = array();
@@ -951,7 +951,7 @@ class Cookie_Notice {
 				<p class="description">' . __( 'Select where to redirect user for more information.', 'cookie-notice' ) . '</p>
 				<div id="cn_see_more_opt_page"' . ($this->options['general']['see_more_opt']['link_type'] === 'custom' ? ' style="display: none;"' : '') . '>
 					<select name="cookie_notice_options[see_more_opt][id]">
-						<option value="empty" ' . selected( 'empty', $this->options['general']['see_more_opt']['id'], false ) . '>' . __( '-- select page --', 'cookie-notice' ) . '</option>';
+						<option value="0" ' . selected( 0, $this->options['general']['see_more_opt']['id'], false ) . '>' . __( '-- select page --', 'cookie-notice' ) . '</option>';
 
 		if ( $pages ) {
 			foreach ( $pages as $page ) {
@@ -1193,7 +1193,7 @@ class Cookie_Notice {
 		
 		echo '
 			<div id="cn_colors-bar_opacity"><label>' . __( 'Bar opacity', 'cookie-notice' ) . '</label><br />
-				<div><input id="cn_colors_bar_opacity_range" class="cn_range" type="range" min="50" max="100" step="1" name="cookie_notice_options[colors][bar_opacity]" value="' . absint( $this->options['general']['colors']['bar_opacity'] ) . '" onchange="cn_colors_bar_opacity_text.value = cn_colors_bar_opacity_range.value" /><input id="cn_colors_bar_opacity_text" class="small-text" type="text" value="' . absint( $this->options['general']['colors']['bar_opacity'] ) . '" /></div>' .
+				<div><input id="cn_colors_bar_opacity_range" class="cn_range" type="range" min="50" max="100" step="1" name="cookie_notice_options[colors][bar_opacity]" value="' . absint( $this->options['general']['colors']['bar_opacity'] ) . '" onchange="cn_colors_bar_opacity_text.value = cn_colors_bar_opacity_range.value" /><input id="cn_colors_bar_opacity_text" class="small-text" type="number" onchange="cn_colors_bar_opacity_range.value = cn_colors_bar_opacity_text.value" min="50" max="100" value="' . absint( $this->options['general']['colors']['bar_opacity'] ) . '" /></div>' .
 			'</div>';
 		
 		echo '
@@ -1278,9 +1278,9 @@ class Cookie_Notice {
 			$input['see_more_opt']['link_type'] = sanitize_text_field( isset( $input['see_more_opt']['link_type'] ) && in_array( $input['see_more_opt']['link_type'], array_keys( $this->links ) ) ? $input['see_more_opt']['link_type'] : $this->defaults['general']['see_more_opt']['link_type'] );
 
 			if ( $input['see_more_opt']['link_type'] === 'custom' )
-				$input['see_more_opt']['link'] = esc_url( $input['see_more'] === true ? $input['see_more_opt']['link'] : 'empty' );
+				$input['see_more_opt']['link'] = ( $input['see_more'] === true ? esc_url( $input['see_more_opt']['link'] ) : 'empty' );
 			elseif ( $input['see_more_opt']['link_type'] === 'page' ) {
-				$input['see_more_opt']['id'] = ( $input['see_more'] === true ? (int) $input['see_more_opt']['id'] : 'empty' );
+				$input['see_more_opt']['id'] = ( $input['see_more'] === true ? (int) $input['see_more_opt']['id'] : 0 );
 				$input['see_more_opt']['sync'] = isset( $input['see_more_opt']['sync'] );
 
 				if ( $input['see_more_opt']['sync'] )
@@ -1391,7 +1391,7 @@ class Cookie_Notice {
 		// check legacy parameters
 		$options = $this->check_legacy_params( $options, array( 'refuse_opt', 'see_more' ) );
 
-		if ( $options['see_more'] === true && $options['link_position'] === 'message' )
+		if ( $options['see_more'] === true )
 			$options['message_text'] = do_shortcode( wp_kses_post( $options['message_text'] ) );
 		else
 			$options['message_text'] = wp_kses_post( $options['message_text'] );
@@ -1720,7 +1720,7 @@ class Cookie_Notice {
 	 */
 	public function check_legacy_params( $options, $params ) {
 		foreach ( $params as $param ) {
-			if ( ! is_bool( $options[$param] ) )
+			if ( array_key_exists( $param, $options ) && ! is_bool( $options[$param] ) )
 				$options[$param] = $options[$param] === 'yes';
 		}
 

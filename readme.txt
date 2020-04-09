@@ -5,7 +5,7 @@ Tags: gdpr, ccpa, cookie, cookies, notice, notification, notify, cookie, cookie 
 Requires at least: 3.3
 Requires PHP: 5.2.4
 Tested up to: 5.4
-Stable tag: 1.3.0
+Stable tag: 1.3.1
 License: MIT License
 License URI: http://opensource.org/licenses/MIT
 
@@ -67,6 +67,12 @@ No questions yet.
 1. screenshot-1.png
 
 == Changelog ==
+
+= 1.3.1 =
+* Fix: Unable to select Privacy policy link
+* Fix: Blank Cookies policy link in a message
+* Fix: Undefined index: on_click
+* Tweak: Adjusted default opacity back to 100
 
 = 1.3.0 =
 * New: Introducing Corona Banner that displays data about Coronavirus pandemia and five steps recommended by the WHO (World Health Organization)
@@ -294,7 +300,7 @@ Initial release
 
 == Upgrade Notice ==
 
-= 1.3.0 =
-* New: Introducing Corona Banner that displays data about Coronavirus pandemia and five steps recommended by the WHO (World Health Organization)
-* New: Option to set bar opacity
-* New: Accept the notice with close icon
+= 1.3.1 =
+* Fix: Unable to select Privacy policy link
+* Fix: Blank Cookies policy link in a message
+* Fix: Undefined index: on_click
