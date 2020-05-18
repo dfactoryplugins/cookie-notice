@@ -23,37 +23,5 @@
 
 			$( e.delegateTarget ).slideUp( 'fast' );
 		} );
-	   
-		/* Steps
-		$( '.cn-notice .step-choice .cn-approve' ).on( 'click', function ( e ) {
-			e.preventDefault();
-
-			$( '.cn-notice .step-choice' ).slideUp( 'fast', 'linear', {
-				start: function () {
-					$( this ).css( {
-						display: "flex"
-					} )
-				}
-			} );
-
-			if ( $( e.target ).hasClass( 'cn-reply-yes' ) ) {
-				$( '.cn-notice .step-yes' ).slideDown( {
-				start: function () {
-					$( this ).css( {
-						display: "flex"
-					} )
-				}
-			} );
-			} else {
-				$( '.cn-notice .step-no' ).slideDown( {
-				start: function () {
-					$( this ).css( {
-						display: "flex"
-					} )
-				}
-			} );
-			};
-		} );
-		*/
 	} );
 } )( jQuery );

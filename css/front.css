@@ -105,7 +105,8 @@
 }
 
 #cookie-notice .cn-button {
-	margin-left: 10px;
+	margin: 0 0 0 10px;
+	border: none;
 }
 
 .cn-button {
@@ -138,10 +139,9 @@
 
 .cn-button.wp-default,
 .cn-button.bootstrap {
-	min-height: 30px;
 	text-decoration: none;
-	padding: 0 10px;
-	line-height: 2.15384615;
+	padding: 8.5px 10px;
+	line-height: 1;
 }
 
 .cn-button.wp-default {
