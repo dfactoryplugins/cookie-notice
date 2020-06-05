@@ -46,6 +46,96 @@ Feel free to contribute to the source code on the [dFactory GitHub Repository](h
 
 ## Changelog ##
 
+#### 1.3.1 ####
+* Fix: Unable to select Privacy policy link
+* Fix: Blank Cookies policy link in a message
+* Fix: Undefined index: on_click
+* Tweak: Adjusted default opacity back to 100
+
+#### 1.3.0 ####
+* New: Introducing Corona Banner that displays data about Coronavirus pandemia and five steps recommended by the WHO (World Health Organization)
+* New: Option to set bar opacity
+* New: Accept the notice with close icon
+* Fix: Policy link added to message without policy option enabled
+
+#### 1.2.51 ####
+* Fix: Problems with iOS and OK/Reject button
+* Tweak: Added Separate cookie expiry for Reject, props Carlos Buchart
+
+#### 1.2.50 ####
+* Fix: The body css class always set to "cookies-refused"
+* Tweak: Improve IE & Safari CustomEvent and ClassList support
+* Tweak: Change the plugin js init event
+
+#### 1.2.49 ####
+* New: Option to accept the notice with any page click
+* Tweak: Remove jQuery dependency
+* Tweak: Swtich from jQuery to CSS3 animations
+* Tweak: Improve the CSS and HTML structure
+
+#### 1.2.48 ####
+* Fix: HTML tags stripped from cookie message
+* Fix: Link target not accepted in inline privacy link
+
+#### 1.2.47 ####
+* New: Option to select the privacy policy link position
+* Tweak: Do not relad the page on refuse button click
+* Tweak: Added aria-label attribute to cookie notice container
+
+#### 1.2.46 ####
+* Tweak: Remove WP Super Cache cookie on deactivation
+* Tweak: Remove plugin version from the db on deactivation
+
+#### 1.2.45 ####
+* Tweak: Improved WP Super Cache support
+* Tweak: CSS container style issue and media query for mobile
+
+#### 1.2.44 ####
+* Fix: The text of the revoke button ignored in shortcode
+* Fix: Revoke consent button not displayed automatically in top position
+* Tweak: Add shortcode parsing for content of [cookies_accepted], thanks to [dsturm](https://github.com/dsturm)
+
+#### 1.2.43 ####
+* New: Option to revoke the user consent
+* New: Script blocking extended to header and footer
+* New: Synchronization with WordPress 4.9.6 Privacy Policy page
+* New: Custom button class option
+* Tweak: Added 1 hour cookie expiry option
+
+#### 1.2.42 ####
+* New: Introducing [cookies_accepted][/cookies_accepted] shortcode
+* Fix: Infinite cookie expiry issue
+
+#### 1.2.41 ####
+* Fix: Infinite redirection loop with scroll enabled
+
+#### 1.2.40 ####
+* Fix: Div align center on some themes
+* Tweak: Extended list of allowed HTML tags in refuse code
+* Tweak: Minified CSS and JS
+
+#### 1.2.39 ####
+* New: Option to reload the page after cookies are accepted
+
+#### 1.2.38 ####
+* Tweak: Move frontend cookie js functions before the document ready call, thanks to [fgreinus](https://github.com/fgreinus)
+* Tweak: Adjust functional javascript code handling 
+* Fix: Chhromium infinity expiration date not valid
+* Fix: Remove deprecated screen_icon() function
+
+#### 1.2.37 ####
+* Tweak: Add aria landmark role="banner"
+* Tweak: Extend cn_cookie_notice_args with button class
+
+#### 1.2.36.1 ####
+* Fix: Repository upload issue with 1.2.36
+
+#### 1.2.36 ####
+* Fix: String translation support for WMPL 3.2+ 
+* Fix: Global var possible conflict with other plugins
+* Tweak: Add $options array to "cn_cookie_notice_output" filter, thanks to [chesio](https://github.com/chesio).
+* Tweak: Removed local translation files in favor of WP repository translations.
+
 #### 1.2.35 ####
 * Tweak: Use html_entity_decode on non-functional code block
 * Tweak: get_pages() function placement optimization

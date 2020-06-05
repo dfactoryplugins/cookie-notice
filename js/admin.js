@@ -28,12 +28,20 @@
 				$( '#cn_see_more_opt' ).slideUp( 'fast' );
 		} );
 
-		// privacy policy option
+		// on scroll option
 		$( '#cn_on_scroll' ).change( function () {
 			if ( $( this ).is( ':checked' ) )
 				$( '#cn_on_scroll_offset' ).slideDown( 'fast' );
 			else
 				$( '#cn_on_scroll_offset' ).slideUp( 'fast' );
+		} );
+		
+		// coronabar text string option
+		$( '#cn_coronabar_texts' ).change( function () {
+			if ( $( this ).is( ':checked' ) )
+				$( '#cn_coronabar_text_strings' ).slideDown( 'fast' );
+			else
+				$( '#cn_coronabar_text_strings' ).slideUp( 'fast' );
 		} );
 
 		// privacy policy link

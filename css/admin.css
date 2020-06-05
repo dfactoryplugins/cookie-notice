@@ -1,5 +1,5 @@
 /* Cookie Notice settings */
-.df-credits {
+.cookie-notice-credits {
     float: right;
     width: 280px;
     background: #fff;
@@ -8,33 +8,21 @@
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
 }
 
-.df-credits .inner {
-    padding-left: 10px;
-    padding-right: 10px;
+.cookie-notice-credits .inner {
+    padding-left: 1.33em;
+    padding-right: 1.33em;
 }
 
-.df-credits h3 {
+.cookie-notice-credits .inner:last-child {
+	padding-bottom: 0.66em;
+}
+
+.cookie-notice-credits h3 {
     font-size: 14px;
     line-height: 1.4;
     margin: 0;
-    padding: 8px 12px;
+    padding: 0.66em 1.33em;;
     border-bottom: 1px solid #eee;
-}
-
-.df-credits .df-link {
-    font-family: Georgia, "Times New Roman", "Bitstream Charter", Times, serif;
-    font-style: italic;
-    padding-bottom: 10px;
-    margin: 0;
-}
-
-.df-credits .df-link a {
-    vertical-align: middle;
-    padding: 5px 0 0 4px;
-}
-
-.df-promo h4 {
-    margin-bottom: 0;
 }
 
 .cookie-notice-settings .df-credits form {
@@ -58,6 +46,12 @@
     height: 0;
 }
 
+.cookie-notice-settings h2 {
+	margin: 1.5em 0;
+	padding-bottom: 1em;
+	border-bottom: 1px solid #ccc;
+}
+
 .cookie-notice-settings form {
     float: left;
     min-width: 463px;
@@ -71,6 +65,10 @@
 .cookie-notice-settings .description {
     font-size: 13px;
     margin-bottom: 8px;
+}
+
+.cookie-notice-settings .description strong {
+	color: #444;
 }
 
 #cn_colors label {
@@ -98,9 +96,18 @@
 	margin-top: 10px;
 }
 
+#cn_coronabar_text_strings {
+	margin-top: 10px;
+}
+
+#cn_colors_bar_opacity_range {
+	vertical-align: middle;
+	margin-right: 10px;
+}
+
 /* All Mobile Sizes (devices and browser) */
 @media only screen and (max-width: 959px) {
-    .df-credits {
+    .cookie-notice-credits {
         width: 100%;
         float: none;
         margin: 20px 0;

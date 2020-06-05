@@ -4,9 +4,17 @@
 	height: auto;
 	z-index: 100000;
 	font-size: 13px;
+	letter-spacing: 0;
 	line-height: 20px;
 	left: 0;
 	text-align: center;
+	/* border-top: 2px solid #fbb03b; */
+	font-weight: normal;
+	font-family: -apple-system,BlinkMacSystemFont,Arial,Roboto,"Helvetica Neue",sans-serif;
+}
+
+#cookie-notice,
+#cookie-notice * {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
@@ -49,14 +57,14 @@
 }
 
 .cookie-notice-container {
-	padding: 15px;
+	padding: 15px 30px;
 	text-align: center;
 	width: 100%;
 	z-index: 2;
 }
 
 .cookie-revoke-container {
-	padding: 15px;
+	padding: 15px 30px;
 	width: 100%;
 	z-index: 1;
 }
@@ -65,10 +73,12 @@
 	position: absolute;
 	right: 15px;
 	top: 50%;
-	margin-top: -7.5px;
+	margin-top: -10px;
 	width: 15px;
 	height: 15px;
 	opacity: 0.5;
+	padding: 10px;
+	outline: none;
 }
 
 .cn-close-icon:hover {
@@ -80,6 +90,7 @@
 	content: ' ';
 	height: 15px;
 	width: 2px;
+	top: 3px;
 	background-color: #fff;
 }
 .cn-close-icon:before {
@@ -93,94 +104,69 @@
 	margin: 0;
 }
 
-.cn-button.wp-default,
-.cn-button.wp-default:hover,
-.cn-button.bootstrap,
-.cn-button.bootstrap:hover {
-	box-shadow: none;
-	text-decoration: none;
-}
-
 #cookie-notice .cn-button {
-	margin-left: 10px;
+	margin: 0 0 0 10px;
+	border: none;
 }
 
-.cn-button.wp-default {
-	font-family: sans-serif;
-	line-height: 18px;
-	padding: 2px 12px;
-	background: linear-gradient(to bottom, #FEFEFE, #F4F4F4) repeat scroll 0 0 #F3F3F3;
-	border-color: #BBB;
-	color: #333;
-	text-shadow: 0 1px 0 #FFF;
-	border-radius: 3px 3px 3px 3px;
-	border-style: solid;
-	border-width: 1px;
-	cursor: pointer;
+.cn-button {
+	font-family: -apple-system,BlinkMacSystemFont,Arial,Roboto,"Helvetica Neue",sans-serif;
+	font-weight: normal;
+	font-size: 13px;
+	letter-spacing: 0.25px;
+	line-height: 20px;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	text-transform: none;
 	display: inline-block;
-	font-size: 12px;
-	font-style: normal;
-	text-decoration: none;
+	cursor: pointer;
+	touch-action: manipulation;
 	white-space: nowrap;
 	outline: none;
-}
-
-.cn-button.wp-default:hover {
-	background: linear-gradient(to bottom, #FFFFFF, #F3F3F3) repeat scroll 0 0 #F3F3F3;
-	border-color: #999;
-	color: #222;
-}
-
-.cn-button.bootstrap {
-	font-family: sans-serif;
-	display: inline-block;
-	*display: inline;
-	padding: 4px 12px;
-	margin-right: .3em;
-	margin-bottom: 0;
-	*margin-left: .3em;
-	line-height: 20px;
-	color: #333;
-	text-align: center;
-	text-shadow: 0 1px 1px rgba(255, 255, 255, .75);
-	font-style: normal;
-	vertical-align: middle;
-	cursor: pointer;
-	color: #fff;
-	text-shadow: 0 -1px 0 rgba(0, 0, 0, .25);
-	background-color: #006dcc;
-	*background-color: #04c;
-	background-image: -moz-linear-gradient(top, #0088cc, #0044cc);
-	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0044cc));
-	background-image: -webkit-linear-gradient(top, #0088cc, #0044cc);
-	background-image: -o-linear-gradient(top, #0088cc, #0044cc);
-	background-image: linear-gradient(to bottom, #0088cc, #0044cc);
-	background-repeat: repeat-x;
-	border-style: solid;
-	border-width: 1px;
-	border-color: #04c #04c #002a80;
-	border-color: rgba(0, 0, 0, .1) rgba(0, 0, 0, .1) rgba(0, 0, 0, .25);
-	box-shadow: 0 1px 0 rgba(255, 255, 255, .2) inset, 0 1px 2px rgba(0, 0, 0, .05);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0044cc', GradientType=0);
-	filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
-	padding: 2px 10px;
-	font-size: 12px;
-	text-decoration: none;
+	box-shadow: none;
+	text-shadow: none;
+	border: none;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	border-radius: 3px;
-	outline: none;
+}
+
+.cn-button:hover {
+	box-shadow: inset 0 0 0 99999px rgba(0,0,0,0.05);
+	text-decoration: none;
+}
+
+.cn-button.wp-default,
+.cn-button.bootstrap {
+	text-decoration: none;
+	padding: 8.5px 10px;
+	line-height: 1;
+}
+
+.cn-button.wp-default {
+	color: #fff;
+	background: #fbb03b;
+}
+
+.cn-button.wp-default:hover {
+}
+
+.cn-button.bootstrap {
+	color: #fff;
+	background: #00a99d;
 }
 
 .cn-button.bootstrap:hover {
-	color: #fff;
-	background-color: #04c;
-	*background-color: #003bb3;
-	background-position: 0 -15px;
-	-webkit-transition: background-position 0.1s linear;
-	-moz-transition: background-position 0.1s linear;
-	-o-transition: background-position 0.1s linear;
-	transition: background-position 0.1s linear;
+}
+
+.cn-text-container {
+	margin: 0 0 6px 0;
+}
+
+.cn-text-container,
+.cn-buttons-container {
+	display: inline-block;
 }
 
 #cookie-notice.cookie-notice-visible.cn-effect-none,
@@ -225,17 +211,6 @@
 #cookie-notice.cn-position-top.cn-effect-slide {
 	-webkit-animation-name: slideOutUp;
 	animation-name: slideOutUp;
-}
-
-@media all and (max-width: 900px) {
-	.cookie-notice-container #cn-notice-text {
-		display: block;
-		margin-bottom: 5px;
-	}
-	#cookie-notice .cn-button {
-		margin-left: 5px;
-		margin-right: 5px;
-	}
 }
 
 @-webkit-keyframes fadeIn {
@@ -379,5 +354,24 @@
 		visibility: hidden;
 		-webkit-transform: translate3d(0, -100%, 0);
 		transform: translate3d(0, -100%, 0);
+	}
+}
+
+@media all and (max-width: 900px) {
+	.cookie-notice-container #cn-notice-text {
+		display: block;
+	}
+	.cookie-notice-container #cn-notice-buttons {
+		display: block;
+	}
+	#cookie-notice .cn-button {
+		margin: 0 5px 5px 5px;
+	}
+}
+
+@media all and (max-width: 480px) {
+	.cookie-notice-container,
+	.cookie-revoke-container {
+		padding: 15px 25px;
 	}
 }
