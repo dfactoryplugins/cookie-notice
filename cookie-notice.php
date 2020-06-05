@@ -1554,7 +1554,7 @@ class Cookie_Notice {
 				'onScroll'				=> (int) $this->options['general']['on_scroll'],
 				'onScrollOffset'		=> (int) $this->options['general']['on_scroll_offset'],
 				'onClick'				=> (int) $this->options['general']['on_click'],
-				'cookieName'			=> 'cookie_notice_accepted',
+				'cookieName'			=> apply_filters( 'cn_cookie_name', 'cookie_notice_accepted' ),
 				'cookieTime'			=> $this->times[$this->options['general']['time']][1],
 				'cookieTimeRejected'	=> $this->times[$this->options['general']['time_rejected']][1],
 				'cookiePath'			=> ( defined( 'COOKIEPATH' ) ? (string) COOKIEPATH : '' ),
