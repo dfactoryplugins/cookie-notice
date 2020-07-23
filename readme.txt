@@ -4,8 +4,8 @@ Donate link: http://www.dfactory.eu/
 Tags: gdpr, ccpa, cookie, cookies, notice, notification, notify, cookie, cookie law, privacy, policy, consent, law
 Requires at least: 3.3
 Requires PHP: 5.2.4
-Tested up to: 5.3.2
-Stable tag: 1.2.51
+Tested up to: 5.4
+Stable tag: 1.3.2
 License: MIT License
 License URI: http://opensource.org/licenses/MIT
 
@@ -67,6 +67,23 @@ No questions yet.
 1. screenshot-1.png
 
 == Changelog ==
+
+= 1.3.2 =
+* Tweak: Speed up Corona Banner loading by moving JS file to footer with async parameter
+* Tweak: Improve buttons CSS padding
+* Tweak: Accessibility improvements on links
+
+= 1.3.1 =
+* Fix: Unable to select Privacy policy link
+* Fix: Blank Cookies policy link in a message
+* Fix: Undefined index: on_click
+* Tweak: Adjusted default opacity back to 100
+
+= 1.3.0 =
+* New: Introducing Corona Banner that displays data about Coronavirus pandemia and five steps recommended by the WHO (World Health Organization)
+* New: Option to set bar opacity
+* New: Accept the notice with close icon
+* Fix: Policy link added to message without policy option enabled
 
 = 1.2.51 =
 * Fix: Problems with iOS and OK/Reject button
@@ -288,6 +305,7 @@ Initial release
 
 == Upgrade Notice ==
 
-= 1.2.51 =
-* Fix: Problems with iOS and OK/Reject button
-* Tweak: Added Separate cookie expiry for Reject, props Carlos Buchart
+= 1.3.2 =
+* Tweak: Speed up Corona Banner loading by moving JS file to footer with async parameter
+* Tweak: Improve buttons CSS padding
+* Tweak: Accessibility improvements on links

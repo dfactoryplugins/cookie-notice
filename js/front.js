@@ -90,7 +90,7 @@
 			var _this = this;
 
 			// remove listening to scroll event
-			if ( cnArgs.onScroll === 'yes' )
+			if ( cnArgs.onScroll === '1' )
 				window.removeEventListener( 'scroll', this.handleScroll );
 
 			var date = new Date(),
@@ -131,7 +131,7 @@
 			this.hideCookieNotice();
 
 			// show revoke notice if enabled
-			if ( cnArgs.revoke_cookies_opt === 'automatic' ) {
+			if ( cnArgs.revokeCookiesOpt === 'automatic' ) {
 				// show cookie notice after the revoke is hidden
 				this.noticeContainer.addEventListener( 'animationend', function handler() {
 					_this.noticeContainer.removeEventListener( 'animationend', handler );
@@ -328,6 +328,34 @@
 			if ( scrollTop > parseInt( cnArgs.onScrollOffset ) )
 				this.setStatus( 'accept' );
 		};
+		
+		// adjust the notice offset
+		this.adjustOffset = function() {
+			var coronabarContainer = document.getElementById( 'coronabar' ),
+				adminbarContainer = document.getElementById( 'wpadminbar' ),
+				coronabarOffset = 0,
+				adminbarOffset = 0;
+			
+			// adjust when admin bar is visible
+			if ( cnArgs.position === 'top' && adminbarContainer !== null ) {
+				adminbarOffset = adminbarContainer.offsetHeight;
+
+				this.noticeContainer.style.top = adminbarOffset + 'px';
+			}
+
+			// adjust when coronabar is visible
+			if ( coronabarContainer !== null ) {
+				coronabarOffset = coronabarContainer.offsetHeight - 1;
+				
+				if ( cnArgs.position === 'top' ) {
+					coronabarContainer.style.top = adminbarOffset + 'px';
+
+					this.noticeContainer.style.top = coronabarOffset + adminbarOffset + 'px';
+				} else {
+					this.noticeContainer.style.bottom = coronabarOffset + 'px';
+				}
+			}
+		}
 
 		// cross browser compatible closest function
 		this.getClosest = function ( elem, selector ) {
@@ -365,21 +393,65 @@
 			this.noticeContainer = document.getElementById( 'cookie-notice' );
 
 			var cookieButtons = document.getElementsByClassName( 'cn-set-cookie' ),
-				revokeButtons = document.getElementsByClassName( 'cn-revoke-cookie' );
+				revokeButtons = document.getElementsByClassName( 'cn-revoke-cookie' ),
+				closeIcon = document.getElementById( 'cn-close-notice' );
 
 			// add effect class
 			this.noticeContainer.classList.add( 'cn-effect-' + cnArgs.hideEffect );
+			
+			// adjust on init
+			_this.adjustOffset();
+			
+			// adjust on resize
+			window.addEventListener( 'resize', function( event ) {
+				_this.adjustOffset();
+			} );
+
+			// adjust when coronabar is active
+			if ( cnArgs.coronabarActive === '1' ) {
+				// on display
+				document.addEventListener( 'display.coronabar', function( event ) {
+					_this.adjustOffset();
+				} );
+				// on hide
+				document.addEventListener( 'hide.coronabar', function( event ) {
+					_this.adjustOffset();
+				} );
+				// on save data
+				document.addEventListener( 'saveData.coronabar', function( event ) {
+					var casesData = event.detail;
+					
+					if ( casesData !== null ) {	
+						// alpha JS request // no jQuery
+						var request = new XMLHttpRequest();
+
+						request.open( 'POST', cnArgs.ajaxUrl, true );
+						request.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded;' );
+						request.onload = function () {
+							if ( this.status >= 200 && this.status < 400 ) {
+								// ff successful
+							} else {
+								// if fail
+							}
+						};
+						request.onerror = function () {
+							// connection error
+						};
+						request.send( 'action=cn_save_cases&nonce=' + cnArgs.nonce + '&data=' + JSON.stringify( casesData ) );
+					}
+				} );
+			}
 
 			/*
 			 // add refuse class
-			 this.noticeContainer.classList.add( cnArgs.refuse === 'yes' ? 'cn-refuse-active' : 'cn-refuse-inactive' );
+			 this.noticeContainer.classList.add( cnArgs.refuse === '1' ? 'cn-refuse-active' : 'cn-refuse-inactive' );
 			 
 			 // add revoke class
-			 if ( cnArgs.revoke_cookies === '1' ) {
+			 if ( cnArgs.revokeCookies === '1' ) {
 			 this.noticeContainer.classList.add( 'cn-revoke-active' );
 			 
 			 // add revoke type class (manual or automatic)
-			 this.noticeContainer.classList.add( 'cn-revoke-' + cnArgs.revoke_cookies_opt );
+			 this.noticeContainer.classList.add( 'cn-revoke-' + cnArgs.revokeCookiesOpt );
 			 } else {
 			 this.noticeContainer.classList.add( 'cn-revoke-inactive' );
 			 }
@@ -388,13 +460,13 @@
 			// check cookies status
 			if ( this.cookiesAccepted === null ) {
 				// handle on scroll
-				if ( cnArgs.onScroll === 'yes' )
+				if ( cnArgs.onScroll === '1' )
 					window.addEventListener( 'scroll', function ( e ) {
 						_this.handleScroll();
 					} );
 
 				// handle on click
-				if ( cnArgs.onClick === 'yes' )
+				if ( cnArgs.onClick === '1' )
 					window.addEventListener( 'click', function ( e ) {
 						var outerContainer = _this.getClosest( e.target, '#cookie-notice' );
 
@@ -411,13 +483,24 @@
 				this.setBodyClass( [ 'cookies-set', this.cookiesAccepted === true ? 'cookies-accepted' : 'cookies-refused' ] );
 
 				// show revoke notice if enabled
-				if ( cnArgs.revoke_cookies == 1 && cnArgs.revoke_cookies_opt === 'automatic' )
+				if ( cnArgs.revokeCookies === '1' && cnArgs.revokeCookiesOpt === 'automatic' )
 					this.showRevokeNotice();
 			}
 
 			// handle cookie buttons click
 			for ( var i = 0; i < cookieButtons.length; i++ ) {
 				cookieButtons[i].addEventListener( 'click', function ( e ) {
+					e.preventDefault();
+					// Chrome double click event fix
+					e.stopPropagation();
+
+					_this.setStatus( this.dataset.cookieSet );
+				} );
+			}
+			
+			// handle close icon
+			if ( closeIcon !== 'null' ) {
+				closeIcon.addEventListener( 'click', function ( e ) {
 					e.preventDefault();
 					// Chrome double click event fix
 					e.stopPropagation();
