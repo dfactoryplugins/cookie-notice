@@ -1,11 +1,12 @@
-( function ( $ ) {
+( function( $ ) {
 
-    $( document ).ready( function () {
+    // ready event
+	$( function() {
 		// initialize color picker
 		$( '.cn_color' ).wpColorPicker();
 
 		// refuse option
-		$( '#cn_refuse_opt' ).change( function () {
+		$( '#cn_refuse_opt' ).on( 'change', function() {
 			if ( $( this ).is( ':checked' ) )
 				$( '#cn_refuse_opt_container' ).slideDown( 'fast' );
 			else
@@ -13,7 +14,7 @@
 		} );
 		
 		// revoke option
-		$( '#cn_revoke_cookies' ).change( function () {
+		$( '#cn_revoke_cookies' ).on( 'change', function() {
 			if ( $( this ).is( ':checked' ) )
 				$( '#cn_revoke_opt_container' ).slideDown( 'fast' );
 			else
@@ -21,7 +22,7 @@
 		} );
 
 		// privacy policy option
-		$( '#cn_see_more' ).change( function () {
+		$( '#cn_see_more' ).on( 'change', function() {
 			if ( $( this ).is( ':checked' ) )
 				$( '#cn_see_more_opt' ).slideDown( 'fast' );
 			else
@@ -29,7 +30,7 @@
 		} );
 
 		// on scroll option
-		$( '#cn_on_scroll' ).change( function () {
+		$( '#cn_on_scroll' ).on( 'change', function() {
 			if ( $( this ).is( ':checked' ) )
 				$( '#cn_on_scroll_offset' ).slideDown( 'fast' );
 			else
@@ -37,7 +38,7 @@
 		} );
 		
 		// coronabar text string option
-		$( '#cn_coronabar_texts' ).change( function () {
+		$( '#cn_coronabar_texts' ).on( 'change', function() {
 			if ( $( this ).is( ':checked' ) )
 				$( '#cn_coronabar_text_strings' ).slideDown( 'fast' );
 			else
@@ -45,19 +46,19 @@
 		} );
 
 		// privacy policy link
-		$( '#cn_see_more_link-custom, #cn_see_more_link-page' ).change( function () {
+		$( '#cn_see_more_link-custom, #cn_see_more_link-page' ).on( 'change', function() {
 			if ( $( '#cn_see_more_link-custom:checked' ).val() === 'custom' ) {
-				$( '#cn_see_more_opt_page' ).slideUp( 'fast', function () {
+				$( '#cn_see_more_opt_page' ).slideUp( 'fast', function() {
 					$( '#cn_see_more_opt_link' ).slideDown( 'fast' );
 				} );
 			} else if ( $( '#cn_see_more_link-page:checked' ).val() === 'page' ) {
-				$( '#cn_see_more_opt_link' ).slideUp( 'fast', function () {
+				$( '#cn_see_more_opt_link' ).slideUp( 'fast', function() {
 					$( '#cn_see_more_opt_page' ).slideDown( 'fast' );
 				} );
 			}
 		} );
 		
-		$( '#cn_refuse_code_fields' ).find( 'a' ).click( function ( e ) {
+		$( '#cn_refuse_code_fields' ).find( 'a' ).on( 'click', function( e ) {
 			e.preventDefault();
 
 			$( '#cn_refuse_code_fields' ).find( 'a' ).removeClass( 'nav-tab-active' );
@@ -70,7 +71,7 @@
 		} );
     } );
 
-	$( document ).on( 'click', 'input#reset_cookie_notice_options', function () {
+	$( document ).on( 'click', 'input#reset_cookie_notice_options', function() {
 		return confirm( cnArgs.resetToDefaults );
 	} );
 

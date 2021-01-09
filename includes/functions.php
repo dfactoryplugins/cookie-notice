@@ -6,7 +6,7 @@ if ( ! defined( 'ABSPATH' ) )
 /**
  * Check if cookies are accepted.
  *
- * @return boolean Whether cookies are accepted
+ * @return bool
  */
 if ( ! function_exists( 'cn_cookies_accepted' ) ) {
 	function cn_cookies_accepted() {
@@ -17,7 +17,7 @@ if ( ! function_exists( 'cn_cookies_accepted' ) ) {
 /**
  * Check if cookies are set.
  *
- * @return boolean Whether cookies are set
+ * @return bool
  */
 if ( ! function_exists( 'cn_cookies_set' ) ) {
 	function cn_cookies_set() {

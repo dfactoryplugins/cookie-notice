@@ -112,11 +112,17 @@ class Cookie_Notice {
 	private $times = array();
 	private $notices = array();
 	private $script_placements = array();
-	
 	private static $_instance;
 
-	private function __clone() {}
-	private function __wakeup() {}
+	/**
+	 * Disable object cloning.
+	 */
+	public function __clone() {}
+
+	/**
+	 * Disable unserializing of the class.
+	 */
+	public function __wakeup() {}
 
 	/**
 	 * Main plugin instance.
@@ -137,6 +143,8 @@ class Cookie_Notice {
 
 	/**
 	 * Constructor.
+	 *
+	 * @return void
 	 */
 	public function __construct() {
 		register_activation_hook( __FILE__, array( $this, 'activation' ) );
@@ -181,7 +189,7 @@ class Cookie_Notice {
 	}
 	
 	/**
-	 * Include required files
+	 * Include required files.
 	 *
 	 * @return void
 	 */
@@ -190,7 +198,7 @@ class Cookie_Notice {
 	}
 
 	/**
-	 * Load plugin defaults
+	 * Load plugin defaults.
 	 */
 	public function load_defaults() {
 		$this->positions = array(
@@ -315,10 +323,10 @@ class Cookie_Notice {
 			}
 		}
 	}
-	
+
 	/**
 	 * Check plugin version.
-	 * 
+	 *
 	 * @return void
 	 */
 	public function check_version() {
@@ -337,13 +345,13 @@ class Cookie_Notice {
 
 	/**
 	 * Update notice.
-	 * 
+	 *
 	 * @return void
 	 */
 	public function update_notice() {
 		if ( ! current_user_can( 'install_plugins' ) )
 			return;
-		
+
 		// test only
 		// $this->options['general'] = wp_parse_args( array( 'update_version' => 2, 'update_notice' => true ), $this->options['general'] );
 		// update_option( 'cookie_notice_options', $this->options['general'] );
@@ -356,21 +364,23 @@ class Cookie_Notice {
 
 			update_option( 'cookie_notice_options', $this->options['general'] );
 		}
-		
+
 		// display current version notice
 		if ( $this->options['general']['update_notice'] === true && $this->options['general']['coronabar'] ) {
 			// include notice js and css, only if needed
-			wp_enqueue_script(
-				'cookie-notice-admin-notice', plugins_url( 'js/admin-notice' . ( ! ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '.min' : '' ) . '.js', __FILE__ ), array( 'jquery' ), $this->defaults['version']
-			);
+			wp_enqueue_script( 'cookie-notice-admin-notice', plugins_url( 'js/admin-notice' . ( ! ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '.min' : '' ) . '.js', __FILE__ ), array( 'jquery' ), $this->defaults['version'] );
+
 			wp_localize_script(
-				'cookie-notice-admin-notice', 'cnArgsNotice', array(
+				'cookie-notice-admin-notice',
+				'cnArgsNotice',
+				array(
 					'ajaxUrl' => admin_url( 'admin-ajax.php' ),
 					'nonce' => wp_create_nonce( 'cn_dismiss_notice' )
 				)
 			);
+
 			wp_enqueue_style( 'cookie-notice-admin-notice', plugins_url( 'css/admin-notice' . ( ! ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '.min' : '' ) . '.css', __FILE__ ) );
-			
+
 			$notice_html = 
 			'<div class="cn-notice-text">' .
 				'<p>' . __( "Thank you for using the <strong>Corona Banner</strong> and spreading the word about steps to stop the Coronavirus pandemia.", 'cookie-notice' ) . '<br />' . 
@@ -383,10 +393,11 @@ class Cookie_Notice {
 
 	/**
 	 * Add admin notices.
-	 * 
+	 *
 	 * @param string $html
 	 * @param string $status
-	 * @param bool $paragraph
+	 * @param bool $container
+	 * @return void
 	 */
 	private function add_notice( $html = '', $status = 'error', $container = '' ) {
 		$this->notices[] = array(
@@ -400,8 +411,8 @@ class Cookie_Notice {
 
 	/**
 	 * Print admin notices.
-	 * 
-	 * @return mixed
+	 *
+	 * @return void
 	 */
 	public function display_notice() {
 		foreach( $this->notices as $notice ) {
@@ -416,6 +427,8 @@ class Cookie_Notice {
 
 	/**
 	 * Dismiss admin notice.
+	 *
+	 * @return void
 	 */
 	public function ajax_dismiss_admin_notice() {
 		if ( ! current_user_can( 'install_plugins' ) )
@@ -429,16 +442,20 @@ class Cookie_Notice {
 				case 'delay':
 					// set delay period to 1 week from now
 					$this->options['general'] = wp_parse_args( array( 'update_delay_date' => time() + 1209600 ), $this->options['general'] );
+
+					// update options
 					update_option( 'cookie_notice_options', $this->options['general'] );
 					break;
-				
-				// delay notice
+
+				// approve notice
 				case 'approve':
 					// enable coronabar
 					$this->options['general'] = wp_parse_args( array( 'coronabar' => true), $this->options['general'] );
+
 					// hide notice
 					$this->options['general'] = wp_parse_args( array( 'update_notice' => false ), $this->options['general'] );
 					$this->options['general'] = wp_parse_args( array( 'update_delay_date' => 0 ), $this->options['general'] );
+
 					// update options
 					update_option( 'cookie_notice_options', $this->options['general'] );
 					break;
@@ -454,24 +471,26 @@ class Cookie_Notice {
 
 		exit;
 	}
-	
+
 	/**
 	 * Save corona cases locally for caching.
+	 *
+	 * @return void
 	 */
 	public function ajax_save_cases() {
 		// check if the bar is enabled
 		if ( ! $this->options['general']['coronabar'] )
 			return;
-		
+
 		if ( ! wp_verify_nonce( esc_attr( $_REQUEST['nonce'] ), 'cn_save_cases' ) )
 			return;
-		
+
 		$json_data = ! empty( $_REQUEST['data'] ) ? esc_attr( $_REQUEST['data'] ) : false;
 		$cases_data = array();
 
 		if ( ! empty( $json_data ) )
 			$cases_data = json_decode( stripslashes( html_entity_decode( $json_data ) ), true );
-		
+
 		// save data
 		if ( $cases_data && is_array( $cases_data ) )
 			set_transient( 'cookie_notice_coronadata', $cases_data, 12 * HOUR_IN_SECONDS );
@@ -516,16 +535,16 @@ class Cookie_Notice {
 	 *
 	 * @param array $args
 	 * @param mixed $content
-	 * @return mixed
+	 * @return string
 	 */
 	public function cookies_accepted_shortcode( $args, $content ) {
 		if ( $this->cookies_accepted() ) {
 			$scripts = html_entity_decode( trim( wp_kses( $content, $this->get_allowed_html() ) ) );
 
 			if ( ! empty( $scripts ) ) {
-				if ( preg_match_all( '/' . get_shortcode_regex() . '/', $content ) ) {
+				if ( preg_match_all( '/' . get_shortcode_regex() . '/', $content ) )
 					$scripts = do_shortcode( $scripts );
-				}
+
 				return $scripts;
 			}
 		}
@@ -538,7 +557,7 @@ class Cookie_Notice {
 	 *
 	 * @param array $args
 	 * @param mixed $content
-	 * @return mixed
+	 * @return string
 	 */
 	public function cookies_revoke_shortcode( $args, $content ) {
 		// get options
@@ -555,10 +574,8 @@ class Cookie_Notice {
 
 		// escape class(es)
 		$args['class'] = esc_attr( $args['class'] );
-		
-		$shortcode = '<a href="#" class="cn-revoke-cookie cn-button cn-revoke-inline' . ( $options['css_style'] !== 'none' ? ' ' . $options['css_style'] : '' ) . ( $args['class'] !== '' ? ' ' . $args['class'] : '' ) . '" title="' . esc_html( $args['title'] ) . '">' . esc_html( $args['title'] ) . '</a>';
 
-		return $shortcode;
+		return '<a href="#" class="cn-revoke-cookie cn-button cn-revoke-inline' . ( $options['css_style'] !== 'none' ? ' ' . $options['css_style'] : '' ) . ( $args['class'] !== '' ? ' ' . $args['class'] : '' ) . '" title="' . esc_html( $args['title'] ) . '">' . esc_html( $args['title'] ) . '</a>';
 	}
 
 	/**
@@ -571,26 +588,24 @@ class Cookie_Notice {
 	public function cookies_policy_link_shortcode( $args, $content ) {
 		// get options
 		$options = $this->options['general'];
-		
+
 		// defaults
 		$defaults = array(
 			'title'	=> esc_html( $options['see_more_opt']['text'] !== '' ? $options['see_more_opt']['text'] : '&#x279c;' ),
 			'link'	=> ( $options['see_more_opt']['link_type'] === 'custom' ? $options['see_more_opt']['link'] : get_permalink( $options['see_more_opt']['id'] ) ),
 			'class'	=> $options['css_class']
 		);
-		
+
 		// combine shortcode arguments
 		$args = shortcode_atts( $defaults, $args );
-		
-		$shortcode = '<a href="' . $args['link'] . '" target="' . $options['link_target'] . '" id="cn-more-info" class="cn-privacy-policy-link cn-link' . ( $args['class'] !== '' ? ' ' . $args['class'] : '' ) . '">' . esc_html( $args['title'] ) . '</a>';
-		
-		return $shortcode;
+
+		return '<a href="' . $args['link'] . '" target="' . $options['link_target'] . '" id="cn-more-info" class="cn-privacy-policy-link cn-link' . ( $args['class'] !== '' ? ' ' . $args['class'] : '' ) . '">' . esc_html( $args['title'] ) . '</a>';
 	}
 
 	/**
 	 * Register WPML (>= 3.2) strings if needed.
 	 *
-	 * @return	void
+	 * @return void
 	 */
 	private function register_wpml_strings() {
 		global $wpdb;
@@ -605,7 +620,7 @@ class Cookie_Notice {
 			'Privacy policy text'	=> $this->options['general']['see_more_opt']['text'],
 			'Custom link'			=> $this->options['general']['see_more_opt']['link']
 		);
-		
+
 		// coronabar strings
 		foreach ( $this->defaults['general']['coronabar_text_strings'] as $key => $label ) {
 			$strings[$key] = $this->options['general']['coronabar_text_strings'];
@@ -626,6 +641,8 @@ class Cookie_Notice {
 
 	/**
 	 * Load textdomain.
+	 *
+	 * @return void
 	 */
 	public function load_textdomain() {
 		load_plugin_textdomain( 'cookie-notice', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
@@ -633,6 +650,8 @@ class Cookie_Notice {
 
 	/**
 	 * Add submenu.
+	 *
+	 * @return void
 	 */
 	public function admin_menu_options() {
 		add_options_page( __( 'Cookie Notice', 'cookie-notice' ), __( 'Cookie Notice', 'cookie-notice' ), apply_filters( 'cn_manage_cookie_notice_cap', 'manage_options' ), 'cookie-notice', array( $this, 'options_page' ) );
@@ -640,8 +659,8 @@ class Cookie_Notice {
 
 	/**
 	 * Options page output.
-	 * 
-	 * @return mixed
+	 *
+	 * @return void
 	 */
 	public function options_page() {
 		echo '
@@ -665,7 +684,7 @@ class Cookie_Notice {
 
 		settings_fields( 'cookie_notice_options' );
 		do_settings_sections( 'cookie_notice_options' );
-		
+
 		echo '
 				<p class="submit">';
 		submit_button( '', 'primary', 'save_cookie_notice_options', false );
@@ -681,6 +700,8 @@ class Cookie_Notice {
 
 	/**
 	 * Regiseter plugin settings.
+	 *
+	 * @return void
 	 */
 	public function register_settings() {
 		register_setting( 'cookie_notice_options', 'cookie_notice_options', array( $this, 'validate_options' ) );
@@ -706,7 +727,7 @@ class Cookie_Notice {
 		add_settings_field( 'cn_coronabar', __( 'Display', 'cookie-notice' ), array( $this, 'cn_coronabar' ), 'cookie_notice_options', 'cookie_notice_coronabar' );
 		add_settings_field( 'cn_coronabar_cases', __( 'Current cases', 'cookie-notice' ), array( $this, 'cn_coronabar_cases' ), 'cookie_notice_options', 'cookie_notice_coronabar' );
 		add_settings_field( 'cn_coronabar_texts', __( 'Text strings', 'cookie-notice' ), array( $this, 'cn_coronabar_texts' ), 'cookie_notice_options', 'cookie_notice_coronabar' );
-		
+
 		// design
 		add_settings_section( 'cookie_notice_design', __( 'Design', 'cookie-notice' ), array( $this, 'cn_section_design' ), 'cookie_notice_options' );
 		add_settings_field( 'cn_position', __( 'Position', 'cookie-notice' ), array( $this, 'cn_position' ), 'cookie_notice_options', 'cookie_notice_design' );
@@ -718,13 +739,17 @@ class Cookie_Notice {
 
 	/**
 	 * Section callback: fix for WP < 3.3
+	 *
+	 * @return void
 	 */
 	public function cn_section_configuration() {}
 	public function cn_section_design() {}
 	public function cn_section_coronabar() {}
-	
+
 	/**
 	 * Display Corona Banner option.
+	 *
+	 * @return void
 	 */
 	public function cn_coronabar() {
 		echo '
@@ -733,9 +758,11 @@ class Cookie_Notice {
 			<p class="description">' . __( 'The Corona Banner displays data about Coronavirus pandemia and <strong>five steps recommended by the WHO (World Health Organization)</strong> to help flatten the Coronavirus curve.', 'cookie-notice' ) . '</p>
 		</fieldset>';
 	}
-	
+
 	/**
 	 * Display current cases option.
+	 *
+	 * @return void
 	 */
 	public function cn_coronabar_cases() {
 		echo '
@@ -744,9 +771,11 @@ class Cookie_Notice {
 			<p class="description">' . __( 'Provides up-to-date data about Coronavirus confirmed and recovered cases.', 'cookie-notice' ) . '</p>
 		</fieldset>';
 	}
-	
+
 	/**
 	 * Coronabar text strings.
+	 *
+	 * @return void
 	 */
 	public function cn_coronabar_texts() {
 		$descriptions = array(
@@ -758,23 +787,25 @@ class Cookie_Notice {
 			'step_four_desc' => __( 'Recommendation Four', 'cookie-notice' ),
 			'step_five_desc' => __( 'Recommendation Five', 'cookie-notice' )
 		);
-		
+
 		echo '
 		<fieldset>
 			<label><input id="cn_coronabar_texts" type="checkbox" name="cookie_notice_options[coronabar_texts]" value="1" ' . checked( true, $this->options['general']['coronabar_texts'], false ) . ' />' . __( 'Enable if you\'d like to adjust the Corona Banner text strings.', 'cookie-notice' ) . '</label>
 			<div id="cn_coronabar_text_strings"' . ( $this->options['general']['coronabar_texts'] === false ? ' style="display: none;"' : '' ) . '>';
-				foreach ( $this->defaults['general']['coronabar_text_strings'] as $key => $label ) {
-					echo '
-					<span class="cn_coronabar_text_string">
-						<input type="text" class="regular-text" name="cookie_notice_options[coronabar_text_strings][' . $key .']" value="' . esc_html( $this->options['general']['coronabar_text_strings'][$key] ) . '" />
-					</span>';
-					
-					// display description
-					if ( array_key_exists( $key, $descriptions ) ) {
-						echo '
-					<p class="description">' . $descriptions[$key] . '</p>';
-					}
-				}
+
+		foreach ( $this->defaults['general']['coronabar_text_strings'] as $key => $label ) {
+			echo '
+				<span class="cn_coronabar_text_string">
+					<input type="text" class="regular-text" name="cookie_notice_options[coronabar_text_strings][' . $key .']" value="' . esc_html( $this->options['general']['coronabar_text_strings'][$key] ) . '" />
+				</span>';
+
+			// display description
+			if ( array_key_exists( $key, $descriptions ) ) {
+				echo '
+				<p class="description">' . $descriptions[$key] . '</p>';
+			}
+		}
+
 		echo '
 			</div>
 		</fieldset>';
@@ -782,6 +813,8 @@ class Cookie_Notice {
 
 	/**
 	 * Cookie message option.
+	 *
+	 * @return void
 	 */
 	public function cn_message_text() {
 		echo '
@@ -795,6 +828,8 @@ class Cookie_Notice {
 
 	/**
 	 * Accept cookie label option.
+	 *
+	 * @return void
 	 */
 	public function cn_accept_text() {
 		echo '
@@ -808,6 +843,8 @@ class Cookie_Notice {
 
 	/**
 	 * Enable/Disable third party non functional cookies option.
+	 *
+	 * @return void
 	 */
 	public function cn_refuse_opt() {
 		echo '
@@ -824,6 +861,8 @@ class Cookie_Notice {
 
 	/**
 	 * Non functional cookies code.
+	 *
+	 * @return void
 	 */
 	public function cn_refuse_code() {
 		$allowed_html = $this->get_allowed_html();
@@ -853,6 +892,8 @@ class Cookie_Notice {
 
 	/**
 	 * Revoke cookies option.
+	 *
+	 * @return void
 	 */
 	public function cn_revoke_opt() {
 		echo '
@@ -877,6 +918,8 @@ class Cookie_Notice {
 
 	/**
 	 * Redirection on cookie accept.
+	 *
+	 * @return void
 	 */
 	public function cn_redirection() {
 		echo '
@@ -887,6 +930,8 @@ class Cookie_Notice {
 
 	/**
 	 * Privacy policy link option.
+	 *
+	 * @return void
 	 */
 	public function cn_see_more() {
 		$pages = get_pages(
@@ -973,6 +1018,8 @@ class Cookie_Notice {
 
 	/**
 	 * Expiration time option.
+	 *
+	 * @return void
 	 */
 	public function cn_time() {
 		echo '
@@ -996,6 +1043,8 @@ class Cookie_Notice {
 
 	/**
 	 * Expiration time option.
+	 *
+	 * @return void
 	 */
 	public function cn_time_rejected() {
 		echo '
@@ -1019,6 +1068,8 @@ class Cookie_Notice {
 
 	/**
 	 * Script placement option.
+	 *
+	 * @return void
 	 */
 	public function cn_script_placement() {
 		echo '
@@ -1036,6 +1087,8 @@ class Cookie_Notice {
 
 	/**
 	 * Position option.
+	 *
+	 * @return void
 	 */
 	public function cn_position() {
 		echo '
@@ -1057,6 +1110,8 @@ class Cookie_Notice {
 
 	/**
 	 * Animation effect option.
+	 *
+	 * @return void
 	 */
 	public function cn_hide_effect() {
 		echo '
@@ -1078,6 +1133,8 @@ class Cookie_Notice {
 
 	/**
 	 * On scroll option.
+	 *
+	 * @return void
 	 */
 	public function cn_on_scroll() {
 		echo '
@@ -1092,6 +1149,8 @@ class Cookie_Notice {
 	
 	/**
 	 * On click option.
+	 *
+	 * @return void
 	 */
 	public function cn_on_click() {
 		echo '
@@ -1102,6 +1161,8 @@ class Cookie_Notice {
 	
 	/**
 	 * Delete plugin data on deactivation.
+	 *
+	 * @return void
 	 */
 	public function cn_deactivation_delete() {
 		echo '
@@ -1112,6 +1173,8 @@ class Cookie_Notice {
 
 	/**
 	 * CSS style option.
+	 *
+	 * @return void
 	 */
 	public function cn_css_style() {
 		echo '
@@ -1133,6 +1196,8 @@ class Cookie_Notice {
 
 	/**
 	 * CSS style option.
+	 *
+	 * @return void
 	 */
 	public function cn_css_class() {
 		echo '
@@ -1146,6 +1211,8 @@ class Cookie_Notice {
 
 	/**
 	 * Colors option.
+	 *
+	 * @return void
 	 */
 	public function cn_colors() {
 		echo '
@@ -1159,21 +1226,19 @@ class Cookie_Notice {
 				<input class="cn_color" type="text" name="cookie_notice_options[colors][' . $value . ']" value="' . esc_attr( $this->options['general']['colors'][$value] ) . '" />' .
 			'</div>';
 		}
-		
-		// print_r( $this->options['general']['colors'] );
-		
+
 		echo '
 			<div id="cn_colors-bar_opacity"><label>' . __( 'Bar opacity', 'cookie-notice' ) . '</label><br />
 				<div><input id="cn_colors_bar_opacity_range" class="cn_range" type="range" min="50" max="100" step="1" name="cookie_notice_options[colors][bar_opacity]" value="' . absint( $this->options['general']['colors']['bar_opacity'] ) . '" onchange="cn_colors_bar_opacity_text.value = cn_colors_bar_opacity_range.value" /><input id="cn_colors_bar_opacity_text" class="small-text" type="number" onchange="cn_colors_bar_opacity_range.value = cn_colors_bar_opacity_text.value" min="50" max="100" value="' . absint( $this->options['general']['colors']['bar_opacity'] ) . '" /></div>' .
 			'</div>';
-		
+
 		echo '
 		</fieldset>';
 	}
 
 	/**
 	 * Validate options.
-	 * 
+	 *
 	 * @param array $input
 	 * @return array
 	 */
@@ -1227,16 +1292,16 @@ class Cookie_Notice {
 
 			// hide effect
 			$input['hide_effect'] = sanitize_text_field( isset( $input['hide_effect'] ) && in_array( $input['hide_effect'], array_keys( $this->effects ) ) ? $input['hide_effect'] : $this->defaults['general']['hide_effect'] );
-			
+
 			// redirection
 			$input['redirection'] = isset( $input['redirection'] );
-			
+
 			// on scroll
 			$input['on_scroll'] = isset( $input['on_scroll'] );
 
 			// on scroll offset
 			$input['on_scroll_offset'] = absint( isset( $input['on_scroll_offset'] ) && $input['on_scroll_offset'] !== '' ? $input['on_scroll_offset'] : $this->defaults['general']['on_scroll_offset'] );
-			
+
 			// on click
 			$input['on_click'] = isset( $input['on_click'] );
 
@@ -1257,7 +1322,7 @@ class Cookie_Notice {
 				if ( $input['see_more_opt']['sync'] )
 					update_option( 'wp_page_for_privacy_policy', $input['see_more_opt']['id'] );
 			}
-			
+
 			// policy link position
 			$input['link_position'] = sanitize_text_field( isset( $input['link_position'] ) && in_array( $input['link_position'], array_keys( $this->link_positions ) ) ? $input['link_position'] : $this->defaults['general']['link_position'] );
 
@@ -1270,13 +1335,15 @@ class Cookie_Notice {
 			
 			// cases
 			$input['coronabar_cases'] = isset( $input['coronabar_cases'] );
+
 			// text adjustments
 			$input['coronabar_texts'] = isset( $input['coronabar_texts'] );
+
 			// text strings
 			foreach ( $this->defaults['general']['coronabar_text_strings'] as $key => $label ) {
 				$input['coronabar_text_strings'][$key] = sanitize_text_field( isset( $input['coronabar_text_strings'][$key] ) && $input['coronabar_text_strings'][$key] !== '' ? $input['coronabar_text_strings'][$key] : $this->defaults['general']['coronabar_text_strings'][$key] );
 			}
-			
+
 			$input['update_version'] = $this->options['general']['update_version'];
 			$input['update_notice'] = $this->options['general']['update_notice'];
 
@@ -1295,11 +1362,9 @@ class Cookie_Notice {
 					do_action( 'wpml_register_single_string', 'Cookie Notice', 'Custom link', $input['see_more_opt']['link'] );
 			}
 		} elseif ( isset( $_POST['reset_cookie_notice_options'] ) ) {
-			
 			$input = $this->defaults['general'];
 
 			add_settings_error( 'reset_cookie_notice_options', 'reset_cookie_notice_options', __( 'Settings restored to defaults.', 'cookie-notice' ), 'updated' );
-			
 		}
 
 		return $input;
@@ -1307,8 +1372,8 @@ class Cookie_Notice {
 
 	/**
 	 * Cookie notice output.
-	 * 
-	 * @return mixed
+	 *
+	 * @return void
 	 */
 	public function add_cookie_notice() {
 		// WPML >= 3.2
@@ -1368,7 +1433,7 @@ class Cookie_Notice {
 		// message output
 		$output = '
 		<!-- Cookie Notice plugin v' . $this->defaults['version'] . ' by Digital Factory https://dfactory.eu/ -->
-		<div id="cookie-notice" role="banner" class="cookie-notice-hidden cookie-revoke-hidden cn-position-' . $options['position'] . '" aria-label="' . $options['aria_label'] . '" style="background-color: rgba(' . implode( ',', $this->hex2rgb( $options['colors']['bar'] ) ) . ',' . $options['colors']['bar_opacity'] * 0.01 . ');">'
+		<div id="cookie-notice" role="banner" class="cookie-notice-hidden cookie-revoke-hidden cn-position-' . $options['position'] . '" aria-label="' . $options['aria_label'] . '" style="background-color: rgba(' . implode( ',', $this->hex2rgb( $options['colors']['bar'] ) ) . ',' . number_format ( $options['colors']['bar_opacity'] / 100, 2, '.', '' ) . ');">'
 			. '<div class="cookie-notice-container" style="color: ' . $options['colors']['text'] . ';">'
 			. '<span id="cn-notice-text" class="cn-text-container">'. $options['message_text'] . '</span>'
 			. '<span id="cn-notice-buttons" class="cn-buttons-container"><a href="#" id="cn-accept-cookie" data-cookie-set="accept" class="cn-set-cookie ' . $options['button_class'] . ( $options['css_style'] !== 'none' ? ' ' . $options['css_style'] : '' ) . ( $options['css_class'] !== '' ? ' ' . $options['css_class'] : '' ) . '" aria-label="' . $options['accept_text'] . '">' . $options['accept_text'] . '</a>'
@@ -1389,7 +1454,7 @@ class Cookie_Notice {
 
 	/**
 	 * Check if cookies are accepted.
-	 * 
+	 *
 	 * @return bool
 	 */
 	public static function cookies_accepted() {
@@ -1399,28 +1464,34 @@ class Cookie_Notice {
 	/**
 	 * Check if cookies are set.
 	 *
-	 * @return boolean Whether cookies are set
+	 * @return bool
 	 */
 	public function cookies_set() {
 		return apply_filters( 'cn_is_cookie_set', isset( $_COOKIE['cookie_notice_accepted'] ) );
 	}
-	
+
 	/**
 	 * Add WP Super Cache cookie.
+	 *
+	 * @return void
 	 */
 	public function wpsc_add_cookie() {
 		do_action( 'wpsc_add_cookie', 'cookie_notice_accepted' );
 	}
-	
+
 	/**
 	 * Delete WP Super Cache cookie.
+	 *
+	 * @return void
 	 */
 	public function wpsc_delete_cookie() {
 		do_action( 'wpsc_delete_cookie', 'cookie_notice_accepted' );
 	}
-		
+
 	/**
      * Get default settings.
+	 *
+	 * @return array
      */
     public function get_defaults() {
         return $this->defaults;
@@ -1428,7 +1499,7 @@ class Cookie_Notice {
 
 	/**
 	 * Add links to support forum.
-	 * 
+	 *
 	 * @param array $links
 	 * @param string $file
 	 * @return array
@@ -1437,7 +1508,7 @@ class Cookie_Notice {
 		if ( ! current_user_can( apply_filters( 'cn_manage_cookie_notice_cap', 'manage_options' ) ) )
 			return $links;
 
-		if ( $file == plugin_basename( __FILE__ ) )
+		if ( $file === plugin_basename( __FILE__ ) )
 			return array_merge( $links, array( sprintf( '<a href="http://www.dfactory.eu/support/forum/cookie-notice/" target="_blank">%s</a>', __( 'Support', 'cookie-notice' ) ) ) );
 
 		return $links;
@@ -1445,7 +1516,7 @@ class Cookie_Notice {
 
 	/**
 	 * Add links to settings page.
-	 * 
+	 *
 	 * @param array $links
 	 * @param string $file
 	 * @return array
@@ -1454,7 +1525,7 @@ class Cookie_Notice {
 		if ( ! current_user_can( apply_filters( 'cn_manage_cookie_notice_cap', 'manage_options' ) ) )
 			return $links;
 
-		if ( $file == plugin_basename( __FILE__ ) )
+		if ( $file === plugin_basename( __FILE__ ) )
 			array_unshift( $links, sprintf( '<a href="%s">%s</a>', admin_url( 'options-general.php?page=cookie-notice' ), __( 'Settings', 'cookie-notice' ) ) );
 
 		return $links;
@@ -1462,6 +1533,8 @@ class Cookie_Notice {
 
 	/**
 	 * Activate the plugin.
+	 *
+	 * @return void
 	 */
 	public function activation() {
 		add_option( 'cookie_notice_options', $this->defaults['general'], '', 'no' );
@@ -1470,15 +1543,18 @@ class Cookie_Notice {
 
 	/**
 	 * Deactivate the plugin.
+	 *
+	 * @return void
 	 */
 	public function deactivation() {
 		if ( $this->options['general']['deactivation_delete'] === true ) {
 			delete_option( 'cookie_notice_options' );
 			delete_option( 'cookie_notice_version' );
+
 			// delete if set
 			delete_option( 'cookie_notice_coronadata' );
 		}
-		
+
 		// remove WP Super Cache cookie
 		$this->wpsc_delete_cookie();
 	}
@@ -1518,18 +1594,20 @@ class Cookie_Notice {
 
 	/**
 	 * Load scripts and styles - admin.
+	 *
+	 * @return void
 	 */
 	public function admin_enqueue_scripts( $page ) {
 		if ( $page !== 'settings_page_cookie-notice' )
 			return;
 
-		wp_enqueue_script(
-			'cookie-notice-admin', plugins_url( 'js/admin' . ( ! ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '.min' : '' ) . '.js', __FILE__ ), array( 'jquery', 'wp-color-picker' ), $this->defaults['version']
-		);
-		
+		wp_enqueue_script( 'cookie-notice-admin', plugins_url( 'js/admin' . ( ! ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '.min' : '' ) . '.js', __FILE__ ), array( 'jquery', 'wp-color-picker' ), $this->defaults['version'] );
+
 		wp_localize_script(
-			'cookie-notice-admin', 'cnArgs', array(
-				'resetToDefaults'	=> __( 'Are you sure you want to reset these settings to defaults?', 'cookie-notice' )
+			'cookie-notice-admin',
+			'cnArgs',
+			array(
+				'resetToDefaults' => __( 'Are you sure you want to reset these settings to defaults?', 'cookie-notice' )
 			)
 		);
 
@@ -1539,6 +1617,8 @@ class Cookie_Notice {
 
 	/**
 	 * Load scripts and styles - frontend.
+	 *
+	 * @return void
 	 */
 	public function wp_enqueue_scripts() {
 		wp_enqueue_script( 'cookie-notice-front', plugins_url( 'js/front' . ( ! ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '.min' : '' ) . '.js', __FILE__ ), array(), $this->defaults['version'], isset( $this->options['general']['script_placement'] ) && $this->options['general']['script_placement'] === 'footer' );
@@ -1565,7 +1645,7 @@ class Cookie_Notice {
 				'revokeCookies'			=> (int) $this->options['general']['revoke_cookies'],
 				'revokeCookiesOpt'		=> $this->options['general']['revoke_cookies_opt'],
 				'secure'				=> (int) is_ssl(),
-				'coronabarActive'		=> (int) $this->options['general']['coronabar'],
+				'coronabarActive'		=> (int) $this->options['general']['coronabar']
 			)
 		);
 
@@ -1575,33 +1655,31 @@ class Cookie_Notice {
 	/**
 	 * Print Coronabar scripts.
 	 *
-	 * @return mixed
+	 * @return void
 	 */
 	public function wp_footer_corona() {
 		// coronabar
 		if ( $this->options['general']['coronabar'] ) {
-
 			$options = array(
-				'position' => $this->options['general']['position'],
-				// 'backgroundOpacity' => absint( $this->options['general']['colors']['bar_opacity'] ),
-				'displayCases' => $this->options['general']['coronabar_cases'],
+				'position'			=> $this->options['general']['position'],
+				'backgroundOpacity'	=> (int) $this->options['general']['colors']['bar_opacity'],
+				'displayCases'		=> (bool) $this->options['general']['coronabar_cases']
 			);
-			
+
 			// text strings
 			foreach ( $this->defaults['general']['coronabar_text_strings'] as $key => $label ) {
 				$key_updated = $this->underscores_to_camelcase( 'text_' . $key );
-				
+
 				$options[$key_updated] = $this->options['general']['coronabar_text_strings'][$key];
 			}
-			
+
 			// get cached data
 			$cached_data = get_transient( 'cookie_notice_coronadata' );
 
 			// if exists, send to js
-			if ( ! empty( $cached_data ) ) {
+			if ( ! empty( $cached_data ) )
 				$options['cachedData'] = $cached_data;
-			}
-			
+
 			echo '
 			<!-- Corona Banner -->
 			<script type="text/javascript">
@@ -1614,7 +1692,7 @@ class Cookie_Notice {
 	/**
 	 * Print non functional JavaScript in body.
 	 *
-	 * @return mixed
+	 * @return void
 	 */
 	public function wp_print_footer_scripts() {
 		if ( $this->cookies_accepted() ) {
@@ -1628,7 +1706,7 @@ class Cookie_Notice {
 	/**
 	 * Print non functional JavaScript in header.
 	 *
-	 * @return mixed
+	 * @return void
 	 */
 	public function wp_print_header_scripts() {
 		if ( $this->cookies_accepted() ) {
@@ -1638,12 +1716,12 @@ class Cookie_Notice {
 				echo $scripts;
 		}	
 	}
-	
+
 	/**
 	 * Helper: convert hex color to rgb color.
-	 * 
-	 * @param type $color
-	 * @return array
+	 *
+	 * @param string $color
+	 * @return array|bool
 	 */
 	public function hex2rgb( $color ) {
 		if ( $color[0] == '#' )
@@ -1662,10 +1740,10 @@ class Cookie_Notice {
 
 		return array( $r, $g, $b );
 	}
-	
+
 	/**
-	 * Helper: Convert undersocores to CamelCase/
-	 * 
+	 * Helper: Convert undersocores to CamelCase.
+	 *
 	 * @param type $string
 	 * @param bool $capitalize_first_char
 	 * @return string
@@ -1673,13 +1751,12 @@ class Cookie_Notice {
 	public function underscores_to_camelcase( $string, $capitalize_first_char = false ) {
 		$str = str_replace( ' ', '', ucwords( str_replace( '_', ' ', $string ) ) );
 
-		if ( ! $capitalize_first_char ) {
+		if ( ! $capitalize_first_char )
 			$str[0] = strtolower( $str[0] );
-		}
 
 		return $str;
 	}
-	
+
 	/**
 	 * Check legacy parameters that were yes/no strings.
 	 *
@@ -1779,7 +1856,7 @@ class Cookie_Notice {
 	 */
 	public function is_cookie_policy_page() {
 		$see_more = $this->options['general']['see_more_opt'];
-		
+
 		if ( $see_more['link_type'] !== 'page' )
 			return false;
 
@@ -1790,7 +1867,6 @@ class Cookie_Notice {
 
 		return $current_page->post_name === $cp_slug;
 	}
-
 }
 
 /**
