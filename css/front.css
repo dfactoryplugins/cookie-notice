@@ -1,6 +1,7 @@
 #cookie-notice {
 	position: fixed;
-	min-width: 100%;
+	min-width: 99%%;
+	max-width:100%;
 	height: auto;
 	z-index: 100000;
 	font-size: 13px;
@@ -8,7 +9,6 @@
 	line-height: 20px;
 	left: 0;
 	text-align: center;
-	/* border-top: 2px solid #fbb03b; */
 	font-weight: normal;
 	font-family: -apple-system,BlinkMacSystemFont,Arial,Roboto,"Helvetica Neue",sans-serif;
 }
@@ -192,7 +192,7 @@
 }
 
 #cookie-notice.cookie-notice-visible.cn-effect-slide,
-#cookie-notice.cookie-revoke-visible.cn-effect-slide{
+#cookie-notice.cookie-revoke-visible.cn-effect-slide {
 	-webkit-animation-name: slideInUp;
 	animation-name: slideInUp;
 }
